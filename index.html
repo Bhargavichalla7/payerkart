@@ -95,7 +95,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
       <a href="#api" style="font-size:13px;font-family:var(--mono);color:var(--ink);border:1px solid var(--line);padding:9px 14px;border-radius:6px;">See API Preview</a>
-      <a href="mailto:founders@payerkart.com?subject=Payerkart%20Demo%20Request" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);padding:10px 16px;border-radius:6px;">Book a Demo →</a>
+      <button onclick="openDemoModal()" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);border:none;padding:10px 16px;border-radius:6px;">Book a Demo →</button>
     </div>
   </div>
 </div>
@@ -112,7 +112,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       Right now, checking coverage usually means signing into a payer's own web portal — a different one for nearly every payer — and typing the same patient name, date of birth, and insurance details in by hand. Payerkart replaces that portal-by-portal routine with a single API: eligibility, insurance discovery, claims submission, and status tracking, across payers, one schema, purpose-built around that workflow instead of adapted from something broader.
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:6px;">
-      <a href="mailto:founders@payerkart.com?subject=Payerkart%20Demo%20Request" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);padding:13px 22px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;">Book a Demo →</a>
+      <button onclick="openDemoModal()" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);border:none;padding:13px 22px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;">Book a Demo →</button>
       <a href="#api" style="font-family:var(--mono);font-size:14px;color:var(--ink);border:1px solid var(--line);padding:13px 22px;border-radius:8px;">See API Preview</a>
     </div>
     <div style="display:flex;gap:28px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--line);margin-top:8px;">
@@ -391,7 +391,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <h2 style="margin:0;font-size:30px;font-weight:600;color:var(--paper);">Ready to talk payer infrastructure?</h2>
     <p style="margin:0;color:rgba(239,241,234,0.65);font-size:15.5px;max-width:52ch;">Book a demo to see how Payerkart fits your workflow, and get on the list for early sandbox access — no payer contracts to negotiate before your first request.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding-top:8px;">
-      <a href="mailto:founders@payerkart.com?subject=Payerkart%20Demo%20Request" style="font-family:var(--mono);font-size:14px;color:var(--ink);background:var(--paper);padding:13px 24px;border-radius:8px;">Book a Demo →</a>
+      <button onclick="openDemoModal()" style="font-family:var(--mono);font-size:14px;color:var(--ink);background:var(--paper);border:none;padding:13px 24px;border-radius:8px;">Book a Demo →</button>
       <a href="#api" style="font-family:var(--mono);font-size:14px;color:var(--paper);border:1px solid rgba(239,241,234,0.3);padding:13px 24px;border-radius:8px;">See API Preview</a>
     </div>
   </div>
@@ -412,6 +412,52 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
   </div>
 </div>
 
+</div>
+
+<!-- DEMO MODAL -->
+<div id="demoModalOverlay" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(18,26,22,0.55);align-items:center;justify-content:center;padding:20px;">
+  <div style="width:100%;max-width:440px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;position:relative;max-height:90vh;overflow-y:auto;">
+    <button onclick="closeDemoModal()" aria-label="Close" style="position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:20px;line-height:1;color:var(--muted);padding:4px;">×</button>
+
+    <div id="demoFormWrap">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:8px;">Book a Demo</div>
+      <h3 style="margin:0 0 6px;font-size:21px;font-weight:600;">Tell us about your workflow</h3>
+      <p style="margin:0 0 20px;color:var(--muted);font-size:13.5px;line-height:1.55;">We'll get back to you to set up a time — and your use case helps shape what we build first.</p>
+
+      <form id="demoForm" onsubmit="submitDemoForm(event)" style="display:flex;flex-direction:column;gap:14px;">
+        <input type="hidden" name="access_key" value="93c88fbd-9ea1-4fdd-a33e-c6ccf4829ad5">
+        <input type="hidden" name="subject" value="Payerkart Demo Request">
+        <input type="hidden" name="from_name" value="Payerkart Website">
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink);">
+          Name
+          <input type="text" name="name" required style="font-family:var(--sans);font-size:14.5px;padding:10px 12px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--ink);">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink);">
+          Work email
+          <input type="email" name="email" required style="font-family:var(--sans);font-size:14.5px;padding:10px 12px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--ink);">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink);">
+          Company
+          <input type="text" name="company" style="font-family:var(--sans);font-size:14.5px;padding:10px 12px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--ink);">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink);">
+          What are you looking to do?
+          <textarea name="message" rows="3" style="font-family:var(--sans);font-size:14.5px;padding:10px 12px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--ink);resize:vertical;"></textarea>
+        </label>
+
+        <button type="submit" id="demoSubmitBtn" style="margin-top:4px;font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);border:none;padding:13px 20px;border-radius:8px;cursor:pointer;">Send request →</button>
+        <div id="demoFormError" style="display:none;color:var(--warn);font-size:13px;"></div>
+      </form>
+    </div>
+
+    <div id="demoFormSuccess" style="display:none;text-align:center;padding:20px 0;">
+      <div style="font-size:32px;margin-bottom:10px;">✓</div>
+      <h3 style="margin:0 0 8px;font-size:19px;font-weight:600;">Request sent</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.55;">Thanks — we'll be in touch shortly to set up a time.</p>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -436,6 +482,63 @@ document.getElementById('copyBtn').addEventListener('click', function(){
     }).catch(revert);
   }
 });
+
+// DEMO MODAL
+function openDemoModal(){
+  document.getElementById('demoModalOverlay').style.display = 'flex';
+  document.getElementById('demoFormWrap').style.display = 'block';
+  document.getElementById('demoFormSuccess').style.display = 'none';
+  document.getElementById('demoFormError').style.display = 'none';
+  document.body.style.overflow = 'hidden';
+}
+function closeDemoModal(){
+  document.getElementById('demoModalOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.getElementById('demoModalOverlay').addEventListener('click', function(e){
+  if (e.target === this) closeDemoModal();
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeDemoModal();
+});
+
+function submitDemoForm(e){
+  e.preventDefault();
+  var form = document.getElementById('demoForm');
+  var btn = document.getElementById('demoSubmitBtn');
+  var errBox = document.getElementById('demoFormError');
+  errBox.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  var data = Object.fromEntries(new FormData(form).entries());
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(json){
+    if (json.success) {
+      document.getElementById('demoFormWrap').style.display = 'none';
+      document.getElementById('demoFormSuccess').style.display = 'block';
+      if (typeof gtag === 'function') { gtag('event', 'demo_request_submitted'); }
+      form.reset();
+    } else {
+      errBox.textContent = json.message || 'Something went wrong — please try again or email founders@payerkart.com directly.';
+      errBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send request →';
+    }
+  })
+  .catch(function(){
+    errBox.textContent = 'Something went wrong — please try again or email founders@payerkart.com directly.';
+    errBox.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Send request →';
+  });
+}
 </script>
 
 </body>
