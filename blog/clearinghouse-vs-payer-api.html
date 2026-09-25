@@ -115,13 +115,13 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 <ul>
   <li><strong>Batch-oriented by default.</strong> Many clearinghouse integrations still run on scheduled file transfers rather than live requests, even when the underlying payer connection could support real time.</li>
   <li><strong>Status visibility lag.</strong> You often find out about a rejection or denial hours or days after submission, not at the moment something goes wrong.</li>
-  <li><strong>Format standardization, not workflow.</strong> A clearinghouse gets your claim into the right shape — it doesn't help you verify eligibility, discover unlisted coverage, or track status changes as they happen.</li>
+  <li><strong>Format standardization, not workflow.</strong> A clearinghouse gets your claim into the right shape — it doesn't help you verify eligibility or track status changes as they happen, on its own.</li>
   <li><strong>Per-transaction and per-payer fees</strong> that add up differently than a flat API pricing model.</li>
 </ul>
 
 <h2>What a direct payer API changes</h2>
 
-<p>A payer API — or a platform like Payerkart that unifies several payer APIs behind one interface — replaces the batch/file model with request/response calls your application makes directly: verify eligibility, submit a claim, check status, all synchronously, all in the same schema regardless of which payer is on the other end.</p>
+<p>A payer API layer — like the one Payerkart puts in front of an existing clearinghouse connection — replaces the batch/file experience with request/response calls your application makes directly: verify eligibility, check status, resubmit a corrected claim, all synchronously, all in the same schema regardless of which payer is on the other end.</p>
 
 <div class="twrap">
 <table>
@@ -159,7 +159,7 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 
 <p>Most teams don't do a clean cutover — they run both, weighting new volume toward the API path as it proves out, while keeping clearinghouse rails as a fallback for payers not yet on the API side. What matters is not treating the clearinghouse as the permanent architecture just because it's the incumbent one.</p>
 
-<p>Payerkart's approach is to give you that API layer without the multi-year payer enrollment slog: <a href="/#capabilities">eligibility, discovery, claims submission, and status tracking</a> behind one schema, so the migration is additive rather than a rip-and-replace project.</p>
+<p>Payerkart's approach is to put a single, modern API in front of an existing clearinghouse connection, rather than making you build and maintain that connection yourself: <a href="/#capabilities">eligibility, claim status, and claim resubmission</a> behind one schema, so adopting it is additive rather than a rip-and-replace project.</p>
 
 <h2>The takeaway</h2>
 
@@ -167,7 +167,7 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 
 <div style="margin-top:48px;padding:32px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:flex;flex-direction:column;gap:14px;">
   <h3 style="margin:0;font-size:18px;">Try the API side for yourself</h3>
-  <p style="margin:0;color:var(--muted);font-size:14.5px;">Payerkart's sandbox gives you eligibility, discovery, claims, and status through one schema — no payer contracts required to start testing.</p>
+  <p style="margin:0;color:var(--muted);font-size:14.5px;">Payerkart's sandbox gives you eligibility, claim status, and resubmission through one schema, built on an existing clearinghouse connection — no payer contracts required to start testing.</p>
   <a href="/#start" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);padding:12px 20px;border-radius:8px;width:fit-content;">Start Building →</a>
 </div>
 
