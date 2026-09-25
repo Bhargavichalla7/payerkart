@@ -12,7 +12,7 @@
   gtag('config', 'G-5KS54TFG1N');
 </script>
 <title>Payerkart — Healthcare Payer Infrastructure API</title>
-<meta name="description" content="Verify eligibility, discover insurance, submit claims, and track claim status through one API. Payer infrastructure built for healthcare developers.">
+<meta name="description" content="Verify eligibility, check claim status, and resubmit corrected claims through one API, backed by real clearinghouse connectivity. Payer infrastructure built for healthcare developers.">
 <meta name="google-site-verification" content="l2rVyKTMptO1igdLxXalkTr6IJ1aGl0IwMnWhwPIuKk" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.svg">
@@ -24,7 +24,7 @@
   "name": "Payerkart",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Web",
-  "description": "Healthcare payer infrastructure API for eligibility verification, insurance discovery, claims submission, and claim status tracking.",
+  "description": "Healthcare payer infrastructure API for eligibility verification, claim status tracking, and corrected claim resubmission, backed by clearinghouse connectivity.",
   "url": "https://payerkart.com",
   "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "0" }
 }
@@ -107,9 +107,9 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>
       Payer infrastructure, API-first
     </div>
-    <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">One API for eligibility, claims, and payer status — no clearinghouse required.</h1>
+    <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">One API for eligibility, claim status, and claim resubmission — backed by real clearinghouse connectivity.</h1>
     <p style="margin:0;font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;">
-      Right now, checking coverage usually means signing into a payer's own web portal — a different one for nearly every payer — and typing the same patient name, date of birth, and insurance details in by hand. Payerkart replaces that portal-by-portal routine with a single API: eligibility, insurance discovery, claims submission, and status tracking, across payers, one schema, purpose-built around that workflow instead of adapted from something broader.
+      Right now, checking coverage usually means signing into a payer's own web portal — a different one for nearly every payer — and typing the same patient name, date of birth, and insurance details in by hand. Payerkart replaces that portal-by-portal routine with a single API — one clearinghouse connection behind it, not a per-payer login — for eligibility, claim status, and resubmitting corrected claims, purpose-built around that workflow instead of adapted from something broader.
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:6px;">
       <button onclick="openDemoModal()" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);border:none;padding:13px 22px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;">Book a Demo →</button>
@@ -135,19 +135,14 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
           <span class="mono" style="font-size:11px;color:var(--accent);">200</span>
         </div>
         <div style="display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:baseline;">
-          <span class="mono" style="font-size:11px;color:var(--muted);width:64px;flex:none;">09:41:03</span>
-          <span class="mono" style="font-size:13px;flex:1;">insurance.discover → 2 plans found</span>
-          <span class="mono" style="font-size:11px;color:var(--accent);">200</span>
-        </div>
-        <div style="display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:baseline;">
           <span class="mono" style="font-size:11px;color:var(--muted);width:64px;flex:none;">09:41:19</span>
-          <span class="mono" style="font-size:13px;flex:1;">claims.submit → accepted by payer</span>
-          <span class="mono" style="font-size:11px;color:var(--accent);">202</span>
+          <span class="mono" style="font-size:13px;flex:1;">claims.status → rejected: dob mismatch</span>
+          <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:4px;padding:1px 6px;">action needed</span>
         </div>
         <div style="display:flex;gap:12px;padding:11px 0;align-items:baseline;">
           <span class="mono" style="font-size:11px;color:var(--muted);width:64px;flex:none;">09:44:51</span>
-          <span class="mono" style="font-size:13px;flex:1;">claims.status → in adjudication</span>
-          <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:4px;padding:1px 6px;">pending</span>
+          <span class="mono" style="font-size:13px;flex:1;">claims.resubmit → corrected, in adjudication</span>
+          <span class="mono" style="font-size:11px;color:var(--accent);">202</span>
         </div>
       </div>
     </div>
@@ -170,8 +165,8 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 <div id="capabilities" style="max-width:1180px;margin:0 auto;padding:80px 24px 40px;width:100%;">
   <div style="max-width:60ch;margin-bottom:40px;">
     <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">The workflow</div>
-    <h2 style="margin:0 0 12px;font-size:30px;font-weight:600;">Four payer workflows. One API.</h2>
-    <p style="margin:0;color:var(--muted);font-size:16px;line-height:1.6;">Every stage of the payer relationship, behind a single consistent schema — so switching payers never means switching integrations.</p>
+    <h2 style="margin:0 0 12px;font-size:30px;font-weight:600;">Three payer workflows. One API.</h2>
+    <p style="margin:0;color:var(--muted);font-size:16px;line-height:1.6;">From checking coverage to resubmitting a corrected claim, behind a single consistent schema — so switching payers never means switching integrations.</p>
   </div>
 
   <div class="cap-grid" style="display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;">
@@ -186,26 +181,18 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <div style="background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:12px;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
         <span class="mono" style="font-size:12px;color:var(--muted);">02</span>
-        <span class="mono" style="font-size:11px;color:var(--muted);">POST /v1/insurance/discover</span>
+        <span class="mono" style="font-size:11px;color:var(--muted);">GET /v1/claims/:id</span>
       </div>
-      <h3 style="margin:0;font-size:19px;font-weight:600;">Discover insurance</h3>
-      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">Find active coverage for a patient when the payer or plan isn't on file yet, using demographic and identity matching.</p>
+      <h3 style="margin:0;font-size:19px;font-weight:600;">Track claim status</h3>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">Poll or subscribe to status changes — submitted, in adjudication, paid, denied — with reason codes translated into plain language, not raw payer codes.</p>
     </div>
     <div style="background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:12px;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
         <span class="mono" style="font-size:12px;color:var(--muted);">03</span>
-        <span class="mono" style="font-size:11px;color:var(--muted);">POST /v1/claims</span>
+        <span class="mono" style="font-size:11px;color:var(--muted);">POST /v1/claims/:id/resubmit</span>
       </div>
-      <h3 style="margin:0;font-size:19px;font-weight:600;">Submit claims</h3>
-      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">Send structured claims to the correct payer endpoint without hand-building payer-specific formats or clearinghouse config.</p>
-    </div>
-    <div style="background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:12px;">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;">
-        <span class="mono" style="font-size:12px;color:var(--muted);">04</span>
-        <span class="mono" style="font-size:11px;color:var(--muted);">GET /v1/claims/:id</span>
-      </div>
-      <h3 style="margin:0;font-size:19px;font-weight:600;">Track claim status</h3>
-      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">Poll or subscribe to status changes — submitted, in adjudication, paid, denied — with reason codes normalized across payers.</p>
+      <h3 style="margin:0;font-size:19px;font-weight:600;">Resubmit corrected claims</h3>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">A rejected claim comes back with the specific problem explained in plain language and a suggested fix — correct it and resubmit through the same call, tracked to a final status.</p>
     </div>
   </div>
 </div>
@@ -216,7 +203,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <div style="flex:1 1 320px;min-width:260px;">
       <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">Why Payerkart</div>
       <h2 style="margin:0 0 12px;font-size:26px;font-weight:600;">Built around the payer workflow, not bolted onto one.</h2>
-      <p style="margin:0;color:var(--muted);font-size:15px;line-height:1.65;max-width:48ch;">Payerkart is a focused product: eligibility, insurance discovery, claims, and status, behind one schema. It isn't a general-purpose healthcare API stretched to cover payers as an afterthought — the whole product is built around the handful of requests every provider, biller, and digital health team has to make to a payer, and making them consistent regardless of which payer is on the other end.</p>
+      <p style="margin:0;color:var(--muted);font-size:15px;line-height:1.65;max-width:48ch;">Payerkart is a focused product: eligibility, claim status, and claim resubmission, behind one schema and one clearinghouse connection. It isn't a general-purpose healthcare API stretched to cover payers as an afterthought — the whole product is built around the handful of requests every provider, biller, and digital health team has to make to a payer, and making them consistent regardless of which payer is on the other end.</p>
     </div>
     <div style="flex:1 1 320px;min-width:260px;display:flex;flex-direction:column;gap:16px;">
       <div style="display:flex;gap:12px;align-items:flex-start;">
@@ -253,7 +240,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
         API Preview — In Development
       </div>
       <h2 style="margin:0 0 14px;font-size:28px;font-weight:600;">One integration, not one per payer.</h2>
-      <p style="margin:0 0 20px;color:var(--muted);font-size:15.5px;line-height:1.65;">This is a preview of the request shape we're building — one consistent schema for eligibility, discovery, claims, and status, regardless of the payer on the other end. Book a demo to talk through your use case and get notified when sandbox access opens.</p>
+      <p style="margin:0 0 20px;color:var(--muted);font-size:15.5px;line-height:1.65;">This is a preview of the request shape we're building — one consistent schema for eligibility, claim status, and resubmission, regardless of the payer on the other end. Book a demo to talk through your use case and get notified when sandbox access opens.</p>
       <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;">
         <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Consistent JSON in, JSON out, across payers</li>
         <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Sandbox environment with test payers, opening to early partners</li>
@@ -296,7 +283,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <div style="display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--accent);">
         <span class="mono" style="font-size:12px;color:var(--muted);">Step 2</span>
         <h3 style="margin:0;font-size:16px;font-weight:600;">Verify</h3>
-        <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.55;">Check eligibility and discover coverage before care is delivered.</p>
+        <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.55;">Check eligibility and confirm coverage details before care is delivered.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--accent);">
         <span class="mono" style="font-size:12px;color:var(--muted);">Step 3</span>
@@ -336,10 +323,10 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 
     <div class="faq-item open" style="border-bottom:1px solid var(--line);">
       <button class="faq-toggle" style="width:100%;text-align:left;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);">
-        <span style="font-size:15.5px;font-weight:500;">How is Payerkart different from a clearinghouse?</span>
+        <span style="font-size:15.5px;font-weight:500;">Is Payerkart a clearinghouse?</span>
         <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">−</span>
       </button>
-      <p class="faq-answer">A clearinghouse routes files between you and payers in whatever format each side expects. Payerkart gives you one modern API — eligibility, discovery, claims, and status — and handles the payer-specific translation behind it.</p>
+      <p class="faq-answer">No — Payerkart is built on top of an established clearinghouse connection, not instead of one. What's new is the layer above it: one consistent API and schema for eligibility, claim status, and resubmission, so you integrate once instead of hand-building the request formats and error handling yourself.</p>
     </div>
 
     <div class="faq-item" style="border-bottom:1px solid var(--line);">
