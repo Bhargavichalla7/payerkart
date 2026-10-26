@@ -79,16 +79,16 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 <div style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
   <div style="max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
     <a href="/" style="display:flex;align-items:center;gap:10px;">
-      <span style="width:28px;height:28px;border:1.5px solid var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:600;font-size:14px;">P</span>
+      <svg width="26" height="26" viewBox="0 0 44 44" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg>
       <span style="font-family:var(--mono);font-weight:600;font-size:17px;letter-spacing:-0.01em;">Payerkart</span>
     </a>
     <div style="display:flex;align-items:center;gap:28px;" class="mono">
       <a href="/#capabilities" class="nav-desktop" style="font-size:14px;color:var(--ink);">Product</a>
-      <a href="/#api" class="nav-desktop" style="font-size:14px;color:var(--ink);">Docs</a>
+      <a href="/#api" class="nav-desktop" style="font-size:14px;color:var(--ink);">API Preview</a>
       <a href="/blog/" class="nav-desktop" style="font-size:14px;color:var(--accent-strong);">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
-      <a href="/#start" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);padding:10px 16px;border-radius:6px;">Start Building →</a>
+      <a href="/#start" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);padding:10px 16px;border-radius:6px;">Book a Demo →</a>
     </div>
   </div>
 </div>
@@ -121,7 +121,7 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 
 <h2>What a direct payer API changes</h2>
 
-<p>A payer API layer — like the one Payerkart puts in front of an existing clearinghouse connection — replaces the batch/file experience with request/response calls your application makes directly: verify eligibility, check status, resubmit a corrected claim, all synchronously, all in the same schema regardless of which payer is on the other end.</p>
+<p>A payer API layer — like the one Payerkart puts in front of an existing clearinghouse connection — replaces the batch/file experience with request/response calls your application makes directly: verify eligibility and check claim status, synchronously, in the same schema regardless of which payer is on the other end.</p>
 
 <div class="twrap">
 <table>
@@ -150,7 +150,7 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 
 <ul>
   <li><strong>Real-time eligibility at scheduling and check-in</strong>, not just at claim time — see our post on <a href="/blog/real-time-eligibility-verification.html">why real-time eligibility verification matters</a>.</li>
-  <li><strong>Immediate submission feedback</strong> instead of waiting on a batch cycle to learn a claim was malformed.</li>
+  <li><strong>Immediate status feedback</strong> instead of waiting on a batch cycle to learn a claim was rejected.</li>
   <li><strong>Live status tracking</strong> via webhook instead of polling a portal or waiting for a file drop.</li>
   <li><strong>One integration surface</strong> to maintain instead of per-payer EDI quirks leaking through the clearinghouse layer.</li>
 </ul>
@@ -159,7 +159,7 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 
 <p>Most teams don't do a clean cutover — they run both, weighting new volume toward the API path as it proves out, while keeping clearinghouse rails as a fallback for payers not yet on the API side. What matters is not treating the clearinghouse as the permanent architecture just because it's the incumbent one.</p>
 
-<p>Payerkart's approach is to put a single, modern API in front of an existing clearinghouse connection, rather than making you build and maintain that connection yourself: <a href="/#capabilities">eligibility, claim status, and claim resubmission</a> behind one schema, so adopting it is additive rather than a rip-and-replace project.</p>
+<p>Payerkart's approach is to put a single, modern API in front of an existing clearinghouse connection, rather than making you build and maintain that connection yourself: <a href="/#capabilities">eligibility verification and claim status</a> behind one schema, so adopting it is additive rather than a rip-and-replace project.</p>
 
 <h2>The takeaway</h2>
 
@@ -167,7 +167,7 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 
 <div style="margin-top:48px;padding:32px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:flex;flex-direction:column;gap:14px;">
   <h3 style="margin:0;font-size:18px;">Try the API side for yourself</h3>
-  <p style="margin:0;color:var(--muted);font-size:14.5px;">Payerkart's sandbox gives you eligibility, claim status, and resubmission through one schema, built on an existing clearinghouse connection — no payer contracts required to start testing.</p>
+  <p style="margin:0;color:var(--muted);font-size:14.5px;">Payerkart's sandbox gives you eligibility verification and claim status through one schema, built on an existing clearinghouse connection — no payer contracts required to start testing.</p>
   <a href="/#start" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);padding:12px 20px;border-radius:8px;width:fit-content;">Start Building →</a>
 </div>
 
@@ -175,13 +175,16 @@ th{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacin
 
 <!-- FOOTER -->
 <div style="width:100%;background:var(--paper);">
-  <div style="max-width:1180px;margin:0 auto;padding:32px 24px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);">
-    <span class="mono" style="font-size:12px;color:var(--muted);">© 2026 Payerkart. Healthcare payer infrastructure.</span>
+  <div style="max-width:1180px;margin:0 auto;padding:32px 24px 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);">
+    <span class="mono" style="font-size:12px;color:var(--muted);">© 2026 Payerkart, a product of Blue Matrix Connect. Healthcare payer infrastructure.</span>
     <div style="display:flex;gap:20px;" class="mono">
       <a href="/#capabilities" style="font-size:12px;color:var(--muted);">Product</a>
-      <a href="/#api" style="font-size:12px;color:var(--muted);">Docs</a>
+      <a href="/#api" style="font-size:12px;color:var(--muted);">API Preview</a>
       <a href="/blog/" style="font-size:12px;color:var(--muted);">Blog</a>
     </div>
+  </div>
+  <div style="max-width:1180px;margin:0 auto;padding:14px 24px 28px;">
+    <span class="mono" style="font-size:11px;color:var(--muted);opacity:0.75;">Confidential — shared for review only. Not for public distribution.</span>
   </div>
 </div>
 
