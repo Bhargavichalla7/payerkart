@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5KS54TFG1N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5KS54TFG1N');
+</script>
+<title>Payerkart Blog — Healthcare Payer &amp; RCM Insights</title>
+<meta name="description" content="Guides and analysis on healthcare payer integration, eligibility verification, claims automation, and revenue cycle management, from the team building Payerkart.">
+<link rel="canonical" href="https://payerkart.com/blog/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Payerkart Blog",
+  "url": "https://payerkart.com/blog/",
+  "description": "Guides and analysis on healthcare payer integration, eligibility verification, and claims automation."
+}
+</script>
+<style>
+:root{
+  --ink:#14231D; --paper:#EFF1EA; --surface:#FFFFFF; --surface-2:#E7EAE1;
+  --accent:#1E6F52; --accent-strong:#123D2C; --accent-soft:#DCEAE1;
+  --warn:#B5581F; --warn-soft:#F3E3D3;
+  --line:#D3D0C1; --muted:#5B6660;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#ECEFE7; --paper:#0F1713; --surface:#152018; --surface-2:#1B271F;
+    --accent:#57D0A0; --accent-strong:#2FA37A; --accent-soft:#1B342A;
+    --warn:#E08B4E; --warn-soft:#3A2718;
+    --line:#28342C; --muted:#93A19A;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#ECEFE7; --paper:#0F1713; --surface:#152018; --surface-2:#1B271F;
+  --accent:#57D0A0; --accent-strong:#2FA37A; --accent-soft:#1B342A;
+  --warn:#E08B4E; --warn-soft:#3A2718;
+  --line:#28342C; --muted:#93A19A;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);}
+a{color:var(--accent);text-decoration:none;}
+a:hover{color:var(--accent-strong);}
+h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
+.mono{font-family:var(--mono);}
+.nav-desktop{display:none;}
+@media (min-width:760px){ .nav-desktop{display:inline-block;} }
+.post-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media (max-width:680px){ .post-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div style="width:100%;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);min-height:100%;">
+
+<!-- HEADER -->
+<div style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
+  <div style="max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+    <a href="/" style="display:flex;align-items:center;gap:10px;">
+      <svg width="26" height="26" viewBox="0 0 44 44" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg>
+      <span style="font-family:var(--mono);font-weight:600;font-size:17px;letter-spacing:-0.01em;">Payerkart</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:28px;" class="mono">
+      <a href="/#capabilities" class="nav-desktop" style="font-size:14px;color:var(--ink);">Product</a>
+      <a href="/#api" class="nav-desktop" style="font-size:14px;color:var(--ink);">API Preview</a>
+      <a href="/blog/" class="nav-desktop" style="font-size:14px;color:var(--accent-strong);">Blog</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a href="/#start" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);padding:10px 16px;border-radius:6px;">Book a Demo →</a>
+    </div>
+  </div>
+</div>
+
+<!-- HEADLINE -->
+<div style="max-width:1180px;margin:0 auto;padding:64px 24px 40px;width:100%;">
+  <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">Payerkart Blog</div>
+  <h1 style="margin:0 0 14px;font-size:36px;font-weight:600;line-height:1.15;">Notes on payer integration &amp; revenue cycle</h1>
+  <p style="margin:0;color:var(--muted);font-size:16px;line-height:1.6;max-width:60ch;">Practical guides on eligibility verification, claims workflows, and payer infrastructure — written for the RCM teams and developers who deal with this every day.</p>
+</div>
+
+<!-- POSTS -->
+<div style="max-width:1180px;margin:0 auto;padding:0 24px 96px;width:100%;">
+  <div class="post-grid" style="display:grid;gap:24px;">
+
+    <a href="/blog/true-cost-of-manual-eligibility-checks.html" style="display:block;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:28px;color:var(--ink);">
+      <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:14px;">OCT 28, 2026 · 5 MIN READ</div>
+      <h2 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.3;">The Real Cost of Checking Eligibility Through the Payer Portal</h2>
+      <p style="margin:0 0 16px;color:var(--muted);font-size:14.5px;line-height:1.6;">Payer portals are free to log into, but staff time isn't. Here's what manual eligibility checks actually cost, backed by the CAQH Index — and four things to check this week.</p>
+      <span class="mono" style="font-size:13px;color:var(--accent);">Read the post →</span>
+    </a>
+
+    <a href="/blog/real-time-eligibility-verification.html" style="display:block;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:28px;color:var(--ink);">
+      <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:14px;">SEP 22, 2026 · 7 MIN READ</div>
+      <h2 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.3;">Why Real-Time Eligibility Verification Is the Foundation of Clean Claims</h2>
+      <p style="margin:0 0 16px;color:var(--muted);font-size:14.5px;line-height:1.6;">Stale eligibility data is one of the biggest silent causes of denied and delayed claims. Here's what real-time verification actually fixes — and why batch checks aren't enough anymore.</p>
+      <span class="mono" style="font-size:13px;color:var(--accent);">Read the post →</span>
+    </a>
+
+    <a href="/blog/clearinghouse-vs-payer-api.html" style="display:block;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:28px;color:var(--ink);">
+      <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:14px;">SEP 22, 2026 · 8 MIN READ</div>
+      <h2 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.3;">Clearinghouse vs. Payer API: What RCM Teams Need to Know in 2026</h2>
+      <p style="margin:0 0 16px;color:var(--muted);font-size:14.5px;line-height:1.6;">Clearinghouses have run claims routing for decades. Here's how direct payer APIs compare on speed, visibility, and cost — and when each approach actually makes sense.</p>
+      <span class="mono" style="font-size:13px;color:var(--accent);">Read the post →</span>
+    </a>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="width:100%;background:var(--paper);margin-top:auto;">
+  <div style="max-width:1180px;margin:0 auto;padding:32px 24px 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);">
+    <span class="mono" style="font-size:12px;color:var(--muted);">© 2026 Payerkart, a product of Blue Matrix Connect. Healthcare payer infrastructure.</span>
+    <div style="display:flex;gap:20px;" class="mono">
+      <a href="/#capabilities" style="font-size:12px;color:var(--muted);">Product</a>
+      <a href="/#api" style="font-size:12px;color:var(--muted);">API Preview</a>
+      <a href="/blog/" style="font-size:12px;color:var(--muted);">Blog</a>
+    </div>
+  </div>
+  <div style="max-width:1180px;margin:0 auto;padding:14px 24px 28px;">
+    <span class="mono" style="font-size:11px;color:var(--muted);opacity:0.75;">Confidential — shared for review only. Not for public distribution.</span>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
