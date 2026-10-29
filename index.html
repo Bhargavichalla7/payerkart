@@ -11,19 +11,22 @@
   gtag('js', new Date());
   gtag('config', 'G-5KS54TFG1N');
 </script>
-<title>Payerkart Blog — Healthcare Payer &amp; RCM Insights</title>
-<meta name="description" content="Guides and analysis on healthcare payer integration, eligibility verification, claims automation, and revenue cycle management, from the team building Payerkart.">
-<link rel="canonical" href="https://payerkart.com/blog/">
+<title>Payerkart — Healthcare Payer Infrastructure API</title>
+<meta name="description" content="Verify eligibility and check claim status through one API, backed by real clearinghouse connectivity. Payer infrastructure built for healthcare developers.">
+<meta name="google-site-verification" content="l2rVyKTMptO1igdLxXalkTr6IJ1aGl0IwMnWhwPIuKk" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.svg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Payerkart Blog",
-  "url": "https://payerkart.com/blog/",
-  "description": "Guides and analysis on healthcare payer integration, eligibility verification, and claims automation."
+  "@type": "SoftwareApplication",
+  "name": "Payerkart",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "description": "Healthcare payer infrastructure API for eligibility verification and claim status tracking, backed by clearinghouse connectivity.",
+  "url": "https://payerkart.com",
+  "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "0" }
 }
 </script>
 <style>
@@ -53,78 +56,393 @@
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);}
 a{color:var(--accent);text-decoration:none;}
 a:hover{color:var(--accent-strong);}
+button{font-family:inherit;cursor:pointer;}
 h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
+::selection{background:var(--accent-soft);}
 .mono{font-family:var(--mono);}
 .nav-desktop{display:none;}
 @media (min-width:760px){ .nav-desktop{display:inline-block;} }
-.post-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
-@media (max-width:680px){ .post-grid{grid-template-columns:1fr;} }
+.cap-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media (max-width:640px){ .cap-grid{grid-template-columns:1fr;} }
+.steps-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
+@media (max-width:760px){ .steps-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+@media (max-width:420px){ .steps-grid{grid-template-columns:1fr;} }
+.sec-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media (max-width:380px){ .sec-grid{grid-template-columns:1fr;} }
+.faq-answer{display:none;margin:0 0 20px;color:var(--muted);font-size:14.5px;line-height:1.65;max-width:64ch;}
+.faq-item.open .faq-answer{display:block;}
+.faq-item.open .faq-mark{transform:rotate(0deg);}
+#top,#capabilities,#why,#api,#security,#faq{scroll-margin-top:76px;}
 </style>
 </head>
 <body>
 
-<div style="width:100%;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);min-height:100%;">
+<div style="width:100%;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);">
 
 <!-- HEADER -->
 <div style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
   <div style="max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
-    <a href="/" style="display:flex;align-items:center;gap:10px;">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;">
       <svg width="26" height="26" viewBox="0 0 44 44" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg>
       <span style="font-family:var(--mono);font-weight:600;font-size:17px;letter-spacing:-0.01em;">Payerkart</span>
     </a>
     <div style="display:flex;align-items:center;gap:28px;" class="mono">
-      <a href="/#capabilities" class="nav-desktop" style="font-size:14px;color:var(--ink);">Product</a>
-      <a href="/#api" class="nav-desktop" style="font-size:14px;color:var(--ink);">API Preview</a>
-      <a href="/blog/" class="nav-desktop" style="font-size:14px;color:var(--accent-strong);">Blog</a>
+      <a href="#capabilities" class="nav-desktop" style="font-size:14px;color:var(--ink);">Product</a>
+      <a href="#why" class="nav-desktop" style="font-size:14px;color:var(--ink);">Why Payerkart</a>
+      <a href="#api" class="nav-desktop" style="font-size:14px;color:var(--ink);">API Preview</a>
+      <a href="#security" class="nav-desktop" style="font-size:14px;color:var(--ink);">Security</a>
+      <a href="#faq" class="nav-desktop" style="font-size:14px;color:var(--ink);">FAQ</a>
+      <a href="/blog/" class="nav-desktop" style="font-size:14px;color:var(--ink);">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
-      <a href="/#start" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);padding:10px 16px;border-radius:6px;">Book a Demo →</a>
+      <a href="#api" style="font-size:13px;font-family:var(--mono);color:var(--ink);border:1px solid var(--line);padding:9px 14px;border-radius:6px;">See API Preview</a>
+      <button onclick="openDemoModal()" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);border:none;padding:10px 16px;border-radius:6px;">Book a Demo →</button>
     </div>
   </div>
 </div>
 
-<!-- HEADLINE -->
-<div style="max-width:1180px;margin:0 auto;padding:64px 24px 40px;width:100%;">
-  <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">Payerkart Blog</div>
-  <h1 style="margin:0 0 14px;font-size:36px;font-weight:600;line-height:1.15;">Notes on payer integration &amp; revenue cycle</h1>
-  <p style="margin:0;color:var(--muted);font-size:16px;line-height:1.6;max-width:60ch;">Practical guides on eligibility verification, claims workflows, and payer infrastructure — written for the RCM teams and developers who deal with this every day.</p>
+<!-- HERO -->
+<div id="top" style="max-width:1180px;margin:0 auto;padding:72px 24px 56px;width:100%;display:flex;gap:56px;flex-wrap:wrap;align-items:flex-start;">
+  <div style="flex:1 1 460px;min-width:280px;display:flex;flex-direction:column;gap:22px;">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:6px 12px;width:fit-content;">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>
+      Payer infrastructure, API-first
+    </div>
+    <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">One API for eligibility verification and claim status — backed by real clearinghouse connectivity.</h1>
+    <p style="margin:0;font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;">
+      Right now, checking coverage usually means signing into a payer's own web portal — a different one for nearly every payer — and typing the same patient name, date of birth, and insurance details in by hand. Payerkart replaces that portal-by-portal routine with a single API — one clearinghouse connection behind it, not a per-payer login — for eligibility verification and claim status, purpose-built around that workflow instead of adapted from something broader.
+    </p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:6px;">
+      <button onclick="openDemoModal()" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);border:none;padding:13px 22px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;">Book a Demo →</button>
+      <a href="#api" style="font-family:var(--mono);font-size:14px;color:var(--ink);border:1px solid var(--line);padding:13px 22px;border-radius:8px;">See API Preview</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid var(--line);margin-top:8px;">
+      <div class="mono" style="font-size:12px;color:var(--muted);">→ Built with a real RCM team</div>
+      <div class="mono" style="font-size:12px;color:var(--muted);">→ One schema, every payer</div>
+      <div class="mono" style="font-size:12px;color:var(--muted);">→ Early partners shape the API</div>
+    </div>
+  </div>
+
+  <div style="flex:1 1 400px;min-width:280px;">
+    <div style="border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);">
+        <span class="mono" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">Claim trace · sample output</span>
+        <span class="mono" style="font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:100px;padding:2px 9px;">preview</span>
+      </div>
+      <div style="padding:18px 16px;display:flex;flex-direction:column;gap:0;">
+        <div style="display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:baseline;">
+          <span class="mono" style="font-size:11px;color:var(--muted);width:64px;flex:none;">09:41:02</span>
+          <span class="mono" style="font-size:13px;flex:1;">eligibility.verify → member active</span>
+          <span class="mono" style="font-size:11px;color:var(--accent);">200</span>
+        </div>
+        <div style="display:flex;gap:12px;padding:11px 0;align-items:baseline;">
+          <span class="mono" style="font-size:11px;color:var(--muted);width:64px;flex:none;">09:41:19</span>
+          <span class="mono" style="font-size:13px;flex:1;">claims.status → rejected: dob mismatch</span>
+          <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:4px;padding:1px 6px;">action needed</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- POSTS -->
-<div style="max-width:1180px;margin:0 auto;padding:0 24px 96px;width:100%;">
-  <div class="post-grid" style="display:grid;gap:24px;">
+<!-- TRUST STRIP -->
+<div style="width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface-2);">
+  <div style="max-width:1180px;margin:0 auto;padding:22px 24px;display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+      <span class="mono" style="font-size:24px;font-weight:600;color:var(--accent-strong);">15 min → &lt;1 sec</span>
+      <span class="mono" style="font-size:12px;color:var(--muted);">per eligibility check, in live use at a Payerkart practice</span>
+    </div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;" class="mono">
+      <span style="font-size:12px;color:var(--ink);">Designed for real-time eligibility</span>
+      <span style="font-size:12px;color:var(--ink);">Purpose-built for payer workflows</span>
+      <span style="font-size:12px;color:var(--ink);">One schema across payers</span>
+    </div>
+  </div>
+</div>
 
-    <a href="/blog/true-cost-of-manual-eligibility-checks.html" style="display:block;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:28px;color:var(--ink);">
-      <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:14px;">OCT 28, 2026 · 5 MIN READ</div>
-      <h2 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.3;">The Real Cost of Checking Eligibility Through the Payer Portal</h2>
-      <p style="margin:0 0 16px;color:var(--muted);font-size:14.5px;line-height:1.6;">Payer portals are free to log into, but staff time isn't. Here's what manual eligibility checks actually cost, backed by the CAQH Index — and four things to check this week.</p>
-      <span class="mono" style="font-size:13px;color:var(--accent);">Read the post →</span>
-    </a>
+<!-- CAPABILITIES -->
+<div id="capabilities" style="max-width:1180px;margin:0 auto;padding:80px 24px 40px;width:100%;">
+  <div style="max-width:60ch;margin-bottom:40px;">
+    <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">The workflow</div>
+    <h2 style="margin:0 0 12px;font-size:30px;font-weight:600;">Two payer workflows. One API.</h2>
+    <p style="margin:0;color:var(--muted);font-size:16px;line-height:1.6;">From checking coverage to tracking a claim to its final status, behind a single consistent schema — so switching payers never means switching integrations.</p>
+  </div>
 
-    <a href="/blog/real-time-eligibility-verification.html" style="display:block;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:28px;color:var(--ink);">
-      <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:14px;">SEP 22, 2026 · 7 MIN READ</div>
-      <h2 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.3;">Why Real-Time Eligibility Verification Is the Foundation of Clean Claims</h2>
-      <p style="margin:0 0 16px;color:var(--muted);font-size:14.5px;line-height:1.6;">Stale eligibility data is one of the biggest silent causes of denied and delayed claims. Here's what real-time verification actually fixes — and why batch checks aren't enough anymore.</p>
-      <span class="mono" style="font-size:13px;color:var(--accent);">Read the post →</span>
-    </a>
+  <div class="cap-grid" style="display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;">
+    <div style="background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span class="mono" style="font-size:12px;color:var(--muted);">01</span>
+        <span class="mono" style="font-size:11px;color:var(--muted);">POST /v1/eligibility</span>
+      </div>
+      <h3 style="margin:0;font-size:19px;font-weight:600;">Verify eligibility</h3>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">Get active coverage, plan type, and cost-share details with one call — the same answer staff pull today by logging into a payer portal and entering patient details by hand, minus the manual lookup.</p>
+    </div>
+    <div style="background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span class="mono" style="font-size:12px;color:var(--muted);">02</span>
+        <span class="mono" style="font-size:11px;color:var(--muted);">GET /v1/claims/:id</span>
+      </div>
+      <h3 style="margin:0;font-size:19px;font-weight:600;">Track claim status</h3>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">Poll or subscribe to status changes — submitted, in adjudication, paid, denied — with reason codes translated into plain language, not raw payer codes.</p>
+    </div>
+  </div>
 
-    <a href="/blog/clearinghouse-vs-payer-api.html" style="display:block;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:28px;color:var(--ink);">
-      <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:14px;">SEP 22, 2026 · 8 MIN READ</div>
-      <h2 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.3;">Clearinghouse vs. Payer API: What RCM Teams Need to Know in 2026</h2>
-      <p style="margin:0 0 16px;color:var(--muted);font-size:14.5px;line-height:1.6;">Clearinghouses have run claims routing for decades. Here's how direct payer APIs compare on speed, visibility, and cost — and when each approach actually makes sense.</p>
-      <span class="mono" style="font-size:13px;color:var(--accent);">Read the post →</span>
-    </a>
+  <!-- WHAT YOU GET BACK -->
+  <div style="margin-top:56px;display:flex;gap:48px;flex-wrap:wrap;align-items:flex-start;">
+    <div style="flex:1 1 300px;min-width:260px;">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">What you get back</div>
+      <h3 style="margin:0 0 12px;font-size:22px;font-weight:600;">Not just a pass/fail — the fields your front desk and billing team actually need.</h3>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.65;max-width:46ch;">An eligibility check returns the coverage details staff would otherwise copy by hand out of a payer portal. A claim status check returns where the claim stands and, on a rejection, the specific reason — not a raw payer code someone has to go look up.</p>
+    </div>
+    <div style="flex:1 1 420px;min-width:280px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;">
+      <div style="background:var(--surface);padding:16px 18px;">
+        <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:4px;">Coverage status</div>
+        <div style="font-size:14.5px;font-weight:500;">Active / inactive, as of the check</div>
+      </div>
+      <div style="background:var(--surface);padding:16px 18px;">
+        <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:4px;">Plan &amp; cost-share</div>
+        <div style="font-size:14.5px;font-weight:500;">Plan type, copay, deductible</div>
+      </div>
+      <div style="background:var(--surface);padding:16px 18px;">
+        <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:4px;">Network status</div>
+        <div style="font-size:14.5px;font-weight:500;">In-network / out-of-network</div>
+      </div>
+      <div style="background:var(--surface);padding:16px 18px;">
+        <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:4px;">Claim status</div>
+        <div style="font-size:14.5px;font-weight:500;">Submitted, in review, paid, denied</div>
+      </div>
+      <div style="background:var(--surface);padding:16px 18px;grid-column:1 / -1;">
+        <div class="mono" style="font-size:11px;color:var(--muted);margin-bottom:4px;">Denial reason</div>
+        <div style="font-size:14.5px;font-weight:500;">Plain-language explanation of why — not a raw payer code</div>
+      </div>
+    </div>
+  </div>
 
+  <!-- SAMPLE RESULT STATES -->
+  <div style="margin-top:56px;">
+    <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">What it looks like in practice</div>
+    <h3 style="margin:0 0 20px;font-size:22px;font-weight:600;">Sample result states</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">
+      <div style="border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:6px;">
+        <span class="mono" style="font-size:11px;color:var(--accent);background:var(--accent-soft);border-radius:100px;padding:2px 10px;width:fit-content;">Verified</span>
+        <div style="font-size:14px;font-weight:500;">Member active — PPO Gold, $25 copay</div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:6px;">
+        <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:2px 10px;width:fit-content;">Action needed</span>
+        <div style="font-size:14px;font-weight:500;">Coverage terminated as of 10/01</div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:6px;">
+        <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:2px 10px;width:fit-content;">Action needed</span>
+        <div style="font-size:14px;font-weight:500;">Plan active, provider out-of-network</div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:6px;">
+        <span class="mono" style="font-size:11px;color:var(--accent);background:var(--accent-soft);border-radius:100px;padding:2px 10px;width:fit-content;">Paid</span>
+        <div style="font-size:14px;font-weight:500;">Claim adjudicated — $420 paid</div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:6px;">
+        <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:2px 10px;width:fit-content;">Denied</span>
+        <div style="font-size:14px;font-weight:500;">Denied — DOB mismatch with payer record</div>
+      </div>
+      <div style="border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:6px;">
+        <span class="mono" style="font-size:11px;color:var(--muted);background:var(--surface-2);border-radius:100px;padding:2px 10px;width:fit-content;">Not found</span>
+        <div style="font-size:14px;font-weight:500;">No match — recheck member ID</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY / CREDIBILITY -->
+<div id="why" style="width:100%;background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div style="max-width:1180px;margin:0 auto;padding:64px 24px;width:100%;display:flex;gap:48px;flex-wrap:wrap;align-items:flex-start;">
+    <div style="flex:1 1 320px;min-width:260px;">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">Why Payerkart</div>
+      <h2 style="margin:0 0 12px;font-size:26px;font-weight:600;">Built around the payer workflow, not bolted onto one.</h2>
+      <p style="margin:0;color:var(--muted);font-size:15px;line-height:1.65;max-width:48ch;">Payerkart is a focused product: eligibility verification and claim status, behind one schema and one clearinghouse connection. It isn't a general-purpose healthcare API stretched to cover payers as an afterthought — the whole product is built around the handful of requests every hospital front desk and billing team has to make to a payer, and making them consistent regardless of which payer is on the other end.</p>
+    </div>
+    <div style="flex:1 1 320px;min-width:260px;display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span class="mono" style="font-size:12px;color:var(--accent);flex:none;padding-top:2px;">01</span>
+        <div>
+          <div style="font-size:14.5px;font-weight:500;margin-bottom:2px;">One product, one problem</div>
+          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Payerkart exists to fix one thing: the fragmented, per-payer way eligibility and claims work happens today, where staff still sign into a different portal for every check.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span class="mono" style="font-size:12px;color:var(--accent);flex:none;padding-top:2px;">02</span>
+        <div>
+          <div style="font-size:14.5px;font-weight:500;margin-bottom:2px;">Already live, not a concept</div>
+          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Payerkart is running in production today, cutting a 15-minute portal check down to under a second for a live practice. We'll keep saying plainly what's live versus what's still being built out.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:flex-start;">
+        <span class="mono" style="font-size:12px;color:var(--accent);flex:none;padding-top:2px;">03</span>
+        <div>
+          <div style="font-size:14.5px;font-weight:500;margin-bottom:2px;">Early partners shape the API</div>
+          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Book a demo and your workflow becomes part of what we build first — this is the stage where feedback changes the product.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CODE PANEL -->
+<div id="api" style="max-width:1180px;margin:0 auto;padding:56px 24px;width:100%;">
+  <div style="display:flex;gap:56px;flex-wrap:wrap;align-items:center;">
+    <div style="flex:1 1 360px;min-width:280px;">
+      <div style="display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:5px 12px;width:fit-content;margin-bottom:14px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>
+        API Preview — Live
+      </div>
+      <h2 style="margin:0 0 14px;font-size:28px;font-weight:600;">One integration, not one per payer.</h2>
+      <p style="margin:0 0 20px;color:var(--muted);font-size:15.5px;line-height:1.65;">This is the actual request shape running in production — one consistent schema for eligibility verification and claim status, regardless of the payer on the other end. Book a demo to talk through your use case and get sandbox access.</p>
+      <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;">
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Consistent JSON in, JSON out, across payers</li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Sandbox environment with test payers, opening to early partners</li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Webhooks planned for claim status changes</li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Idempotent writes, versioned endpoints from day one</li>
+      </ul>
+    </div>
+    <div style="flex:1 1 420px;min-width:280px;">
+      <div style="border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--ink);">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:rgba(255,255,255,0.06);">
+          <span class="mono" style="font-size:11px;color:rgba(255,255,255,0.6);">eligibility.sh — preview</span>
+          <button id="copyBtn" class="mono" style="font-size:11px;color:rgba(255,255,255,0.7);background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:5px;padding:4px 9px;">Copy</button>
+        </div>
+        <pre id="codeSample" class="mono" style="margin:0;padding:20px 18px;font-size:13px;line-height:1.7;color:#D7E4DC;overflow-x:auto;white-space:pre;">curl https://api.payerkart.com/v1/eligibility \
+  -H "Authorization: Bearer $PAYERKART_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "patient": { "member_id": "W12345678" },
+    "payer": "auto-detect",
+    "service_type": "office_visit"
+  }'
+
+<span style="color:#7FBF9F;">→ 200 OK</span>
+{ "status": "active", "plan": "PPO Gold", "copay": 25 }</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div style="width:100%;background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div style="max-width:1180px;margin:0 auto;padding:64px 24px;width:100%;">
+    <h2 style="margin:0 0 36px;font-size:26px;font-weight:600;">From first call to final status</h2>
+    <div class="steps-grid" style="display:grid;gap:24px;">
+      <div style="display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--accent);">
+        <span class="mono" style="font-size:12px;color:var(--muted);">Step 1</span>
+        <h3 style="margin:0;font-size:16px;font-weight:600;">Connect</h3>
+        <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.55;">Generate an API key and point requests at one endpoint — no per-payer setup.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--accent);">
+        <span class="mono" style="font-size:12px;color:var(--muted);">Step 2</span>
+        <h3 style="margin:0;font-size:16px;font-weight:600;">Verify</h3>
+        <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.55;">Check eligibility and confirm coverage details before care is delivered.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:2px solid var(--accent);">
+        <span class="mono" style="font-size:12px;color:var(--muted);">Step 3</span>
+        <h3 style="margin:0;font-size:16px;font-weight:600;">Track</h3>
+        <p style="margin:0;font-size:14px;color:var(--muted);line-height:1.55;">Poll status or get a webhook the moment adjudication changes.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECURITY -->
+<div id="security" style="max-width:1180px;margin:0 auto;padding:64px 24px;width:100%;">
+  <div style="border:1px solid var(--line);border-radius:12px;padding:36px;display:flex;gap:40px;flex-wrap:wrap;justify-content:space-between;background:var(--surface);">
+    <div style="flex:1 1 280px;min-width:240px;">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">Security &amp; compliance</div>
+      <h2 style="margin:0 0 10px;font-size:24px;font-weight:600;">Handled like the healthcare data it is</h2>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:48ch;">Payerkart is built around HIPAA-aligned data handling — encryption in transit and at rest, scoped access, and full audit logs on every request.</p>
+    </div>
+    <div class="sec-grid" style="flex:1 1 320px;min-width:240px;display:grid;gap:16px;">
+      <div class="mono" style="font-size:13px;display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);">✓</span>Encrypted in transit &amp; at rest</div>
+      <div class="mono" style="font-size:13px;display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);">✓</span>Scoped, revocable API keys</div>
+      <div class="mono" style="font-size:13px;display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);">✓</span>Full request audit logs</div>
+      <div class="mono" style="font-size:13px;display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);">✓</span>BAAs available on request</div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div id="faq" style="max-width:820px;margin:0 auto;padding:56px 24px 80px;width:100%;">
+  <h2 style="margin:0 0 28px;font-size:26px;font-weight:600;">Frequently asked</h2>
+  <div style="display:flex;flex-direction:column;">
+
+    <div class="faq-item open" style="border-bottom:1px solid var(--line);">
+      <button class="faq-toggle" style="width:100%;text-align:left;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);">
+        <span style="font-size:15.5px;font-weight:500;">Is Payerkart a clearinghouse?</span>
+        <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">−</span>
+      </button>
+      <p class="faq-answer">No — Payerkart is built on top of an established clearinghouse connection, not instead of one. What's new is the layer above it: one consistent API and schema for eligibility verification and claim status, so you integrate once instead of hand-building the request formats and error handling yourself.</p>
+    </div>
+
+    <div class="faq-item" style="border-bottom:1px solid var(--line);">
+      <button class="faq-toggle" style="width:100%;text-align:left;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);">
+        <span style="font-size:15.5px;font-weight:500;">Is Payerkart live yet?</span>
+        <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
+      </button>
+      <p class="faq-answer">Yes — Payerkart is live in production, already verifying eligibility and tracking claim status for a practice today, cutting what used to be a 15-minute portal check down to under a second. We're still early, so book a demo and your use case helps shape what we build next.</p>
+    </div>
+
+    <div class="faq-item" style="border-bottom:1px solid var(--line);">
+      <button class="faq-toggle" style="width:100%;text-align:left;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);">
+        <span style="font-size:15.5px;font-weight:500;">Which payers are supported?</span>
+        <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
+      </button>
+      <p class="faq-answer">Payerkart connects to commercial and government payers across the US. New payers are added on an ongoing basis; check the docs for current coverage before going live.</p>
+    </div>
+
+    <div class="faq-item" style="border-bottom:1px solid var(--line);">
+      <button class="faq-toggle" style="width:100%;text-align:left;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);">
+        <span style="font-size:15.5px;font-weight:500;">Do I need a contract with each payer to get started?</span>
+        <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
+      </button>
+      <p class="faq-answer">No. You can start in the sandbox with test payers immediately, and Payerkart's existing payer relationships mean you don't negotiate connections one by one.</p>
+    </div>
+
+    <div class="faq-item" style="border-bottom:1px solid var(--line);">
+      <button class="faq-toggle" style="width:100%;text-align:left;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);">
+        <span style="font-size:15.5px;font-weight:500;">Is patient data handled in a HIPAA-aligned way?</span>
+        <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
+      </button>
+      <p class="faq-answer">Yes. Data is encrypted in transit and at rest, access is scoped per API key, every request is logged, and a BAA is available for teams that need one.</p>
+    </div>
+
+    <div class="faq-item" style="border-bottom:1px solid var(--line);">
+      <button class="faq-toggle" style="width:100%;text-align:left;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);">
+        <span style="font-size:15.5px;font-weight:500;">What does pricing look like?</span>
+        <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
+      </button>
+      <p class="faq-answer">Pricing is usage-based and scales with the workflows you run. Reach out through Start Building to get a plan sized to your volume.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<div id="start" style="width:100%;background:var(--ink);">
+  <div style="max-width:900px;margin:0 auto;padding:72px 24px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px;">
+    <h2 style="margin:0;font-size:30px;font-weight:600;color:var(--paper);">Ready to talk payer infrastructure?</h2>
+    <p style="margin:0;color:rgba(239,241,234,0.65);font-size:15.5px;max-width:52ch;">Book a demo to see how Payerkart fits your workflow and get sandbox access — no payer contracts to negotiate before your first request.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding-top:8px;">
+      <button onclick="openDemoModal()" style="font-family:var(--mono);font-size:14px;color:var(--ink);background:var(--paper);border:none;padding:13px 24px;border-radius:8px;">Book a Demo →</button>
+      <a href="#api" style="font-family:var(--mono);font-size:14px;color:var(--paper);border:1px solid rgba(239,241,234,0.3);padding:13px 24px;border-radius:8px;">See API Preview</a>
+    </div>
   </div>
 </div>
 
 <!-- FOOTER -->
-<div style="width:100%;background:var(--paper);margin-top:auto;">
+<div style="width:100%;background:var(--paper);">
   <div style="max-width:1180px;margin:0 auto;padding:32px 24px 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);">
     <span class="mono" style="font-size:12px;color:var(--muted);">© 2026 Payerkart, a product of Blue Matrix Connect. Healthcare payer infrastructure.</span>
     <div style="display:flex;gap:20px;" class="mono">
-      <a href="/#capabilities" style="font-size:12px;color:var(--muted);">Product</a>
-      <a href="/#api" style="font-size:12px;color:var(--muted);">API Preview</a>
+      <a href="#capabilities" style="font-size:12px;color:var(--muted);">Product</a>
+      <a href="#why" style="font-size:12px;color:var(--muted);">Why Payerkart</a>
+      <a href="#api" style="font-size:12px;color:var(--muted);">API Preview</a>
+      <a href="#security" style="font-size:12px;color:var(--muted);">Security</a>
+      <a href="#faq" style="font-size:12px;color:var(--muted);">FAQ</a>
       <a href="/blog/" style="font-size:12px;color:var(--muted);">Blog</a>
     </div>
   </div>
@@ -134,5 +452,133 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 </div>
 
 </div>
+
+<!-- DEMO MODAL -->
+<div id="demoModalOverlay" style="display:none;position:fixed;inset:0;z-index:100;background:rgba(18,26,22,0.55);align-items:center;justify-content:center;padding:20px;">
+  <div style="width:100%;max-width:440px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;position:relative;max-height:90vh;overflow-y:auto;">
+    <button onclick="closeDemoModal()" aria-label="Close" style="position:absolute;top:16px;right:16px;background:transparent;border:none;font-size:20px;line-height:1;color:var(--muted);padding:4px;">×</button>
+
+    <div id="demoFormWrap">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:8px;">Book a Demo</div>
+      <h3 style="margin:0 0 6px;font-size:21px;font-weight:600;">Tell us about your workflow</h3>
+      <p style="margin:0 0 20px;color:var(--muted);font-size:13.5px;line-height:1.55;">We'll get back to you to set up a time — and your use case helps shape what we build first.</p>
+
+      <form id="demoForm" onsubmit="submitDemoForm(event)" style="display:flex;flex-direction:column;gap:14px;">
+        <input type="hidden" name="access_key" value="93c88fbd-9ea1-4fdd-a33e-c6ccf4829ad5">
+        <input type="hidden" name="subject" value="Payerkart Demo Request">
+        <input type="hidden" name="from_name" value="Payerkart Website">
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink);">
+          Name
+          <input type="text" name="name" required style="font-family:var(--sans);font-size:14.5px;padding:10px 12px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--ink);">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink);">
+          Work email
+          <input type="email" name="email" required style="font-family:var(--sans);font-size:14.5px;padding:10px 12px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--ink);">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink);">
+          Company
+          <input type="text" name="company" style="font-family:var(--sans);font-size:14.5px;padding:10px 12px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--ink);">
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--ink);">
+          What are you looking to do?
+          <textarea name="message" rows="3" style="font-family:var(--sans);font-size:14.5px;padding:10px 12px;border-radius:7px;border:1px solid var(--line);background:var(--paper);color:var(--ink);resize:vertical;"></textarea>
+        </label>
+
+        <button type="submit" id="demoSubmitBtn" style="margin-top:4px;font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);border:none;padding:13px 20px;border-radius:8px;cursor:pointer;">Send request →</button>
+        <div id="demoFormError" style="display:none;color:var(--warn);font-size:13px;"></div>
+      </form>
+    </div>
+
+    <div id="demoFormSuccess" style="display:none;text-align:center;padding:20px 0;">
+      <div style="font-size:32px;margin-bottom:10px;">✓</div>
+      <h3 style="margin:0 0 8px;font-size:19px;font-weight:600;">Request sent</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.55;">Thanks — we'll be in touch shortly to set up a time.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.faq-toggle').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var item = btn.closest('.faq-item');
+    var mark = item.querySelector('.faq-mark');
+    var isOpen = item.classList.contains('open');
+    item.classList.toggle('open', !isOpen);
+    mark.textContent = isOpen ? '+' : '−';
+  });
+});
+
+document.getElementById('copyBtn').addEventListener('click', function(){
+  var text = 'curl https://api.payerkart.com/v1/eligibility -H "Authorization: Bearer $PAYERKART_KEY" -H "Content-Type: application/json" -d \'{"patient":{"member_id":"W12345678"},"payer":"auto-detect","service_type":"office_visit"}\'';
+  var btn = this;
+  var revert = function(){ btn.textContent = 'Copy'; };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function(){
+      btn.textContent = 'Copied';
+      setTimeout(revert, 1600);
+    }).catch(revert);
+  }
+});
+
+// DEMO MODAL
+function openDemoModal(){
+  document.getElementById('demoModalOverlay').style.display = 'flex';
+  document.getElementById('demoFormWrap').style.display = 'block';
+  document.getElementById('demoFormSuccess').style.display = 'none';
+  document.getElementById('demoFormError').style.display = 'none';
+  document.body.style.overflow = 'hidden';
+}
+function closeDemoModal(){
+  document.getElementById('demoModalOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.getElementById('demoModalOverlay').addEventListener('click', function(e){
+  if (e.target === this) closeDemoModal();
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') closeDemoModal();
+});
+
+function submitDemoForm(e){
+  e.preventDefault();
+  var form = document.getElementById('demoForm');
+  var btn = document.getElementById('demoSubmitBtn');
+  var errBox = document.getElementById('demoFormError');
+  errBox.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  var data = Object.fromEntries(new FormData(form).entries());
+
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(json){
+    if (json.success) {
+      document.getElementById('demoFormWrap').style.display = 'none';
+      document.getElementById('demoFormSuccess').style.display = 'block';
+      if (typeof gtag === 'function') { gtag('event', 'demo_request_submitted'); }
+      form.reset();
+    } else {
+      errBox.textContent = json.message || 'Something went wrong — please try again or email founders@payerkart.com directly.';
+      errBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send request →';
+    }
+  })
+  .catch(function(){
+    errBox.textContent = 'Something went wrong — please try again or email founders@payerkart.com directly.';
+    errBox.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Send request →';
+  });
+}
+</script>
+
 </body>
 </html>
