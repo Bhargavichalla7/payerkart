@@ -12,7 +12,7 @@
   gtag('config', 'G-5KS54TFG1N');
 </script>
 <title>Payerkart — Healthcare Payer Infrastructure API</title>
-<meta name="description" content="Verify eligibility and check claim status through one API, backed by real clearinghouse connectivity. Payer infrastructure built for healthcare developers.">
+<meta name="description" content="Verify insurance eligibility and track claim status inside your hospital's EHR through one API, backed by real clearinghouse connectivity.">
 <meta name="google-site-verification" content="l2rVyKTMptO1igdLxXalkTr6IJ1aGl0IwMnWhwPIuKk" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.svg">
@@ -24,7 +24,7 @@
   "name": "Payerkart",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Web",
-  "description": "Healthcare payer infrastructure API for eligibility verification and claim status tracking, backed by clearinghouse connectivity.",
+  "description": "Healthcare payer infrastructure API that works with your hospital's EHR for eligibility verification and claim status tracking, backed by clearinghouse connectivity.",
   "url": "https://payerkart.com",
   "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "0" }
 }
@@ -67,12 +67,14 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 .steps-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
 @media (max-width:760px){ .steps-grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
 @media (max-width:420px){ .steps-grid{grid-template-columns:1fr;} }
+.feat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+@media (max-width:700px){ .feat-grid{grid-template-columns:1fr;} .ui-split{grid-template-columns:1fr !important;} .ui-split > div:first-child{border-right:none !important;border-bottom:1px solid var(--line);} }
 .sec-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 @media (max-width:380px){ .sec-grid{grid-template-columns:1fr;} }
 .faq-answer{display:none;margin:0 0 20px;color:var(--muted);font-size:14.5px;line-height:1.65;max-width:64ch;}
 .faq-item.open .faq-answer{display:block;}
 .faq-item.open .faq-mark{transform:rotate(0deg);}
-#top,#capabilities,#why,#api,#security,#faq{scroll-margin-top:76px;}
+#top,#capabilities,#product,#features,#why,#api,#security,#faq{scroll-margin-top:76px;}
 </style>
 </head>
 <body>
@@ -88,6 +90,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     </a>
     <div style="display:flex;align-items:center;gap:28px;" class="mono">
       <a href="#capabilities" class="nav-desktop" style="font-size:14px;color:var(--ink);">Product</a>
+      <a href="#features" class="nav-desktop" style="font-size:14px;color:var(--ink);">Features</a>
       <a href="#why" class="nav-desktop" style="font-size:14px;color:var(--ink);">Why Payerkart</a>
       <a href="#api" class="nav-desktop" style="font-size:14px;color:var(--ink);">API Preview</a>
       <a href="#security" class="nav-desktop" style="font-size:14px;color:var(--ink);">Security</a>
@@ -106,42 +109,78 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
   <div style="flex:1 1 460px;min-width:280px;display:flex;flex-direction:column;gap:22px;">
     <div style="display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:6px 12px;width:fit-content;">
       <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>
-      Payer infrastructure, API-first
+      Works with your hospital's EHR
     </div>
-    <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">One API for eligibility verification and claim status — backed by real clearinghouse connectivity.</h1>
+    <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">Eligibility and claim status, built into your hospital's EHR.</h1>
     <p style="margin:0;font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;">
-      Right now, checking coverage usually means signing into a payer's own web portal — a different one for nearly every payer — and typing the same patient name, date of birth, and insurance details in by hand. Payerkart replaces that portal-by-portal routine with a single API — one clearinghouse connection behind it, not a per-payer login — for eligibility verification and claim status, purpose-built around that workflow instead of adapted from something broader.
+      Payerkart plugs into your hospital's existing EHR through one API, backed by real clearinghouse connectivity. Staff verify coverage and track claims without leaving the screen they already work in — no separate payer logins, no re-typing patient details, and one integration that works across every payer.
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:6px;">
       <button onclick="openDemoModal()" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);border:none;padding:13px 22px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;">Book a Demo →</button>
       <a href="#api" style="font-family:var(--mono);font-size:14px;color:var(--ink);border:1px solid var(--line);padding:13px 22px;border-radius:8px;">See API Preview</a>
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid var(--line);margin-top:8px;">
-      <div class="mono" style="font-size:12px;color:var(--muted);">→ Built with a real RCM team</div>
+      <div class="mono" style="font-size:12px;color:var(--muted);">→ Works with your hospital's EHR</div>
       <div class="mono" style="font-size:12px;color:var(--muted);">→ One schema, every payer</div>
-      <div class="mono" style="font-size:12px;color:var(--muted);">→ Early partners shape the API</div>
+      <div class="mono" style="font-size:12px;color:var(--muted);">→ Live with a real practice today</div>
     </div>
   </div>
 
-  <div style="flex:1 1 400px;min-width:280px;">
+  <div style="flex:1 1 440px;min-width:280px;">
     <div style="border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);">
-        <span class="mono" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">Claim trace · sample output</span>
-        <span class="mono" style="font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:100px;padding:2px 9px;">preview</span>
-      </div>
-      <div style="padding:18px 16px;display:flex;flex-direction:column;gap:0;">
-        <div style="display:flex;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:baseline;">
-          <span class="mono" style="font-size:11px;color:var(--muted);width:64px;flex:none;">09:41:02</span>
-          <span class="mono" style="font-size:13px;flex:1;">eligibility.verify → member active</span>
-          <span class="mono" style="font-size:11px;color:var(--accent);">200</span>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--surface-2);">
+        <div style="display:flex;align-items:center;gap:9px;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:var(--accent-strong);color:var(--paper);font-size:14px;font-weight:600;line-height:1;">+</span>
+          <span style="font-size:13px;font-weight:600;">Sample Community Hospital</span>
+          <span class="mono" style="font-size:10.5px;color:var(--muted);">EHR</span>
         </div>
-        <div style="display:flex;gap:12px;padding:11px 0;align-items:baseline;">
-          <span class="mono" style="font-size:11px;color:var(--muted);width:64px;flex:none;">09:41:19</span>
-          <span class="mono" style="font-size:13px;flex:1;">claims.status → rejected: dob mismatch</span>
-          <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:4px;padding:1px 6px;">action needed</span>
+        <span class="mono" style="font-size:10.5px;color:var(--accent);border:1px solid var(--accent);border-radius:100px;padding:2px 9px;">powered by Payerkart</span>
+      </div>
+      <div style="padding:14px 14px 6px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:14px;font-weight:600;">Today's check-in queue</span>
+          <span class="mono" style="font-size:10.5px;color:var(--muted);">eligibility checked automatically</span>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--line);">
+        <div style="display:grid;grid-template-columns:44px 1.3fr 1fr 112px;gap:10px;padding:10px 12px;align-items:center;border-bottom:1px solid var(--line);background:var(--accent-soft);">
+          <span class="mono" style="font-size:11px;color:var(--muted);">08:00</span>
+          <span style="font-size:13px;font-weight:600;">Gonzalez, Maria</span>
+          <span style="font-size:12px;color:var(--muted);">Aetna</span>
+          <span class="mono" style="font-size:10.5px;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">verified</span>
+        </div>
+        <div style="display:grid;grid-template-columns:44px 1.3fr 1fr 112px;gap:10px;padding:10px 12px;align-items:center;border-bottom:1px solid var(--line);">
+          <span class="mono" style="font-size:11px;color:var(--muted);">08:30</span>
+          <span style="font-size:13px;font-weight:600;">Carter, James</span>
+          <span style="font-size:12px;color:var(--muted);">UnitedHealthcare</span>
+          <span class="mono" style="font-size:10.5px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">needs review</span>
+        </div>
+        <div style="display:grid;grid-template-columns:44px 1.3fr 1fr 112px;gap:10px;padding:10px 12px;align-items:center;border-bottom:1px solid var(--line);">
+          <span class="mono" style="font-size:11px;color:var(--muted);">09:00</span>
+          <span style="font-size:13px;font-weight:600;">Patel, Aisha</span>
+          <span style="font-size:12px;color:var(--muted);">Cigna</span>
+          <span class="mono" style="font-size:10.5px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">ID invalid</span>
+        </div>
+        <div style="display:grid;grid-template-columns:44px 1.3fr 1fr 112px;gap:10px;padding:10px 12px;align-items:center;border-bottom:1px solid var(--line);">
+          <span class="mono" style="font-size:11px;color:var(--muted);">10:00</span>
+          <span style="font-size:13px;font-weight:600;">Nguyen, Linda</span>
+          <span style="font-size:12px;color:var(--muted);">Medicare Part B</span>
+          <span class="mono" style="font-size:10.5px;color:var(--muted);background:var(--surface-2);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">scheduled</span>
+        </div>
+      </div>
+      <div style="padding:14px;background:var(--surface-2);display:flex;flex-direction:column;gap:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:13px;font-weight:600;">Maria Gonzalez · Aetna</span>
+          <span class="mono" style="font-size:10.5px;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">active</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;">
+          <div><div class="mono" style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);">Copay</div><div style="font-size:14px;font-weight:600;">$25.00</div></div>
+          <div><div class="mono" style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);">Deductible left</div><div style="font-size:14px;font-weight:600;">$1,100</div></div>
+          <div><div class="mono" style="font-size:10px;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);">Checked</div><div style="font-size:14px;font-weight:600;">&lt;1 sec</div></div>
         </div>
       </div>
     </div>
+    <p class="mono" style="margin:10px 0 0;font-size:11px;color:var(--muted);">Illustrative screen, sample data.</p>
   </div>
 </div>
 
@@ -175,7 +214,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
         <span class="mono" style="font-size:11px;color:var(--muted);">POST /v1/eligibility</span>
       </div>
       <h3 style="margin:0;font-size:19px;font-weight:600;">Verify eligibility</h3>
-      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">Get active coverage, plan type, and cost-share details with one call — the same answer staff pull today by logging into a payer portal and entering patient details by hand, minus the manual lookup.</p>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;">Get active coverage, plan type, and cost-share details with one call — returned right inside the EHR screen your staff already use, with no separate lookup.</p>
     </div>
     <div style="background:var(--surface);padding:28px;display:flex;flex-direction:column;gap:12px;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
@@ -192,7 +231,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <div style="flex:1 1 300px;min-width:260px;">
       <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">What you get back</div>
       <h3 style="margin:0 0 12px;font-size:22px;font-weight:600;">Not just a pass/fail — the fields your front desk and billing team actually need.</h3>
-      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.65;max-width:46ch;">An eligibility check returns the coverage details staff would otherwise copy by hand out of a payer portal. A claim status check returns where the claim stands and, on a rejection, the specific reason — not a raw payer code someone has to go look up.</p>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.65;max-width:46ch;">An eligibility check returns the coverage details staff would otherwise look up and re-type by hand. A claim status check returns where the claim stands and, on a rejection, the specific reason — not a raw payer code someone has to go look up.</p>
     </div>
     <div style="flex:1 1 420px;min-width:280px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;">
       <div style="background:var(--surface);padding:16px 18px;">
@@ -251,6 +290,169 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
   </div>
 </div>
 
+<!-- PRODUCT IN ACTION -->
+<div id="product" style="width:100%;background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div style="max-width:1180px;margin:0 auto;padding:72px 24px;width:100%;">
+    <div style="max-width:62ch;margin-bottom:36px;">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">The product in action</div>
+      <h2 style="margin:0 0 12px;font-size:30px;font-weight:600;">What your front desk sees.</h2>
+      <p style="margin:0;color:var(--muted);font-size:16px;line-height:1.6;">Payerkart is an API first, so it shows up inside the EHR your staff already use. Below is a sample check-in screen: every patient in today's queue is checked, and the result lands next to the patient, with no payer portal in sight.</p>
+    </div>
+
+    <div class="ui-frame" style="border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--surface-2);">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:5px;background:var(--accent-strong);color:var(--paper);font-size:15px;font-weight:600;line-height:1;">+</span>
+          <span style="font-size:14px;font-weight:600;">Sample Community Hospital</span>
+          <span class="mono" style="font-size:11px;color:var(--muted);">EHR · illustrative</span>
+        </div>
+        <div class="mono" style="display:flex;gap:6px;font-size:12px;">
+          <span style="padding:5px 11px;border-radius:6px;background:var(--accent-soft);color:var(--accent-strong);">Front desk</span>
+          <span style="padding:5px 11px;color:var(--muted);">Admin</span>
+          <span style="padding:5px 11px;color:var(--muted);">API activity</span>
+        </div>
+      </div>
+
+      <div class="ui-split" style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);">
+        <!-- Queue -->
+        <div style="padding:22px 22px 8px;border-right:1px solid var(--line);min-width:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:10px;flex-wrap:wrap;">
+            <h3 style="margin:0;font-size:16px;font-weight:600;">Today's check-in queue</h3>
+            <span class="mono" style="font-size:11px;color:var(--muted);">5 patients · 1 verified · 3 need attention</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <div style="min-width:520px;">
+              <div class="mono" style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:8px 8px;font-size:10.5px;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);border-bottom:1px solid var(--line);">
+                <span>Time</span><span>Patient</span><span>Payer / member ID</span><span>Status</span>
+              </div>
+              <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;background:var(--accent-soft);border-bottom:1px solid var(--line);">
+                <span class="mono" style="font-size:12px;">08:00</span>
+                <span><span style="font-size:13.5px;font-weight:600;">Gonzalez, Maria</span><br><span style="font-size:12px;color:var(--muted);">Active PPO, routine follow-up</span></span>
+                <span style="font-size:13px;">Aetna<br><span class="mono" style="font-size:11.5px;color:var(--muted);">W284719035</span></span>
+                <span class="mono" style="font-size:11px;color:var(--accent-strong);background:var(--surface);border-radius:100px;padding:3px 10px;width:fit-content;">verified</span>
+              </div>
+              <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;border-bottom:1px solid var(--line);">
+                <span class="mono" style="font-size:12px;">08:30</span>
+                <span><span style="font-size:13.5px;font-weight:600;">Carter, James</span><br><span style="font-size:12px;color:var(--muted);">Coverage lapsed at year end</span></span>
+                <span style="font-size:13px;">UnitedHealthcare<br><span class="mono" style="font-size:11.5px;color:var(--muted);">INACTIVE-884512</span></span>
+                <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:3px 10px;width:fit-content;">needs review</span>
+              </div>
+              <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;border-bottom:1px solid var(--line);">
+                <span class="mono" style="font-size:12px;">09:00</span>
+                <span><span style="font-size:13.5px;font-weight:600;">Patel, Aisha</span><br><span style="font-size:12px;color:var(--muted);">Card typo at registration</span></span>
+                <span style="font-size:13px;">Cigna<br><span class="mono" style="font-size:11.5px;color:var(--muted);">INVALID-U00917</span></span>
+                <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:3px 10px;width:fit-content;">member ID invalid</span>
+              </div>
+              <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;border-bottom:1px solid var(--line);">
+                <span class="mono" style="font-size:12px;">09:30</span>
+                <span><span style="font-size:13.5px;font-weight:600;">Kim, Robert</span><br><span style="font-size:12px;color:var(--muted);">Payer clearinghouse outage</span></span>
+                <span style="font-size:13px;">BCBS of Texas<br><span class="mono" style="font-size:11.5px;color:var(--muted);">XJH55821</span></span>
+                <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:3px 10px;width:fit-content;">payer down, retry</span>
+              </div>
+              <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;">
+                <span class="mono" style="font-size:12px;">10:00</span>
+                <span><span style="font-size:13.5px;font-weight:600;">Nguyen, Linda</span><br><span style="font-size:12px;color:var(--muted);">Medicare, annual wellness</span></span>
+                <span style="font-size:13px;">Medicare Part B<br><span class="mono" style="font-size:11.5px;color:var(--muted);">1EG4TE5MK73</span></span>
+                <span class="mono" style="font-size:11px;color:var(--muted);background:var(--surface-2);border-radius:100px;padding:3px 10px;width:fit-content;">scheduled</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detail -->
+        <div style="padding:22px;min-width:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
+            <h3 style="margin:0;font-size:17px;font-weight:600;">Maria Gonzalez</h3>
+            <span class="mono" style="font-size:11px;color:var(--accent);border:1px solid var(--line);border-radius:6px;padding:4px 9px;">Eligibility history</span>
+          </div>
+          <div class="mono" style="display:grid;grid-template-columns:84px 1fr;gap:6px 10px;font-size:12px;margin-bottom:18px;">
+            <span style="color:var(--muted);">DOB</span><span>1984-03-12</span>
+            <span style="color:var(--muted);">Payer</span><span>Aetna</span>
+            <span style="color:var(--muted);">Member ID</span><span>W284719035</span>
+          </div>
+
+          <div class="mono" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">Eligibility</div>
+          <div style="display:flex;flex-direction:column;gap:7px;font-size:13.5px;margin-bottom:16px;">
+            <div style="display:flex;gap:10px;align-items:center;"><span style="color:var(--muted);width:86px;">Coverage</span><span class="mono" style="font-size:11px;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:2px 10px;">active</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:var(--muted);width:86px;">Plan dates</span><span>2025-01-01 → open</span></div>
+            <div style="display:flex;gap:10px;"><span style="color:var(--muted);width:86px;">Checked</span><span>just now, in under a second</span></div>
+          </div>
+
+          <div class="mono" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Copay</div>
+          <div style="font-size:13.5px;margin-bottom:14px;">Office visit: <strong>$25.00</strong></div>
+
+          <div class="mono" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Deductible</div>
+          <div style="font-size:13.5px;margin-bottom:14px;">Medical: $400 met of $1,500 · <strong>$1,100 remaining</strong></div>
+
+          <div class="mono" style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Coverage by service</div>
+          <div style="display:flex;flex-direction:column;gap:6px;font-size:13.5px;">
+            <div>Office visit: <span class="mono" style="font-size:11px;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:2px 9px;">covered</span></div>
+            <div>Emergency room: <span class="mono" style="font-size:11px;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:2px 9px;">covered</span> <span style="color:var(--muted);">subject to $250 copay</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mono" style="margin:14px 0 0;font-size:11.5px;color:var(--muted);">Illustrative screen with sample data. The EHR view is the hospital's own; Payerkart supplies the result through the API.</p>
+  </div>
+</div>
+
+<!-- FEATURES IN DETAIL -->
+<div id="features" style="max-width:1180px;margin:0 auto;padding:80px 24px 40px;width:100%;">
+  <div style="max-width:62ch;margin-bottom:40px;">
+    <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">Features</div>
+    <h2 style="margin:0 0 12px;font-size:30px;font-weight:600;">Everything behind the check, in detail.</h2>
+    <p style="margin:0;color:var(--muted);font-size:16px;line-height:1.6;">Eligibility verification and claim status, plus the controls a hospital IT team and billing office need around them.</p>
+  </div>
+
+  <div class="feat-grid" style="display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;">
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">ELIGIBILITY</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Real-time verification, one schema</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">Identify the patient by ID, or by name and date of birth plus payer details. You get coverage status, plan dates, copay, deductible (used and remaining) and coverage by service category in the same JSON for every payer. Synchronous, or async with a webhook or polling.</p>
+    </div>
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">ELIGIBILITY</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Errors a person can act on</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">A typo'd member ID, a payer outage, an inactive plan: each comes back as a structured code with a plain-language message, not raw EDI. Rate limits are documented and return clear 429 responses.</p>
+    </div>
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">ELIGIBILITY</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Overnight batch verification</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">Schedule tomorrow's appointment list to be checked overnight. Patients with inactive or expired coverage are flagged by API, webhook and the admin screen, so staff can follow up before the visit.</p>
+    </div>
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">ELIGIBILITY</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Insurance card scan</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">For front desks without their own capture flow, upload a photo or PDF of the card. Payer, member ID and plan details are extracted for you to confirm before the check runs.</p>
+    </div>
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">CLAIM STATUS</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Status you can read</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">Look up where any claim stands. When a payer rejects or asks for follow-up, the code is translated into a plain explanation and suggested fix, for example "the date of birth is missing or doesn't match the payer's records."</p>
+    </div>
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">CLAIM STATUS</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Remittance detail</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">Payment and remittance data linked to each claim comes back in the same standardized schema, so billing doesn't have to read raw remittance files.</p>
+    </div>
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">INTEGRATION</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Fits your EHR through adapters</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">A standard adapter contract connects Payerkart to your EHR or integration engine. It works with your hospital's EHR: eClinicalWorks was the first adapter, and adding another EHR doesn't change the core API. If an EHR push fails, results stay available through the API with retry options.</p>
+    </div>
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">ADMIN</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Keys, usage and health in one place</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">Hospital admins manage scoped API keys, see usage, and watch adapter status (active adapter, last successful push, failures). A sandbox with test keys and canned responses lets IT test before go-live.</p>
+    </div>
+    <div style="background:var(--surface);padding:26px;display:flex;flex-direction:column;gap:10px;grid-column:1 / -1;">
+      <span class="mono" style="font-size:11px;color:var(--accent);">AUDIT &amp; SECURITY</span>
+      <h3 style="margin:0;font-size:17px;font-weight:600;">Every check logged</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;max-width:90ch;">Each eligibility and claim status request is recorded with who made it, when, and for which patient or claim. The audit log is searchable by API key, patient, date and endpoint. Access is role-based and enforced on the server, and retries with backoff mean an outage never fails silently.</p>
+    </div>
+  </div>
+</div>
+
 <!-- WHY / CREDIBILITY -->
 <div id="why" style="width:100%;background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
   <div style="max-width:1180px;margin:0 auto;padding:64px 24px;width:100%;display:flex;gap:48px;flex-wrap:wrap;align-items:flex-start;">
@@ -264,7 +466,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
         <span class="mono" style="font-size:12px;color:var(--accent);flex:none;padding-top:2px;">01</span>
         <div>
           <div style="font-size:14.5px;font-weight:500;margin-bottom:2px;">One product, one problem</div>
-          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Payerkart exists to fix one thing: the fragmented, per-payer way eligibility and claims work happens today, where staff still sign into a different portal for every check.</div>
+          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Payerkart exists to fix one thing: the fragmented, manual way eligibility and claims work happens today, by connecting your hospital's EHR to every payer through one API.</div>
         </div>
       </div>
       <div style="display:flex;gap:12px;align-items:flex-start;">
@@ -277,8 +479,8 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <div style="display:flex;gap:12px;align-items:flex-start;">
         <span class="mono" style="font-size:12px;color:var(--accent);flex:none;padding-top:2px;">03</span>
         <div>
-          <div style="font-size:14.5px;font-weight:500;margin-bottom:2px;">Early partners shape the API</div>
-          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Book a demo and your workflow becomes part of what we build first — this is the stage where feedback changes the product.</div>
+          <div style="font-size:14.5px;font-weight:500;margin-bottom:2px;">Built with the teams who use it</div>
+          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Payerkart is shaped by real front-desk and billing workflows. Book a demo and tell us yours — feedback from the teams using it directly drives what we build next.</div>
         </div>
       </div>
     </div>
@@ -297,8 +499,8 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <p style="margin:0 0 20px;color:var(--muted);font-size:15.5px;line-height:1.65;">This is the actual request shape running in production — one consistent schema for eligibility verification and claim status, regardless of the payer on the other end. Book a demo to talk through your use case and get sandbox access.</p>
       <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;">
         <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Consistent JSON in, JSON out, across payers</li>
-        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Sandbox environment with test payers, opening to early partners</li>
-        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Webhooks planned for claim status changes</li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Sandbox with test keys and canned payer responses, so you can integrate before go-live</li>
+        <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Webhooks or polling for async results and claim status changes</li>
         <li style="display:flex;gap:10px;align-items:flex-start;font-size:14.5px;"><span style="color:var(--accent);flex:none;">—</span>Idempotent writes, versioned endpoints from day one</li>
       </ul>
     </div>
@@ -383,7 +585,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
         <span style="font-size:15.5px;font-weight:500;">Is Payerkart live yet?</span>
         <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
       </button>
-      <p class="faq-answer">Yes — Payerkart is live in production, already verifying eligibility and tracking claim status for a practice today, cutting what used to be a 15-minute portal check down to under a second. We're still early, so book a demo and your use case helps shape what we build next.</p>
+      <p class="faq-answer">Yes — Payerkart is live in production, already verifying eligibility and tracking claim status for a practice today, cutting what used to be a 15-minute portal check down to under a second. Book a demo to see it on your own workflow.</p>
     </div>
 
     <div class="faq-item" style="border-bottom:1px solid var(--line);">
@@ -437,7 +639,8 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 <div style="width:100%;background:var(--paper);">
   <div style="max-width:1180px;margin:0 auto;padding:32px 24px 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);">
     <span class="mono" style="font-size:12px;color:var(--muted);">© 2026 Payerkart, a product of Blue Matrix Connect. Healthcare payer infrastructure.</span>
-    <div style="display:flex;gap:20px;" class="mono">
+    <div style="display:flex;gap:8px 20px;flex-wrap:wrap;" class="mono">
+      <a href="#features" style="font-size:12px;color:var(--muted);">Features</a>
       <a href="#capabilities" style="font-size:12px;color:var(--muted);">Product</a>
       <a href="#why" style="font-size:12px;color:var(--muted);">Why Payerkart</a>
       <a href="#api" style="font-size:12px;color:var(--muted);">API Preview</a>
@@ -461,7 +664,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <div id="demoFormWrap">
       <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:8px;">Book a Demo</div>
       <h3 style="margin:0 0 6px;font-size:21px;font-weight:600;">Tell us about your workflow</h3>
-      <p style="margin:0 0 20px;color:var(--muted);font-size:13.5px;line-height:1.55;">We'll get back to you to set up a time — and your use case helps shape what we build first.</p>
+      <p style="margin:0 0 20px;color:var(--muted);font-size:13.5px;line-height:1.55;">We'll get back to you to set up a time to walk through your workflow.</p>
 
       <form id="demoForm" onsubmit="submitDemoForm(event)" style="display:flex;flex-direction:column;gap:14px;">
         <input type="hidden" name="access_key" value="93c88fbd-9ea1-4fdd-a33e-c6ccf4829ad5">
