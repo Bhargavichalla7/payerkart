@@ -11,22 +11,22 @@
   gtag('js', new Date());
   gtag('config', 'G-5KS54TFG1N');
 </script>
-<title>Payerkart vs Payer Portals: Eligibility &amp; Claim Status Compared</title>
-<meta name="description" content="Compare checking eligibility and claim status through payer portals with Payerkart&#x27;s API: logins, data entry, time per check, result format and audit trail.">
+<title>API Documentation: Eligibility &amp; Claim Status | Payerkart</title>
+<meta name="description" content="Overview of the Payerkart REST API: authentication, eligibility verification, claim status, webhooks, errors, rate limits and sandbox access.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://payerkart.com/compare/payerkart-vs-payer-portals/">
+<link rel="canonical" href="https://payerkart.com/docs/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:site_name" content="Payerkart">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Payerkart vs Payer Portals: Eligibility &amp; Claim Status Compared">
-<meta property="og:description" content="Compare checking eligibility and claim status through payer portals with Payerkart&#x27;s API: logins, data entry, time per check, result format and audit trail.">
-<meta property="og:url" content="https://payerkart.com/compare/payerkart-vs-payer-portals/">
+<meta property="og:title" content="API Documentation: Eligibility &amp; Claim Status | Payerkart">
+<meta property="og:description" content="Overview of the Payerkart REST API: authentication, eligibility verification, claim status, webhooks, errors, rate limits and sandbox access.">
+<meta property="og:url" content="https://payerkart.com/docs/">
 <meta property="og:image" content="https://payerkart.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Payerkart vs Payer Portals: Eligibility &amp; Claim Status Compared">
-<meta name="twitter:description" content="Compare checking eligibility and claim status through payer portals with Payerkart&#x27;s API: logins, data entry, time per check, result format and audit trail.">
+<meta name="twitter:title" content="API Documentation: Eligibility &amp; Claim Status | Payerkart">
+<meta name="twitter:description" content="Overview of the Payerkart REST API: authentication, eligibility verification, claim status, webhooks, errors, rate limits and sandbox access.">
 <meta name="twitter:image" content="https://payerkart.com/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,31 +61,18 @@
     {
      "@type": "ListItem",
      "position": 2,
-     "name": "Payerkart vs payer portals",
-     "item": "https://payerkart.com/compare/payerkart-vs-payer-portals/"
+     "name": "API docs",
+     "item": "https://payerkart.com/docs/"
     }
    ]
   },
   {
-   "@type": "FAQPage",
-   "mainEntity": [
-    {
-     "@type": "Question",
-     "name": "Are payer portals free?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "Logging in is free, but staff time isn't. The 2024 CAQH Index estimates a partially electronic eligibility check (portal or IVR) costs a medical provider about $4.46, versus about $2.00 fully electronic."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Do we still need portals with Payerkart?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "For routine eligibility and claim status checks, no. Some payer-specific tasks outside that scope may still need a portal."
-     }
-    }
-   ]
+   "@type": "TechArticle",
+   "headline": "Payerkart API documentation",
+   "url": "https://payerkart.com/docs/",
+   "publisher": {
+    "@id": "https://payerkart.com/#org"
+   }
   }
  ]
 }
@@ -95,7 +82,7 @@
 <header class="site-header">
   <div class="wrap">
     <a href="/" class="brand" aria-label="Payerkart home"><svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg><span>Payerkart</span></a>
-    <nav class="nav" aria-label="Main"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
+    <nav class="nav" aria-label="Main"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/" aria-current="page">Docs</a><a href="/blog/">Blog</a></nav>
     <div class="header-cta">
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
       <a href="#demo" data-demo class="btn btn-sm">Book a Demo →</a>
@@ -104,32 +91,64 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
 </header>
 <main>
-<div class="wrap crumbs"><a href="/">Home</a> / Payerkart vs payer portals</div>
+<div class="wrap crumbs"><a href="/">Home</a> / API docs</div>
 <section class="wrap page-hero">
-  <span class="eyebrow">Comparison</span>
-  <h1>Payerkart vs payer portals for eligibility and claim status</h1>
-  <p class="lead">Portals work, one payer at a time. Here's how checking eligibility and claim status through Payerkart compares with logging into each payer's portal.</p>
+  <span class="eyebrow">API preview</span>
+  <h1>Payerkart API documentation</h1>
+  <p class="lead">One REST API for eligibility verification and claim status, with consistent JSON in and out across payers. This page is an overview; the full reference and sandbox keys are shared when you request access.</p>
+  <div class="btn-row"><a href="#demo" data-demo class="btn">Request sandbox access →</a></div>
 </section>
-<section class="wrap" style="padding-bottom:20px;">
+
+<section class="section"><div class="wrap narrow prose">
+  <h2 id="basics">Basics</h2>
+  <ul>
+    <li><b>Base URL:</b> <code>https://api.payerkart.com/v1</code></li>
+    <li><b>Format:</b> JSON request and response bodies</li>
+    <li><b>Versioning:</b> versioned endpoints from day one (<code>/v1</code>)</li>
+    <li><b>Writes:</b> idempotent, so safe to retry</li>
+    <li><b>Async:</b> webhooks or polling for long-running checks and claim status changes</li>
+  </ul>
+
+  <h2 id="auth">Authentication</h2>
+  <p>Send your API key as a Bearer token. Keys are scoped and revocable from the admin console. Sandbox keys return canned payer responses.</p>
+<pre>Authorization: Bearer $PAYERKART_KEY</pre>
+
+  <h2 id="eligibility">Verify eligibility</h2>
+  <p><code>POST /v1/eligibility</code>: check a patient's coverage with a payer. Identify the patient by member ID, or by name and date of birth plus payer details.</p>
+<pre><span class="k">curl</span> https://api.payerkart.com/v1/eligibility \
+  -H <span class="s">"Authorization: Bearer $PAYERKART_KEY"</span> \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -d <span class="s">'{
+    "patient": { "member_id": "W12345678" },
+    "payer": "auto-detect",
+    "service_type": "office_visit"
+  }'</span>
+
+<span class="c"># 200 OK</span>
+{ "status": "active", "plan": "PPO Gold", "copay": 25 }</pre>
+  <p>A full response also carries plan dates, deductible used and remaining, network status and coverage by service category. Field-level definitions are in the full reference.</p>
+
+  <h2 id="claim-status">Get claim status</h2>
+  <p><code>GET /v1/claims/:id</code>: returns where a claim stands with the payer (submitted, in review, paid or denied). Denials and follow-up requests include a plain-language reason and suggested fix. Remittance detail is linked once the claim is paid.</p>
+
+  <h2 id="webhooks">Webhooks</h2>
+  <p>Register a webhook to be notified when an asynchronous eligibility result is ready, when overnight batch verification flags a patient, and when a claim's status changes. Polling is supported for every case.</p>
+
+  <h2 id="errors">Errors and rate limits</h2>
+  <p>Errors come back as a structured code plus a plain-language message, never raw EDI. Common cases:</p>
   <div class="table-wrap"><table>
-    <tr><th></th><th>Payer portals</th><th>Payerkart</th></tr>
-    <tr><td>Logins</td><td>One per payer, per staff member</td><td>One API key for your EHR integration</td></tr>
-    <tr><td>Data entry</td><td>Patient details re-typed into each portal</td><td>Sent from the EHR automatically</td></tr>
-    <tr><td>Time per eligibility check</td><td>~15 minutes at our live practice before Payerkart</td><td>Under a second at the same practice</td></tr>
-    <tr><td>Result format</td><td>Different layout for every payer</td><td>One schema for every payer</td></tr>
-    <tr><td>Where results live</td><td>In the portal, copied by hand</td><td>Inside the EHR, next to the patient</td></tr>
-    <tr><td>Denial reasons</td><td>Payer codes to look up</td><td>Plain-language reason and suggested fix</td></tr>
-    <tr><td>Batch checks</td><td>Manual, patient by patient</td><td>Overnight verification of tomorrow's appointments</td></tr>
-    <tr><td>Audit trail</td><td>Scattered across portals</td><td>Every request logged and searchable</td></tr>
+    <tr><th>Situation</th><th>What you get</th></tr>
+    <tr><td>Member ID not found</td><td>Structured "not found" result: recheck the member ID</td></tr>
+    <tr><td>Coverage inactive</td><td>Inactive status with the termination date</td></tr>
+    <tr><td>Payer outage</td><td>A "payer down, retry" result; retries with backoff are built in</td></tr>
+    <tr><td>Too many requests</td><td>HTTP <code>429</code> with documented rate limits</td></tr>
   </table></div>
-</section>
-<section class="section"><div class="wrap narrow">
-  <h2>FAQ</h2>
-  <div class="faq"><details><summary>Are payer portals free?</summary><p>Logging in is free, but staff time isn&#x27;t. The 2024 CAQH Index estimates a partially electronic eligibility check (portal or IVR) costs a medical provider about $4.46, versus about $2.00 fully electronic.</p></details><details><summary>Do we still need portals with Payerkart?</summary><p>For routine eligibility and claim status checks, no. Some payer-specific tasks outside that scope may still need a portal.</p></details></div>
-  <p style="margin-top:24px;"><a class="more" href="/blog/true-cost-of-manual-eligibility-checks.html">The real cost of checking eligibility through the portal →</a></p>
+
+  <h2 id="sandbox">Sandbox</h2>
+  <p>Test keys and canned payer responses let you build and test the full flow before go-live, with no payer contracts to negotiate first.</p>
+  <div class="callout"><p>Ready to build? <a href="#demo" data-demo>Request sandbox access</a> and we'll send keys and the full reference.</p></div>
 </div></section>
-<div class="wrap"><div class="cta-band"><div><h2>See Payerkart inside your EHR</h2><p>Book a demo to walk through your workflow and get sandbox access. No payer contracts to negotiate before your first request.</p></div>
-<a href="#demo" data-demo class="btn">Book a Demo →</a></div></div>
+
 </main>
 <footer class="site-footer">
   <div class="wrap">
