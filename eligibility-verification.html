@@ -30,9 +30,10 @@
 <meta name="twitter:image" content="https://payerkart.com/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/site.css">
 <link rel="stylesheet" href="/motion.css">
+<link rel="stylesheet" href="/theme.css">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -143,13 +144,15 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile"><a href="/eligibility-verification.html">Eligibility</a><a href="/claim-status.html">Claim status</a><a href="/ehr-integration.html">EHR integration</a><a href="/for-hospitals.html">For hospitals</a><a href="/case-studies.html">Customers</a><a href="/security.html">Security</a><a href="/docs.html">Docs</a><a href="/blog/">Blog</a></nav>
 </header>
 <main>
-<div class="wrap crumbs"><a href="/">Home</a> / Eligibility verification</div>
-<section class="wrap page-hero">
+<div class="hero-band"><div class="wrap crumbs"><a href="/">Home</a> / Eligibility verification</div>
+<section class="wrap page-hero has-photo">
   <span class="eyebrow">Eligibility verification API</span>
   <h1>Real-time insurance eligibility verification, inside your EHR.</h1>
   <p class="lead">Confirm coverage, copay and deductible before the patient reaches the front desk, without opening a payer portal. One API call returns the same structured result for every payer, straight into the screen your staff already use.</p>
   <div class="btn-row"><a href="#demo" data-demo class="btn">Book a Demo →</a><a href="/docs.html#eligibility" class="btn-ghost">See the endpoint</a></div>
-</section>
+
+  <figure class="hero-photo"><img src="/photo-front-desk.jpg" alt="Hospital front desk staff checking in patients" width="1400" height="1050" decoding="async"><span class="photo-chip"><i>✓</i><span>Coverage active · PPO<small>Copay $25 · deductible left $1,100</small></span></span></figure>
+</section></div>
 <section class="wrap" style="padding-bottom:48px;">
   <div class="stats">
     <div><b>15 min → &lt;1 sec</b><span>per check, at a live Payerkart practice</span></div>
@@ -185,6 +188,41 @@
   </div>
 </div></section>
 
+<div class="section" style="padding:0;">
+<section class="scan-sec" aria-labelledby="scanTitle">
+  <div class="copy">
+    <span class="kicker">Insurance card capture</span>
+    <h2 id="scanTitle">Scan the card. Skip the typing.</h2>
+    <p>Take a photo of the patient's insurance card or upload a PDF. Payerkart pulls out the payer, member ID and plan details for staff to confirm, then runs the eligibility check.</p>
+    <ul class="scan-steps">
+      <li><b>1</b><span>Photograph or upload the card at registration</span></li>
+      <li><b>2</b><span>Payer, member ID and plan are extracted automatically</span></li>
+      <li><b>3</b><span>Staff confirm, and eligibility comes back in under a second</span></li>
+    </ul>
+    <p class="scan-note">Illustration with a sample card and sample data.</p>
+  </div>
+  <div class="phone" role="img" aria-label="Animated illustration: a phone scans a sample insurance card, extracts the payer, member ID and plan, then shows coverage active with a 25 dollar copay.">
+    <div class="screen">
+      <div class="bar"><span>Payerkart</span><span>● card capture</span></div>
+      <div class="cam">
+        <div class="ins">
+          <div class="plan">SAMPLE HEALTH PLAN <em>PPO</em></div>
+          <div class="row">MEMBER<b>JANE DOE</b></div>
+          <div class="grid2"><div class="row">MEMBER ID<b>W12345678</b></div><div class="row">GROUP<b>004521</b></div></div>
+        </div>
+        <div class="brk"></div><div class="laser"></div><div class="flash"></div>
+      </div>
+      <div class="status"><span class="s1">Hold the card inside the frame…</span><span class="s2">✓ Card captured, confirm details</span></div>
+      <div class="fields">
+        <div class="f f1"><span><small>PAYER</small><b>Sample Health</b></span><span class="ok">✓</span></div>
+        <div class="f f2"><span><small>MEMBER ID</small><b>W12345678</b></span><span class="ok">✓</span></div>
+        <div class="f f3"><span><small>PLAN</small><b>PPO Gold</b></span><span class="ok">✓</span></div>
+      </div>
+      <div class="result"><b>Coverage active</b><span>Copay $25 · checked in &lt;1 sec</span></div>
+    </div>
+  </div>
+</section>
+</div>
 <section class="section"><div class="wrap">
   <h2>How it works</h2>
   <ol class="steps" style="margin-top:24px;">

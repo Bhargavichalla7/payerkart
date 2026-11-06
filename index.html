@@ -30,7 +30,7 @@
 <meta name="twitter:image" content="https://payerkart.com/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.svg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -73,27 +73,15 @@
 </script>
 <style>
 :root{
-  --ink:#14231D; --paper:#EFF1EA; --surface:#FFFFFF; --surface-2:#E7EAE1;
-  --accent:#1E6F52; --accent-strong:#123D2C; --accent-soft:#DCEAE1;
-  --warn:#B5581F; --warn-soft:#F3E3D3;
-  --line:#D3D0C1; --muted:#5B6660;
-  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ink:#0B1020; --paper:#F7F8FC; --surface:#FFFFFF; --surface-2:#EEF1F8;
+  --accent:#4F46E5; --accent-strong:#3730A3; --accent-soft:#E7E8FF;
+  --warn:#D9480F; --warn-soft:#FFE8DD;
+  --line:#E2E6F0; --muted:#5A6378;
+  --sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ink:#ECEFE7; --paper:#0F1713; --surface:#152018; --surface-2:#1B271F;
-    --accent:#57D0A0; --accent-strong:#2FA37A; --accent-soft:#1B342A;
-    --warn:#E08B4E; --warn-soft:#3A2718;
-    --line:#28342C; --muted:#93A19A;
-  }
-}
-:root[data-theme="dark"]{
-  --ink:#ECEFE7; --paper:#0F1713; --surface:#152018; --surface-2:#1B271F;
-  --accent:#57D0A0; --accent-strong:#2FA37A; --accent-soft:#1B342A;
-  --warn:#E08B4E; --warn-soft:#3A2718;
-  --line:#28342C; --muted:#93A19A;
-}
+
+
 *{box-sizing:border-box;}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);}
 a{color:var(--accent);text-decoration:none;}
@@ -119,13 +107,14 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 #top,#start,#capabilities,#product,#features,#why,#api,#security,#faq{scroll-margin-top:76px;}
 </style>
 <link rel="stylesheet" href="/motion.css">
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
 
 <div style="width:100%;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);">
 
 <!-- HEADER -->
-<div style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
+<div class="pk-header" style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
   <div style="max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
     <a href="#top" style="display:flex;align-items:center;gap:10px;">
       <svg width="26" height="26" viewBox="0 0 44 44" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg>
@@ -153,7 +142,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>
       Works with your hospital's EHR
     </div>
-    <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">Eligibility and claim status, built into your hospital's EHR.</h1>
+    <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">Eligibility and claim status, <span class="pk-grad">built into your hospital's EHR.</span></h1>
     <p style="margin:0;font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;">
       Payerkart plugs into your hospital's existing EHR through one API, backed by real clearinghouse connectivity. Staff verify coverage and track claims without leaving the screen they already work in — no separate payer logins, no re-typing patient details, and one integration that works across commercial and government payers.
     </p>
@@ -240,6 +229,64 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     </div>
   </div>
 </div>
+
+<!-- HOSPITAL SCENARIOS -->
+<section class="scenarios" aria-labelledby="scnTitle">
+  <span class="kicker">A day at the hospital</span>
+  <h2 id="scnTitle">From the first check-in to the overnight batch</h2>
+  <p>Payerkart works quietly in the background of a hospital's day. Here's where it shows up for the people doing the work.</p>
+  <div class="scn-track">
+    <article class="scn"><figure><img src="/photo-front-desk.jpg" alt="Front desk team checking in patients at a hospital reception" width="900" height="675" loading="lazy" decoding="async"><span class="time">07:45</span></figure>
+      <div class="body"><span class="role">Front desk</span><h3>Coverage confirmed before the patient sits down</h3><p>Today's queue was verified automatically. Staff see the active plan, copay and deductible next to each name, with no portal tab.</p><span class="result">✓ active · copay $25</span></div></article>
+    <article class="scn"><figure><img src="/photo-copay-pos.jpg" alt="Patient paying a copay with a card at the registration counter" width="900" height="675" loading="lazy" decoding="async"><span class="time">07:52</span></figure>
+      <div class="body"><span class="role">Registration counter</span><h3>The right copay, collected the first time</h3><p>The copay from the eligibility check is already on screen, so staff charge the right amount on the card terminal, not a guess.</p><span class="result">$25 known before the visit</span></div></article>
+    <article class="scn"><figure><img src="/photo-billing.jpg" alt="Billing specialist working on claims at a computer" width="900" height="675" loading="lazy" decoding="async"><span class="time">14:10</span></figure>
+      <div class="body"><span class="role">Billing office</span><h3>A denial explained in plain language</h3><p>A claim status changes. Billing gets a webhook and a reason they can act on (DOB mismatch) instead of a payer code and a phone call.</p><span class="result">↻ status change → webhook</span></div></article>
+    <article class="scn"><figure><img src="/photo-overnight.jpg" alt="Hospital staff member working at a computer at night" width="900" height="675" loading="lazy" decoding="async"><span class="time">23:30</span></figure>
+      <div class="body"><span class="role">Overnight</span><h3>Tomorrow's list, checked while you sleep</h3><p>Batch verification runs on tomorrow's appointments. Lapsed or expired coverage is flagged before the morning shift starts.</p><span class="result">⚑ 3 patients flagged</span></div></article>
+    <article class="scn"><figure><img src="/photo-it-team.jpg" alt="Hospital IT team working in a data center" width="900" height="675" loading="lazy" decoding="async"><span class="time">Any time</span></figure>
+      <div class="body"><span class="role">Hospital IT</span><h3>One integration to look after</h3><p>One EHR adapter, scoped keys, audit logs and adapter health in one console. New payers don't mean new integrations.</p><span class="result">● adapter healthy</span></div></article>
+  </div>
+  <p class="scn-note">Illustrative scenarios with sample data. Photos are stock images of models, not Payerkart customers.</p>
+</section>
+<div class="people-band"><div class="inner"><img src="/photo-waiting-room.jpg" alt="Patients waiting in a hospital reception area" width="1400" height="700" loading="lazy" decoding="async">
+  <div class="txt"><h3>Shorter waits start at the front desk.</h3><p>When coverage is confirmed in under a second, the line moves, and patients aren't left waiting while staff sit on hold with a payer.</p>
+  <a href="/case-study-eligibility-15-minutes-to-under-a-second.html" class="more" style="color:#5EEAD4;">Read the case study →</a></div></div></div>
+
+<!-- CARD SCAN -->
+<section class="scan-sec" aria-labelledby="scanTitle">
+  <div class="copy">
+    <span class="kicker">Insurance card capture</span>
+    <h2 id="scanTitle">Scan the card. Skip the typing.</h2>
+    <p>Take a photo of the patient's insurance card or upload a PDF. Payerkart pulls out the payer, member ID and plan details for staff to confirm, then runs the eligibility check.</p>
+    <ul class="scan-steps">
+      <li><b>1</b><span>Photograph or upload the card at registration</span></li>
+      <li><b>2</b><span>Payer, member ID and plan are extracted automatically</span></li>
+      <li><b>3</b><span>Staff confirm, and eligibility comes back in under a second</span></li>
+    </ul>
+    <p class="scan-note">Illustration with a sample card and sample data.</p>
+  </div>
+  <div class="phone" role="img" aria-label="Animated illustration: a phone scans a sample insurance card, extracts the payer, member ID and plan, then shows coverage active with a 25 dollar copay.">
+    <div class="screen">
+      <div class="bar"><span>Payerkart</span><span>● card capture</span></div>
+      <div class="cam">
+        <div class="ins">
+          <div class="plan">SAMPLE HEALTH PLAN <em>PPO</em></div>
+          <div class="row">MEMBER<b>JANE DOE</b></div>
+          <div class="grid2"><div class="row">MEMBER ID<b>W12345678</b></div><div class="row">GROUP<b>004521</b></div></div>
+        </div>
+        <div class="brk"></div><div class="laser"></div><div class="flash"></div>
+      </div>
+      <div class="status"><span class="s1">Hold the card inside the frame…</span><span class="s2">✓ Card captured, confirm details</span></div>
+      <div class="fields">
+        <div class="f f1"><span><small>PAYER</small><b>Sample Health</b></span><span class="ok">✓</span></div>
+        <div class="f f2"><span><small>MEMBER ID</small><b>W12345678</b></span><span class="ok">✓</span></div>
+        <div class="f f3"><span><small>PLAN</small><b>PPO Gold</b></span><span class="ok">✓</span></div>
+      </div>
+      <div class="result"><b>Coverage active</b><span>Copay $25 · checked in &lt;1 sec</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- CAPABILITIES -->
 <div id="capabilities" style="max-width:1180px;margin:0 auto;padding:80px 24px 40px;width:100%;">
@@ -552,7 +599,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
           <span class="mono" style="font-size:11px;color:rgba(255,255,255,0.6);">eligibility.sh — preview</span>
           <button id="copyBtn" class="mono" style="font-size:11px;color:rgba(255,255,255,0.7);background:transparent;border:1px solid rgba(255,255,255,0.2);border-radius:5px;padding:4px 9px;">Copy</button>
         </div>
-        <pre id="codeSample" class="mono" style="margin:0;padding:20px 18px;font-size:13px;line-height:1.7;color:#D7E4DC;overflow-x:auto;white-space:pre;">curl https://api.payerkart.com/v1/eligibility \
+        <pre id="codeSample" class="mono" style="margin:0;padding:20px 18px;font-size:13px;line-height:1.7;color:#E2E8F0;overflow-x:auto;white-space:pre;">curl https://api.payerkart.com/v1/eligibility \
   -H "Authorization: Bearer $PAYERKART_KEY" \
   -H "Content-Type: application/json" \
   -d '{
@@ -561,7 +608,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     "service_type": "office_visit"
   }'
 
-<span style="color:#7FBF9F;">→ 200 OK</span>
+<span style="color:#5EEAD4;">→ 200 OK</span>
 { "status": "active", "plan": "PPO Gold", "copay": 25 }</pre>
       </div>
     </div>
@@ -681,16 +728,16 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 <div id="start" style="width:100%;background:var(--ink);">
   <div style="max-width:900px;margin:0 auto;padding:72px 24px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px;">
     <h2 style="margin:0;font-size:30px;font-weight:600;color:var(--paper);">Ready to talk payer infrastructure?</h2>
-    <p style="margin:0;color:rgba(239,241,234,0.65);font-size:15.5px;max-width:52ch;">Book a demo to see how Payerkart fits your workflow and get sandbox access — no payer contracts to negotiate before your first request.</p>
+    <p style="margin:0;color:rgba(180,188,214,1);font-size:15.5px;max-width:52ch;">Book a demo to see how Payerkart fits your workflow and get sandbox access — no payer contracts to negotiate before your first request.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;padding-top:8px;">
       <button onclick="openDemoModal()" style="font-family:var(--mono);font-size:14px;color:var(--ink);background:var(--paper);border:none;padding:13px 24px;border-radius:8px;">Book a Demo →</button>
-      <a href="#api" style="font-family:var(--mono);font-size:14px;color:var(--paper);border:1px solid rgba(239,241,234,0.3);padding:13px 24px;border-radius:8px;">See API Preview</a>
+      <a href="#api" style="font-family:var(--mono);font-size:14px;color:var(--paper);border:1px solid rgba(255,255,255,0.25);padding:13px 24px;border-radius:8px;">See API Preview</a>
     </div>
   </div>
 </div>
 
 <!-- FOOTER -->
-<div style="width:100%;background:var(--paper);">
+<div class="pk-footer" style="width:100%;background:var(--paper);">
   <div style="max-width:1180px;margin:0 auto;padding:32px 24px 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);">
     <span class="mono" style="font-size:12px;color:var(--muted);">© 2026 Payerkart, a product of Blue Matrix Connect. Healthcare payer infrastructure.</span>
     <div style="display:flex;gap:8px 20px;flex-wrap:wrap;" class="mono">

@@ -61,7 +61,7 @@
 
   // ---------- scroll reveal (below the fold only, so nothing flashes) ----------
   var targets = $$([
-    '.section h2', '.section .sub', '.section .card', '.stats', '.table-wrap', 'ol.steps li', '.cta-band',
+    '.scn', '.scan-sec .copy', '.people-band', '.scenarios h2', '.scenarios > p', '.section h2', '.section .sub', '.section .card', '.stats', '.table-wrap', 'ol.steps li', '.cta-band',
     '.faq details', '.prose > *', '.callout', '.trust', '.grid > a.card',
     'h2', 'h3', '.pk-card', 'pre', '.faq-item', 'article > *', '.site-footer .foot-grid > div'
   ].join(','));
