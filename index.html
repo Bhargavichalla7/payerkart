@@ -11,22 +11,22 @@
   gtag('js', new Date());
   gtag('config', 'G-5KS54TFG1N');
 </script>
-<title>EHR Integration for Eligibility &amp; Claim Status | Payerkart</title>
-<meta name="description" content="Payerkart connects to your hospital&#x27;s EHR through a standard adapter, delivering eligibility and claim status results inside existing screens. eClinicalWorks first.">
+<title>Real-Time Eligibility Verification API for Hospitals | Payerkart</title>
+<meta name="description" content="Verify patient insurance eligibility in under a second, inside your hospital&#x27;s EHR. Coverage, copay, deductible and network status in one schema for every payer.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://payerkart.com/ehr-integration/">
+<link rel="canonical" href="https://payerkart.com/eligibility-verification/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:site_name" content="Payerkart">
 <meta property="og:type" content="website">
-<meta property="og:title" content="EHR Integration for Eligibility &amp; Claim Status | Payerkart">
-<meta property="og:description" content="Payerkart connects to your hospital&#x27;s EHR through a standard adapter, delivering eligibility and claim status results inside existing screens. eClinicalWorks first.">
-<meta property="og:url" content="https://payerkart.com/ehr-integration/">
+<meta property="og:title" content="Real-Time Eligibility Verification API for Hospitals | Payerkart">
+<meta property="og:description" content="Verify patient insurance eligibility in under a second, inside your hospital&#x27;s EHR. Coverage, copay, deductible and network status in one schema for every payer.">
+<meta property="og:url" content="https://payerkart.com/eligibility-verification/">
 <meta property="og:image" content="https://payerkart.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="EHR Integration for Eligibility &amp; Claim Status | Payerkart">
-<meta name="twitter:description" content="Payerkart connects to your hospital&#x27;s EHR through a standard adapter, delivering eligibility and claim status results inside existing screens. eClinicalWorks first.">
+<meta name="twitter:title" content="Real-Time Eligibility Verification API for Hospitals | Payerkart">
+<meta name="twitter:description" content="Verify patient insurance eligibility in under a second, inside your hospital&#x27;s EHR. Coverage, copay, deductible and network status in one schema for every payer.">
 <meta name="twitter:image" content="https://payerkart.com/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +50,21 @@
    }
   },
   {
+   "@type": "Service",
+   "name": "Insurance eligibility verification",
+   "description": "Real-time and batch insurance eligibility verification delivered into the hospital EHR through one API.",
+   "url": "https://payerkart.com/eligibility-verification/",
+   "provider": {
+    "@id": "https://payerkart.com/#org"
+   },
+   "areaServed": "US",
+   "serviceType": "Insurance eligibility verification",
+   "audience": {
+    "@type": "Audience",
+    "audienceType": "Hospitals"
+   }
+  },
+  {
    "@type": "BreadcrumbList",
    "itemListElement": [
     {
@@ -61,8 +76,8 @@
     {
      "@type": "ListItem",
      "position": 2,
-     "name": "EHR integration",
-     "item": "https://payerkart.com/ehr-integration/"
+     "name": "Eligibility verification",
+     "item": "https://payerkart.com/eligibility-verification/"
     }
    ]
   },
@@ -71,34 +86,42 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Which EHRs does Payerkart work with?",
+     "name": "How fast is a Payerkart eligibility check?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "eClinicalWorks was the first adapter. Payerkart connects to an EHR or integration engine through a standard adapter contract, so adding another EHR doesn't change the core API. Tell us which EHR you run and we'll confirm the path."
+      "text": "At the practice live on Payerkart today, a check that took about 15 minutes through a payer portal now returns in under a second. Response times depend on the payer, so long-running checks can also be handled asynchronously with a webhook or polling."
      }
     },
     {
      "@type": "Question",
-     "name": "Do our staff need to learn a new tool?",
+     "name": "What does an eligibility response include?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "No. Results are delivered into the EHR screens your front desk and billing team already use."
+      "text": "Coverage status, plan type and plan dates, copay, deductible used and remaining, in-network or out-of-network status, and coverage by service category, in the same JSON shape for every payer."
      }
     },
     {
      "@type": "Question",
-     "name": "What happens if a push to the EHR fails?",
+     "name": "Can we verify eligibility without a member ID?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "The result stays available through the API with retry options, and the adapter status shows the last successful push and any failures."
+      "text": "Yes. You can identify the patient by member ID, or by name and date of birth plus payer details."
      }
     },
     {
      "@type": "Question",
-     "name": "How does our IT team test before go-live?",
+     "name": "Can we check tomorrow's appointments in advance?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "With a sandbox: test keys and canned payer responses, so you can integrate before connecting to live payers."
+      "text": "Yes. Overnight batch verification checks the next day's appointment list and flags patients with inactive or expired coverage by API, webhook and the admin screen, so staff can follow up before the visit."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Payerkart replace our clearinghouse?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Payerkart is built on top of an established clearinghouse connection. It adds one consistent API and schema above it, plus the delivery into your EHR."
      }
     }
    ]
@@ -111,7 +134,7 @@
 <header class="site-header">
   <div class="wrap">
     <a href="/" class="brand" aria-label="Payerkart home"><svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg><span>Payerkart</span></a>
-    <nav class="nav" aria-label="Main"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/" aria-current="page">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
+    <nav class="nav" aria-label="Main"><a href="/eligibility-verification/" aria-current="page">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
     <div class="header-cta">
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
       <a href="#demo" data-demo class="btn btn-sm">Book a Demo →</a>
@@ -120,47 +143,64 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
 </header>
 <main>
-<div class="wrap crumbs"><a href="/">Home</a> / EHR integration</div>
+<div class="wrap crumbs"><a href="/">Home</a> / Eligibility verification</div>
 <section class="wrap page-hero">
-  <span class="eyebrow">EHR integration</span>
-  <h1>Payer answers inside the EHR your staff already use.</h1>
-  <p class="lead">Payerkart plugs into your hospital's EHR through an adapter, so eligibility and claim status results appear next to the patient. No separate payer logins, no second screen, no bots clicking through portals.</p>
-  <div class="btn-row"><a href="#demo" data-demo class="btn">Talk to us about your EHR →</a><a href="/docs/" class="btn-ghost">Read the docs</a></div>
+  <span class="eyebrow">Eligibility verification API</span>
+  <h1>Real-time insurance eligibility verification, inside your EHR.</h1>
+  <p class="lead">Confirm coverage, copay and deductible before the patient reaches the front desk, without opening a payer portal. One API call returns the same structured result for every payer, straight into the screen your staff already use.</p>
+  <div class="btn-row"><a href="#demo" data-demo class="btn">Book a Demo →</a><a href="/docs/#eligibility" class="btn-ghost">See the endpoint</a></div>
+</section>
+<section class="wrap" style="padding-bottom:48px;">
+  <div class="stats">
+    <div><b>15 min → &lt;1 sec</b><span>per check, at a live Payerkart practice</span></div>
+    <div><b>1 schema</b><span>same fields for every payer</span></div>
+    <div><b>Sync or async</b><span>webhook or polling for slow payers</span></div>
+    <div><b>Every check logged</b><span>who, when, which patient</span></div>
+  </div>
 </section>
 
 <section class="section"><div class="wrap">
-  <h2>Where Payerkart sits</h2>
-  <p class="sub">Your EHR talks to one API. Payerkart handles the payer side through an established clearinghouse connection.</p>
-  <div class="card" style="padding:28px;overflow-x:auto;">
-    <svg viewBox="0 0 900 150" width="100%" style="min-width:640px;" role="img" aria-label="Diagram: Hospital EHR connects through the Payerkart adapter and API to a clearinghouse, which connects to commercial and government payers.">
-      <g font-family="IBM Plex Mono, monospace" font-size="15" text-anchor="middle">
-        <rect x="10" y="40" width="180" height="70" rx="10" fill="var(--surface-2)" stroke="var(--line)"/><text x="100" y="72" fill="var(--ink)">Hospital EHR</text><text x="100" y="94" fill="var(--muted)" font-size="12">front desk · billing</text>
-        <rect class="pk-pulse" x="250" y="40" width="190" height="70" rx="10" fill="var(--accent-soft)" stroke="var(--accent)"/><text x="345" y="72" fill="var(--ink)">Payerkart adapter</text><text x="345" y="94" fill="var(--muted)" font-size="12">+ one API · one schema</text>
-        <rect x="500" y="40" width="170" height="70" rx="10" fill="var(--surface-2)" stroke="var(--line)"/><text x="585" y="80" fill="var(--ink)">Clearinghouse</text>
-        <rect x="730" y="40" width="160" height="70" rx="10" fill="var(--surface-2)" stroke="var(--line)"/><text x="810" y="72" fill="var(--ink)">Payers</text><text x="810" y="94" fill="var(--muted)" font-size="12">commercial · govt</text>
-        <g class="pk-flow" stroke="var(--accent)" stroke-width="2"><line x1="190" y1="75" x2="250" y2="75"/><line x1="440" y1="75" x2="500" y2="75"/><line x1="670" y1="75" x2="730" y2="75"/></g>
-      </g>
-    </svg>
+  <h2>What one eligibility check returns</h2>
+  <p class="sub">Not just a pass or fail: the details your front desk would otherwise look up in a portal and re-type by hand.</p>
+  <div class="table-wrap"><table>
+    <tr><th>Field</th><th>What staff see</th></tr>
+    <tr><td>Coverage status</td><td>Active or inactive, as of the moment of the check</td></tr>
+    <tr><td>Plan &amp; plan dates</td><td>Plan type (for example PPO), start and end dates</td></tr>
+    <tr><td>Cost share</td><td>Copay, deductible used and remaining</td></tr>
+    <tr><td>Network status</td><td>In-network or out-of-network for your provider</td></tr>
+    <tr><td>Coverage by service</td><td>Office visit, emergency room and other service categories</td></tr>
+    <tr><td>Actionable errors</td><td>Invalid member ID, payer outage or inactive plan, each as a structured code with a plain-language message</td></tr>
+  </table></div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <h2>Built for how hospitals actually verify coverage</h2>
+  <div class="grid g3" style="margin-top:24px;">
+    <div class="card"><span class="tag">At scheduling</span><h3>Check when the visit is booked</h3><p>Catch a lapsed plan days ahead, while there is still time to talk to the patient about coverage.</p></div>
+    <div class="card"><span class="tag">Overnight</span><h3>Batch-verify tomorrow's list</h3><p>Schedule the next day's appointments to be checked overnight. Inactive or expired coverage is flagged by API, webhook and the admin screen.</p></div>
+    <div class="card"><span class="tag">At check-in</span><h3>Re-check in under a second</h3><p>A final real-time check at the front desk closes the gap between booking and the visit.</p></div>
+    <div class="card"><span class="tag">No member ID?</span><h3>Name + date of birth</h3><p>Identify the patient by member ID, or by name and date of birth plus payer details.</p></div>
+    <div class="card"><span class="tag">Card capture</span><h3>Insurance card scan</h3><p>Upload a photo or PDF of the card. Payer, member ID and plan details are extracted for staff to confirm before the check runs.</p></div>
+    <div class="card"><span class="tag">Audit</span><h3>Every check on record</h3><p>Each request is logged with who made it, when and for which patient. Searchable by API key, patient, date and endpoint.</p></div>
   </div>
 </div></section>
 
 <section class="section"><div class="wrap">
-  <h2>Built for hospital IT</h2>
-  <div class="grid g3" style="margin-top:24px;">
-    <div class="card"><h3>Standard adapter contract</h3><p>Connects Payerkart to your EHR or integration engine. eClinicalWorks was the first adapter; new EHRs plug into the same contract.</p></div>
-    <div class="card"><h3>Admin console</h3><p>Manage scoped API keys, see usage and watch adapter health: active adapter, last successful push, failures.</p></div>
-    <div class="card"><h3>Sandbox first</h3><p>Test keys and canned payer responses let IT validate the integration before go-live.</p></div>
-    <div class="card"><h3>Failure-safe delivery</h3><p>Retries with backoff, and results stay available through the API if an EHR push fails, so an outage never fails silently.</p></div>
-    <div class="card"><h3>Role-based access</h3><p>Access is role-based and enforced on the server. Every request is logged.</p></div>
-    <div class="card"><h3>Versioned API</h3><p>Versioned endpoints and idempotent writes from day one, so upgrades don't break your integration.</p></div>
-  </div>
+  <h2>How it works</h2>
+  <ol class="steps" style="margin-top:24px;">
+    <li><b>Your EHR sends the patient and payer</b><span>Through the Payerkart adapter for your EHR, or a direct call to <code>POST /v1/eligibility</code>.</span></li>
+    <li><b>Payerkart queries the payer through the clearinghouse</b><span>One integration on your side, regardless of which payer is on the other end.</span></li>
+    <li><b>A normalized result comes back</b><span>Same JSON for every payer, synchronously or by webhook or polling.</span></li>
+    <li><b>The result lands next to the patient in the EHR</b><span>No portal login, no re-typing. If an EHR push fails, the result stays available through the API with retry options.</span></li>
+  </ol>
+  <p style="margin-top:22px;"><a href="/ehr-integration/" class="more">How the EHR adapter works →</a> &nbsp; <a href="/compare/payerkart-vs-payer-portals/" class="more">Compare with payer portals →</a></p>
 </div></section>
 
 <section class="section"><div class="wrap narrow">
-  <h2>EHR integration FAQ</h2>
-  <div class="faq"><details><summary>Which EHRs does Payerkart work with?</summary><p>eClinicalWorks was the first adapter. Payerkart connects to an EHR or integration engine through a standard adapter contract, so adding another EHR doesn&#x27;t change the core API. Tell us which EHR you run and we&#x27;ll confirm the path.</p></details><details><summary>Do our staff need to learn a new tool?</summary><p>No. Results are delivered into the EHR screens your front desk and billing team already use.</p></details><details><summary>What happens if a push to the EHR fails?</summary><p>The result stays available through the API with retry options, and the adapter status shows the last successful push and any failures.</p></details><details><summary>How does our IT team test before go-live?</summary><p>With a sandbox: test keys and canned payer responses, so you can integrate before connecting to live payers.</p></details></div>
+  <h2>Eligibility verification FAQ</h2>
+  <div class="faq"><details><summary>How fast is a Payerkart eligibility check?</summary><p>At the practice live on Payerkart today, a check that took about 15 minutes through a payer portal now returns in under a second. Response times depend on the payer, so long-running checks can also be handled asynchronously with a webhook or polling.</p></details><details><summary>What does an eligibility response include?</summary><p>Coverage status, plan type and plan dates, copay, deductible used and remaining, in-network or out-of-network status, and coverage by service category, in the same JSON shape for every payer.</p></details><details><summary>Can we verify eligibility without a member ID?</summary><p>Yes. You can identify the patient by member ID, or by name and date of birth plus payer details.</p></details><details><summary>Can we check tomorrow&#x27;s appointments in advance?</summary><p>Yes. Overnight batch verification checks the next day&#x27;s appointment list and flags patients with inactive or expired coverage by API, webhook and the admin screen, so staff can follow up before the visit.</p></details><details><summary>Does Payerkart replace our clearinghouse?</summary><p>No. Payerkart is built on top of an established clearinghouse connection. It adds one consistent API and schema above it, plus the delivery into your EHR.</p></details></div>
 </div></section>
-<div class="wrap"><div class="cta-band"><div><h2>Which EHR do you run?</h2><p>Tell us your EHR and integration engine and we'll walk through the adapter path and sandbox setup.</p></div>
+<div class="wrap"><div class="cta-band"><div><h2>See Payerkart inside your EHR</h2><p>Book a demo to walk through your workflow and get sandbox access. No payer contracts to negotiate before your first request.</p></div>
 <a href="#demo" data-demo class="btn">Book a Demo →</a></div></div>
 </main>
 <footer class="site-footer">
