@@ -11,22 +11,22 @@
   gtag('js', new Date());
   gtag('config', 'G-5KS54TFG1N');
 </script>
-<title>Claim Status Tracking API for Hospitals | Payerkart</title>
-<meta name="description" content="Track insurance claim status inside your EHR. Poll or get webhooks when adjudication changes, with denial reasons translated into plain language.">
+<title>Payerkart vs Payer Portals: Eligibility &amp; Claim Status Compared</title>
+<meta name="description" content="Compare checking eligibility and claim status through payer portals with Payerkart&#x27;s API: logins, data entry, time per check, result format and audit trail.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://payerkart.com/claim-status/">
+<link rel="canonical" href="https://payerkart.com/compare/payerkart-vs-payer-portals/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:site_name" content="Payerkart">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Claim Status Tracking API for Hospitals | Payerkart">
-<meta property="og:description" content="Track insurance claim status inside your EHR. Poll or get webhooks when adjudication changes, with denial reasons translated into plain language.">
-<meta property="og:url" content="https://payerkart.com/claim-status/">
+<meta property="og:title" content="Payerkart vs Payer Portals: Eligibility &amp; Claim Status Compared">
+<meta property="og:description" content="Compare checking eligibility and claim status through payer portals with Payerkart&#x27;s API: logins, data entry, time per check, result format and audit trail.">
+<meta property="og:url" content="https://payerkart.com/compare/payerkart-vs-payer-portals/">
 <meta property="og:image" content="https://payerkart.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Claim Status Tracking API for Hospitals | Payerkart">
-<meta name="twitter:description" content="Track insurance claim status inside your EHR. Poll or get webhooks when adjudication changes, with denial reasons translated into plain language.">
+<meta name="twitter:title" content="Payerkart vs Payer Portals: Eligibility &amp; Claim Status Compared">
+<meta name="twitter:description" content="Compare checking eligibility and claim status through payer portals with Payerkart&#x27;s API: logins, data entry, time per check, result format and audit trail.">
 <meta name="twitter:image" content="https://payerkart.com/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,21 +50,6 @@
    }
   },
   {
-   "@type": "Service",
-   "name": "Claim status tracking",
-   "description": "Claim status inquiry and change notifications delivered into the hospital EHR through one API.",
-   "url": "https://payerkart.com/claim-status/",
-   "provider": {
-    "@id": "https://payerkart.com/#org"
-   },
-   "areaServed": "US",
-   "serviceType": "Claim status tracking",
-   "audience": {
-    "@type": "Audience",
-    "audienceType": "Hospitals"
-   }
-  },
-  {
    "@type": "BreadcrumbList",
    "itemListElement": [
     {
@@ -76,8 +61,8 @@
     {
      "@type": "ListItem",
      "position": 2,
-     "name": "Claim status tracking",
-     "item": "https://payerkart.com/claim-status/"
+     "name": "Payerkart vs payer portals",
+     "item": "https://payerkart.com/compare/payerkart-vs-payer-portals/"
     }
    ]
   },
@@ -86,34 +71,18 @@
    "mainEntity": [
     {
      "@type": "Question",
-     "name": "Which claim statuses does Payerkart report?",
+     "name": "Are payer portals free?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Where a claim stands with the payer: submitted, in review or adjudication, paid, or denied, with remittance detail linked to the claim once it is paid."
+      "text": "Logging in is free, but staff time isn't. The 2024 CAQH Index estimates a partially electronic eligibility check (portal or IVR) costs a medical provider about $4.46, versus about $2.00 fully electronic."
      }
     },
     {
      "@type": "Question",
-     "name": "How do we get notified when a claim status changes?",
+     "name": "Do we still need portals with Payerkart?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Poll the claim status endpoint, or subscribe to a webhook that fires when the payer's adjudication status changes."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "What happens when a payer rejects a claim?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "The payer's code is translated into a plain-language explanation and a suggested fix, for example that the date of birth is missing or doesn't match the payer's records."
-     }
-    },
-    {
-     "@type": "Question",
-     "name": "Does Payerkart submit claims?",
-     "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "No. Payerkart tracks the status of claims you have already sent through your existing billing workflow. Its scope is eligibility verification and claim status tracking."
+      "text": "For routine eligibility and claim status checks, no. Some payer-specific tasks outside that scope may still need a portal."
      }
     }
    ]
@@ -126,7 +95,7 @@
 <header class="site-header">
   <div class="wrap">
     <a href="/" class="brand" aria-label="Payerkart home"><svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg><span>Payerkart</span></a>
-    <nav class="nav" aria-label="Main"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/" aria-current="page">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
+    <nav class="nav" aria-label="Main"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
     <div class="header-cta">
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
       <a href="#demo" data-demo class="btn btn-sm">Book a Demo →</a>
@@ -135,42 +104,31 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
 </header>
 <main>
-<div class="wrap crumbs"><a href="/">Home</a> / Claim status tracking</div>
+<div class="wrap crumbs"><a href="/">Home</a> / Payerkart vs payer portals</div>
 <section class="wrap page-hero">
-  <span class="eyebrow">Claim status API</span>
-  <h1>Know where every claim stands, without calling the payer.</h1>
-  <p class="lead">Look up any claim's status, or get a webhook the moment adjudication changes. When a payer rejects or asks for follow-up, your billing team gets a plain-language reason and suggested fix, not a raw payer code.</p>
-  <div class="btn-row"><a href="#demo" data-demo class="btn">Book a Demo →</a><a href="/docs/#claim-status" class="btn-ghost">See the endpoint</a></div>
+  <span class="eyebrow">Comparison</span>
+  <h1>Payerkart vs payer portals for eligibility and claim status</h1>
+  <p class="lead">Portals work, one payer at a time. Here's how checking eligibility and claim status through Payerkart compares with logging into each payer's portal.</p>
 </section>
-
-<section class="section"><div class="wrap">
-  <h2>Status your billing team can read</h2>
-  <p class="sub">Example result states, as returned by the API. Illustrative data.</p>
-  <div class="grid g4">
-    <div class="card"><span class="tag">Submitted</span><p>Claim received by the payer and queued.</p></div>
-    <div class="card"><span class="tag">In review</span><p>In adjudication with the payer.</p></div>
-    <div class="card"><span class="tag">Paid</span><p>Claim adjudicated: $420 paid, remittance detail attached.</p></div>
-    <div class="card"><span class="tag" style="color:var(--warn);">Denied</span><p>Date of birth doesn't match the payer's record. Correct DOB and follow up with the payer.</p></div>
-  </div>
-</div></section>
-
-<section class="section"><div class="wrap">
-  <h2>What you get</h2>
-  <div class="grid g3" style="margin-top:24px;">
-    <div class="card"><h3>Poll or subscribe</h3><p>Call <code>GET /v1/claims/:id</code> on demand, or receive a webhook when the status changes.</p></div>
-    <div class="card"><h3>Plain-language reasons</h3><p>Rejection and follow-up codes come back with an explanation and a suggested fix your team can act on.</p></div>
-    <div class="card"><h3>Remittance detail</h3><p>Payment and remittance data linked to each claim, in the same standardized schema, so billing doesn't read raw remittance files.</p></div>
-    <div class="card"><h3>One schema, every payer</h3><p>The same status fields regardless of which payer adjudicates the claim.</p></div>
-    <div class="card"><h3>Inside the EHR</h3><p>Status lands where your billing team already works, through the Payerkart EHR adapter.</p></div>
-    <div class="card"><h3>Logged and scoped</h3><p>Every status request is recorded with who made it and when. Keys are scoped and revocable.</p></div>
-  </div>
-</div></section>
-
+<section class="wrap" style="padding-bottom:20px;">
+  <div class="table-wrap"><table>
+    <tr><th></th><th>Payer portals</th><th>Payerkart</th></tr>
+    <tr><td>Logins</td><td>One per payer, per staff member</td><td>One API key for your EHR integration</td></tr>
+    <tr><td>Data entry</td><td>Patient details re-typed into each portal</td><td>Sent from the EHR automatically</td></tr>
+    <tr><td>Time per eligibility check</td><td>~15 minutes at our live practice before Payerkart</td><td>Under a second at the same practice</td></tr>
+    <tr><td>Result format</td><td>Different layout for every payer</td><td>One schema for every payer</td></tr>
+    <tr><td>Where results live</td><td>In the portal, copied by hand</td><td>Inside the EHR, next to the patient</td></tr>
+    <tr><td>Denial reasons</td><td>Payer codes to look up</td><td>Plain-language reason and suggested fix</td></tr>
+    <tr><td>Batch checks</td><td>Manual, patient by patient</td><td>Overnight verification of tomorrow's appointments</td></tr>
+    <tr><td>Audit trail</td><td>Scattered across portals</td><td>Every request logged and searchable</td></tr>
+  </table></div>
+</section>
 <section class="section"><div class="wrap narrow">
-  <h2>Claim status FAQ</h2>
-  <div class="faq"><details><summary>Which claim statuses does Payerkart report?</summary><p>Where a claim stands with the payer: submitted, in review or adjudication, paid, or denied, with remittance detail linked to the claim once it is paid.</p></details><details><summary>How do we get notified when a claim status changes?</summary><p>Poll the claim status endpoint, or subscribe to a webhook that fires when the payer&#x27;s adjudication status changes.</p></details><details><summary>What happens when a payer rejects a claim?</summary><p>The payer&#x27;s code is translated into a plain-language explanation and a suggested fix, for example that the date of birth is missing or doesn&#x27;t match the payer&#x27;s records.</p></details><details><summary>Does Payerkart submit claims?</summary><p>No. Payerkart tracks the status of claims you have already sent through your existing billing workflow. Its scope is eligibility verification and claim status tracking.</p></details></div>
+  <h2>FAQ</h2>
+  <div class="faq"><details><summary>Are payer portals free?</summary><p>Logging in is free, but staff time isn&#x27;t. The 2024 CAQH Index estimates a partially electronic eligibility check (portal or IVR) costs a medical provider about $4.46, versus about $2.00 fully electronic.</p></details><details><summary>Do we still need portals with Payerkart?</summary><p>For routine eligibility and claim status checks, no. Some payer-specific tasks outside that scope may still need a portal.</p></details></div>
+  <p style="margin-top:24px;"><a class="more" href="/blog/true-cost-of-manual-eligibility-checks.html">The real cost of checking eligibility through the portal →</a></p>
 </div></section>
-<div class="wrap"><div class="cta-band"><div><h2>Stop chasing claim status by phone</h2><p>Book a demo to walk through your workflow and get sandbox access. No payer contracts to negotiate before your first request.</p></div>
+<div class="wrap"><div class="cta-band"><div><h2>See Payerkart inside your EHR</h2><p>Book a demo to walk through your workflow and get sandbox access. No payer contracts to negotiate before your first request.</p></div>
 <a href="#demo" data-demo class="btn">Book a Demo →</a></div></div>
 </main>
 <footer class="site-footer">
