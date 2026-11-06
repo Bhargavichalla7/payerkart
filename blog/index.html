@@ -29,7 +29,7 @@
 <meta name="twitter:image" content="https://payerkart.com/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.svg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,27 +41,15 @@
 </script>
 <style>
 :root{
-  --ink:#14231D; --paper:#EFF1EA; --surface:#FFFFFF; --surface-2:#E7EAE1;
-  --accent:#1E6F52; --accent-strong:#123D2C; --accent-soft:#DCEAE1;
-  --warn:#B5581F; --warn-soft:#F3E3D3;
-  --line:#D3D0C1; --muted:#5B6660;
-  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ink:#0B1020; --paper:#F7F8FC; --surface:#FFFFFF; --surface-2:#EEF1F8;
+  --accent:#4F46E5; --accent-strong:#3730A3; --accent-soft:#E7E8FF;
+  --warn:#D9480F; --warn-soft:#FFE8DD;
+  --line:#E2E6F0; --muted:#5A6378;
+  --sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ink:#ECEFE7; --paper:#0F1713; --surface:#152018; --surface-2:#1B271F;
-    --accent:#57D0A0; --accent-strong:#2FA37A; --accent-soft:#1B342A;
-    --warn:#E08B4E; --warn-soft:#3A2718;
-    --line:#28342C; --muted:#93A19A;
-  }
-}
-:root[data-theme="dark"]{
-  --ink:#ECEFE7; --paper:#0F1713; --surface:#152018; --surface-2:#1B271F;
-  --accent:#57D0A0; --accent-strong:#2FA37A; --accent-soft:#1B342A;
-  --warn:#E08B4E; --warn-soft:#3A2718;
-  --line:#28342C; --muted:#93A19A;
-}
+
+
 *{box-sizing:border-box;}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);}
 a{color:var(--accent);text-decoration:none;}
@@ -74,13 +62,14 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 @media (max-width:680px){ .post-grid{grid-template-columns:1fr;} }
 </style>
 <link rel="stylesheet" href="/motion.css">
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
 
 <div style="width:100%;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);min-height:100%;">
 
 <!-- HEADER -->
-<div style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
+<div class="pk-header" style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
   <div style="max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
     <a href="/" style="display:flex;align-items:center;gap:10px;">
       <svg width="26" height="26" viewBox="0 0 44 44" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg>
