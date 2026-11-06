@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://payerkart.com/sitemap.xml

@@ -11,22 +11,64 @@
   gtag('js', new Date());
   gtag('config', 'G-5KS54TFG1N');
 </script>
-<title>Payerkart — Healthcare Payer Infrastructure API</title>
-<meta name="description" content="Verify insurance eligibility and track claim status inside your hospital's EHR through one API, backed by real clearinghouse connectivity.">
+<title>Payerkart | Eligibility & Claim Status API for Hospital EHRs</title>
+<meta name="description" content="Verify insurance eligibility and track claim status inside your hospital's EHR through one API, backed by real clearinghouse connectivity. Live in production.">
 <meta name="google-site-verification" content="l2rVyKTMptO1igdLxXalkTr6IJ1aGl0IwMnWhwPIuKk" />
+<link rel="canonical" href="https://payerkart.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:site_name" content="Payerkart">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Payerkart | Eligibility & Claim Status API for Hospital EHRs">
+<meta property="og:description" content="Verify insurance eligibility and track claim status inside your hospital's EHR through one API, backed by real clearinghouse connectivity. Live in production.">
+<meta property="og:url" content="https://payerkart.com/">
+<meta property="og:image" content="https://payerkart.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Payerkart | Eligibility & Claim Status API for Hospital EHRs">
+<meta name="twitter:description" content="Verify insurance eligibility and track claim status inside your hospital's EHR through one API, backed by real clearinghouse connectivity. Live in production.">
+<meta name="twitter:image" content="https://payerkart.com/assets/og-image.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.svg">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Payerkart",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Web",
-  "description": "Healthcare payer infrastructure API that works with your hospital's EHR for eligibility verification and claim status tracking, backed by clearinghouse connectivity.",
-  "url": "https://payerkart.com",
-  "offers": { "@type": "Offer", "priceCurrency": "USD", "price": "0" }
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://payerkart.com/#org",
+   "name": "Payerkart",
+   "url": "https://payerkart.com/",
+   "logo": "https://payerkart.com/favicon.svg",
+   "email": "founders@payerkart.com",
+   "parentOrganization": {
+    "@type": "Organization",
+    "name": "Blue Matrix Connect"
+   }
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://payerkart.com/#website",
+   "url": "https://payerkart.com/",
+   "name": "Payerkart",
+   "publisher": {
+    "@id": "https://payerkart.com/#org"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "name": "Payerkart",
+   "applicationCategory": "BusinessApplication",
+   "applicationSubCategory": "Healthcare payer infrastructure API",
+   "operatingSystem": "Web",
+   "description": "API that delivers insurance eligibility verification and claim status tracking into the hospital's EHR, backed by clearinghouse connectivity.",
+   "url": "https://payerkart.com/",
+   "publisher": {
+    "@id": "https://payerkart.com/#org"
+   }
+  }
+ ]
 }
 </script>
 <style>
@@ -61,7 +103,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 ::selection{background:var(--accent-soft);}
 .mono{font-family:var(--mono);}
 .nav-desktop{display:none;}
-@media (min-width:760px){ .nav-desktop{display:inline-block;} }
+@media (min-width:1000px){ .nav-desktop{display:inline-block;} }
 .cap-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
 @media (max-width:640px){ .cap-grid{grid-template-columns:1fr;} }
 .steps-grid{grid-template-columns:repeat(3,minmax(0,1fr));}
@@ -74,8 +116,9 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 .faq-answer{display:none;margin:0 0 20px;color:var(--muted);font-size:14.5px;line-height:1.65;max-width:64ch;}
 .faq-item.open .faq-answer{display:block;}
 .faq-item.open .faq-mark{transform:rotate(0deg);}
-#top,#capabilities,#product,#features,#why,#api,#security,#faq{scroll-margin-top:76px;}
+#top,#start,#capabilities,#product,#features,#why,#api,#security,#faq{scroll-margin-top:76px;}
 </style>
+<link rel="stylesheet" href="/assets/motion.css">
 </head>
 <body>
 
@@ -88,17 +131,16 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <svg width="26" height="26" viewBox="0 0 44 44" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg>
       <span style="font-family:var(--mono);font-weight:600;font-size:17px;letter-spacing:-0.01em;">Payerkart</span>
     </a>
-    <div style="display:flex;align-items:center;gap:28px;" class="mono">
-      <a href="#capabilities" class="nav-desktop" style="font-size:14px;color:var(--ink);">Product</a>
-      <a href="#features" class="nav-desktop" style="font-size:14px;color:var(--ink);">Features</a>
-      <a href="#why" class="nav-desktop" style="font-size:14px;color:var(--ink);">Why Payerkart</a>
-      <a href="#api" class="nav-desktop" style="font-size:14px;color:var(--ink);">API Preview</a>
-      <a href="#security" class="nav-desktop" style="font-size:14px;color:var(--ink);">Security</a>
-      <a href="#faq" class="nav-desktop" style="font-size:14px;color:var(--ink);">FAQ</a>
+    <div style="display:flex;align-items:center;gap:20px;white-space:nowrap;" class="mono">
+      <a href="/eligibility-verification/" class="nav-desktop" style="font-size:14px;color:var(--ink);">Eligibility</a>
+      <a href="/claim-status/" class="nav-desktop" style="font-size:14px;color:var(--ink);">Claim status</a>
+      <a href="/ehr-integration/" class="nav-desktop" style="font-size:14px;color:var(--ink);">EHR integration</a>
+      <a href="/case-studies/" class="nav-desktop" style="font-size:14px;color:var(--ink);">Customers</a>
+      <a href="/security/" class="nav-desktop" style="font-size:14px;color:var(--ink);">Security</a>
+      <a href="/docs/" class="nav-desktop" style="font-size:14px;color:var(--ink);">Docs</a>
       <a href="/blog/" class="nav-desktop" style="font-size:14px;color:var(--ink);">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
-      <a href="#api" style="font-size:13px;font-family:var(--mono);color:var(--ink);border:1px solid var(--line);padding:9px 14px;border-radius:6px;">See API Preview</a>
       <button onclick="openDemoModal()" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);border:none;padding:10px 16px;border-radius:6px;">Book a Demo →</button>
     </div>
   </div>
@@ -113,7 +155,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     </div>
     <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">Eligibility and claim status, built into your hospital's EHR.</h1>
     <p style="margin:0;font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;">
-      Payerkart plugs into your hospital's existing EHR through one API, backed by real clearinghouse connectivity. Staff verify coverage and track claims without leaving the screen they already work in — no separate payer logins, no re-typing patient details, and one integration that works across every payer.
+      Payerkart plugs into your hospital's existing EHR through one API, backed by real clearinghouse connectivity. Staff verify coverage and track claims without leaving the screen they already work in — no separate payer logins, no re-typing patient details, and one integration that works across commercial and government payers.
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:6px;">
       <button onclick="openDemoModal()" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);border:none;padding:13px 22px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;">Book a Demo →</button>
@@ -121,7 +163,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     </div>
     <div style="display:flex;flex-direction:column;gap:8px;padding-top:18px;border-top:1px solid var(--line);margin-top:8px;">
       <div class="mono" style="font-size:12px;color:var(--muted);">→ Works with your hospital's EHR</div>
-      <div class="mono" style="font-size:12px;color:var(--muted);">→ One schema, every payer</div>
+      <div class="mono" style="font-size:12px;color:var(--muted);">→ One schema across payers</div>
       <div class="mono" style="font-size:12px;color:var(--muted);">→ Live with a real practice today</div>
     </div>
   </div>
@@ -189,7 +231,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
   <div style="max-width:1180px;margin:0 auto;padding:22px 24px;display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;align-items:center;">
     <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
       <span class="mono" style="font-size:24px;font-weight:600;color:var(--accent-strong);">15 min → &lt;1 sec</span>
-      <span class="mono" style="font-size:12px;color:var(--muted);">per eligibility check, in live use at a Payerkart practice</span>
+      <span class="mono" style="font-size:12px;color:var(--muted);">per eligibility check, in live use at a Payerkart practice · <a href="/case-studies/eligibility-checks-15-minutes-to-under-a-second/">Read the case study →</a></span>
     </div>
     <div style="display:flex;gap:26px;flex-wrap:wrap;" class="mono">
       <span style="font-size:12px;color:var(--ink);">Designed for real-time eligibility</span>
@@ -466,7 +508,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
         <span class="mono" style="font-size:12px;color:var(--accent);flex:none;padding-top:2px;">01</span>
         <div>
           <div style="font-size:14.5px;font-weight:500;margin-bottom:2px;">One product, one problem</div>
-          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Payerkart exists to fix one thing: the fragmented, manual way eligibility and claims work happens today, by connecting your hospital's EHR to every payer through one API.</div>
+          <div style="font-size:13.5px;color:var(--muted);line-height:1.55;">Payerkart exists to fix one thing: the fragmented, manual way eligibility and claims work happens today, by connecting your hospital's EHR to commercial and government payers through one API.</div>
         </div>
       </div>
       <div style="display:flex;gap:12px;align-items:flex-start;">
@@ -556,7 +598,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <div style="flex:1 1 280px;min-width:240px;">
       <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">Security &amp; compliance</div>
       <h2 style="margin:0 0 10px;font-size:24px;font-weight:600;">Handled like the healthcare data it is</h2>
-      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:48ch;">Payerkart is built around HIPAA-aligned data handling — encryption in transit and at rest, scoped access, and full audit logs on every request.</p>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:48ch;">Payerkart is built around HIPAA-aligned data handling — encryption in transit and at rest, scoped access, and full audit logs on every request. <a href="/security/">Read more about security →</a></p>
     </div>
     <div class="sec-grid" style="flex:1 1 320px;min-width:240px;display:grid;gap:16px;">
       <div class="mono" style="font-size:13px;display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);">✓</span>Encrypted in transit &amp; at rest</div>
@@ -564,6 +606,18 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <div class="mono" style="font-size:13px;display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);">✓</span>Full request audit logs</div>
       <div class="mono" style="font-size:13px;display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);">✓</span>BAAs available on request</div>
     </div>
+  </div>
+</div>
+
+<!-- EXPLORE -->
+<div style="max-width:1180px;margin:0 auto;padding:64px 24px 8px;width:100%;">
+  <div class="mono" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-strong);margin-bottom:10px;">Explore</div>
+  <h2 style="margin:0 0 24px;font-size:30px;font-weight:600;">Go deeper</h2>
+  <div style="display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));">
+    <a href="/eligibility-verification/" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>Eligibility verification</b><br><span style="color:var(--muted);font-size:14px;">Coverage, copay and deductible in under a second.</span></a>
+    <a href="/claim-status/" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>Claim status tracking</b><br><span style="color:var(--muted);font-size:14px;">Status changes and plain-language denial reasons.</span></a>
+    <a href="/ehr-integration/" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>EHR integration</b><br><span style="color:var(--muted);font-size:14px;">How the adapter fits your EHR. eClinicalWorks first.</span></a>
+    <a href="/compare/payerkart-vs-payer-portals/" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>Payerkart vs payer portals</b><br><span style="color:var(--muted);font-size:14px;">Side-by-side, check by check.</span></a>
   </div>
 </div>
 
@@ -593,7 +647,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
         <span style="font-size:15.5px;font-weight:500;">Which payers are supported?</span>
         <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
       </button>
-      <p class="faq-answer">Payerkart connects to commercial and government payers across the US. New payers are added on an ongoing basis; check the docs for current coverage before going live.</p>
+      <p class="faq-answer">Payerkart connects to commercial and government payers across the US. New payers are added on an ongoing basis; see <a href="/payer-coverage/">payer coverage</a> and confirm your payers before going live.</p>
     </div>
 
     <div class="faq-item" style="border-bottom:1px solid var(--line);">
@@ -617,7 +671,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
         <span style="font-size:15.5px;font-weight:500;">What does pricing look like?</span>
         <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
       </button>
-      <p class="faq-answer">Pricing is usage-based and scales with the workflows you run. Reach out through Start Building to get a plan sized to your volume.</p>
+      <p class="faq-answer">Pricing is usage-based and scales with the workflows you run. Book a demo to get a plan sized to your volume.</p>
     </div>
 
   </div>
@@ -640,17 +694,17 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
   <div style="max-width:1180px;margin:0 auto;padding:32px 24px 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);">
     <span class="mono" style="font-size:12px;color:var(--muted);">© 2026 Payerkart, a product of Blue Matrix Connect. Healthcare payer infrastructure.</span>
     <div style="display:flex;gap:8px 20px;flex-wrap:wrap;" class="mono">
-      <a href="#features" style="font-size:12px;color:var(--muted);">Features</a>
-      <a href="#capabilities" style="font-size:12px;color:var(--muted);">Product</a>
-      <a href="#why" style="font-size:12px;color:var(--muted);">Why Payerkart</a>
-      <a href="#api" style="font-size:12px;color:var(--muted);">API Preview</a>
-      <a href="#security" style="font-size:12px;color:var(--muted);">Security</a>
-      <a href="#faq" style="font-size:12px;color:var(--muted);">FAQ</a>
+      <a href="/eligibility-verification/" style="font-size:12px;color:var(--muted);">Eligibility verification</a>
+      <a href="/claim-status/" style="font-size:12px;color:var(--muted);">Claim status</a>
+      <a href="/ehr-integration/" style="font-size:12px;color:var(--muted);">EHR integration</a>
+      <a href="/for-hospitals/" style="font-size:12px;color:var(--muted);">For hospitals</a>
+      <a href="/payer-coverage/" style="font-size:12px;color:var(--muted);">Payer coverage</a>
+      <a href="/case-studies/" style="font-size:12px;color:var(--muted);">Case studies</a>
+      <a href="/security/" style="font-size:12px;color:var(--muted);">Security</a>
+      <a href="/docs/" style="font-size:12px;color:var(--muted);">API docs</a>
+      <a href="/compare/payerkart-vs-payer-portals/" style="font-size:12px;color:var(--muted);">vs payer portals</a>
       <a href="/blog/" style="font-size:12px;color:var(--muted);">Blog</a>
     </div>
-  </div>
-  <div style="max-width:1180px;margin:0 auto;padding:14px 24px 28px;">
-    <span class="mono" style="font-size:11px;color:var(--muted);opacity:0.75;">Confidential — shared for review only. Not for public distribution.</span>
   </div>
 </div>
 
@@ -744,6 +798,8 @@ document.addEventListener('keydown', function(e){
   if (e.key === 'Escape') closeDemoModal();
 });
 
+if (location.hash === '#demo') { openDemoModal(); }
+
 function submitDemoForm(e){
   e.preventDefault();
   var form = document.getElementById('demoForm');
@@ -783,5 +839,6 @@ function submitDemoForm(e){
 }
 </script>
 
+<script src="/assets/motion.js" defer></script>
 </body>
 </html>
