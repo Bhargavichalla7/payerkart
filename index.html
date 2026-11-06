@@ -11,22 +11,22 @@
   gtag('js', new Date());
   gtag('config', 'G-5KS54TFG1N');
 </script>
-<title>Case Study: 15-Minute Eligibility Checks to Under a Second</title>
-<meta name="description" content="How a US practice replaced manual payer-portal eligibility checks with the Payerkart API, cutting each check from about 15 minutes to under a second.">
+<title>Claim Status Tracking API for Hospitals | Payerkart</title>
+<meta name="description" content="Track insurance claim status inside your EHR. Poll or get webhooks when adjudication changes, with denial reasons translated into plain language.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://payerkart.com/case-studies/eligibility-checks-15-minutes-to-under-a-second/">
+<link rel="canonical" href="https://payerkart.com/claim-status/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <meta property="og:site_name" content="Payerkart">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Case Study: 15-Minute Eligibility Checks to Under a Second">
-<meta property="og:description" content="How a US practice replaced manual payer-portal eligibility checks with the Payerkart API, cutting each check from about 15 minutes to under a second.">
-<meta property="og:url" content="https://payerkart.com/case-studies/eligibility-checks-15-minutes-to-under-a-second/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Claim Status Tracking API for Hospitals | Payerkart">
+<meta property="og:description" content="Track insurance claim status inside your EHR. Poll or get webhooks when adjudication changes, with denial reasons translated into plain language.">
+<meta property="og:url" content="https://payerkart.com/claim-status/">
 <meta property="og:image" content="https://payerkart.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Case Study: 15-Minute Eligibility Checks to Under a Second">
-<meta name="twitter:description" content="How a US practice replaced manual payer-portal eligibility checks with the Payerkart API, cutting each check from about 15 minutes to under a second.">
+<meta name="twitter:title" content="Claim Status Tracking API for Hospitals | Payerkart">
+<meta name="twitter:description" content="Track insurance claim status inside your EHR. Poll or get webhooks when adjudication changes, with denial reasons translated into plain language.">
 <meta name="twitter:image" content="https://payerkart.com/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,6 +50,21 @@
    }
   },
   {
+   "@type": "Service",
+   "name": "Claim status tracking",
+   "description": "Claim status inquiry and change notifications delivered into the hospital EHR through one API.",
+   "url": "https://payerkart.com/claim-status/",
+   "provider": {
+    "@id": "https://payerkart.com/#org"
+   },
+   "areaServed": "US",
+   "serviceType": "Claim status tracking",
+   "audience": {
+    "@type": "Audience",
+    "audienceType": "Hospitals"
+   }
+  },
+  {
    "@type": "BreadcrumbList",
    "itemListElement": [
     {
@@ -61,29 +76,47 @@
     {
      "@type": "ListItem",
      "position": 2,
-     "name": "Case studies",
-     "item": "https://payerkart.com/case-studies/"
-    },
-    {
-     "@type": "ListItem",
-     "position": 3,
-     "name": "15 minutes to under a second",
-     "item": "https://payerkart.com/case-studies/eligibility-checks-15-minutes-to-under-a-second/"
+     "name": "Claim status tracking",
+     "item": "https://payerkart.com/claim-status/"
     }
    ]
   },
   {
-   "@type": "Article",
-   "headline": "How a US practice cut eligibility checks from 15 minutes to under a second",
-   "url": "https://payerkart.com/case-studies/eligibility-checks-15-minutes-to-under-a-second/",
-   "datePublished": "2026-11-06",
-   "author": {
-    "@id": "https://payerkart.com/#org"
-   },
-   "publisher": {
-    "@id": "https://payerkart.com/#org"
-   },
-   "image": "https://payerkart.com/assets/og-image.png"
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Which claim statuses does Payerkart report?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Where a claim stands with the payer: submitted, in review or adjudication, paid, or denied, with remittance detail linked to the claim once it is paid."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do we get notified when a claim status changes?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Poll the claim status endpoint, or subscribe to a webhook that fires when the payer's adjudication status changes."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens when a payer rejects a claim?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The payer's code is translated into a plain-language explanation and a suggested fix, for example that the date of birth is missing or doesn't match the payer's records."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Payerkart submit claims?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Payerkart tracks the status of claims you have already sent through your existing billing workflow. Its scope is eligibility verification and claim status tracking."
+     }
+    }
+   ]
   }
  ]
 }
@@ -93,7 +126,7 @@
 <header class="site-header">
   <div class="wrap">
     <a href="/" class="brand" aria-label="Payerkart home"><svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg><span>Payerkart</span></a>
-    <nav class="nav" aria-label="Main"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/" aria-current="page">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
+    <nav class="nav" aria-label="Main"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/" aria-current="page">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
     <div class="header-cta">
       <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
       <a href="#demo" data-demo class="btn btn-sm">Book a Demo →</a>
@@ -102,40 +135,42 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile"><a href="/eligibility-verification/">Eligibility</a><a href="/claim-status/">Claim status</a><a href="/ehr-integration/">EHR integration</a><a href="/for-hospitals/">For hospitals</a><a href="/case-studies/">Customers</a><a href="/security/">Security</a><a href="/docs/">Docs</a><a href="/blog/">Blog</a></nav>
 </header>
 <main>
-<div class="wrap crumbs"><a href="/">Home</a> / <a href="/case-studies/">Case studies</a> / 15 minutes to under a second</div>
+<div class="wrap crumbs"><a href="/">Home</a> / Claim status tracking</div>
 <section class="wrap page-hero">
-  <span class="eyebrow">Case study · Eligibility verification</span>
-  <h1>How a US practice cut eligibility checks from 15 minutes to under a second</h1>
-  <p class="lead">A live practice replaced manual payer-portal lookups with Payerkart's eligibility API. The customer is anonymized; the result is from production use.</p>
+  <span class="eyebrow">Claim status API</span>
+  <h1>Know where every claim stands, without calling the payer.</h1>
+  <p class="lead">Look up any claim's status, or get a webhook the moment adjudication changes. When a payer rejects or asks for follow-up, your billing team gets a plain-language reason and suggested fix, not a raw payer code.</p>
+  <div class="btn-row"><a href="#demo" data-demo class="btn">Book a Demo →</a><a href="/docs/#claim-status" class="btn-ghost">See the endpoint</a></div>
 </section>
-<section class="wrap" style="padding-bottom:40px;">
-  <div class="stats" style="grid-template-columns:repeat(3,minmax(0,1fr));">
-    <div><b>~15 min</b><span>per eligibility check, before</span></div>
-    <div><b>&lt;1 sec</b><span>per eligibility check, with Payerkart</span></div>
-    <div><b>Live</b><span>in production use today</span></div>
+
+<section class="section"><div class="wrap">
+  <h2>Status your billing team can read</h2>
+  <p class="sub">Example result states, as returned by the API. Illustrative data.</p>
+  <div class="grid g4">
+    <div class="card"><span class="tag">Submitted</span><p>Claim received by the payer and queued.</p></div>
+    <div class="card"><span class="tag">In review</span><p>In adjudication with the payer.</p></div>
+    <div class="card"><span class="tag">Paid</span><p>Claim adjudicated: $420 paid, remittance detail attached.</p></div>
+    <div class="card"><span class="tag" style="color:var(--warn);">Denied</span><p>Date of birth doesn't match the payer's record. Correct DOB and follow up with the payer.</p></div>
   </div>
-</section>
-<section class="section"><div class="wrap narrow prose">
-  <h2>The challenge</h2>
-  <p>Before Payerkart, verifying a patient's insurance meant a staff member logging into the payer's portal, re-typing the patient's details, finding coverage, copay and deductible, and copying the answer back. Each check took around 15 minutes, and it had to be repeated for every patient and every payer, each with its own portal.</p>
-
-  <h2>What changed</h2>
-  <p>The practice connected to Payerkart's eligibility API. Instead of a portal lookup, the check is one API call that returns coverage status, plan details and cost share in the same structured format regardless of the payer.</p>
-  <ul>
-    <li><b>No portal logins</b> for routine eligibility checks</li>
-    <li><b>No re-typing</b> of patient details into a separate system</li>
-    <li><b>One consistent result</b> across payers, with actionable messages when something is wrong (inactive coverage, invalid member ID)</li>
-  </ul>
-
-  <h2>The result</h2>
-  <blockquote>An eligibility check that took about 15 minutes now returns in under a second.</blockquote>
-  <p>Staff time that went into portal lookups goes back to patients, and coverage problems surface before the visit rather than after a claim is denied.</p>
-
-  <h2>Why it matters</h2>
-  <p>Industry benchmarks show the same pattern. The <a href="https://www.caqh.org/explorations/caqh-index" rel="noopener" target="_blank">2024 CAQH Index</a> estimates that moving an eligibility check from manual to fully electronic saves a medical provider around 12 minutes per transaction. For a deeper look at the numbers, read <a href="/blog/true-cost-of-manual-eligibility-checks.html">The Real Cost of Checking Eligibility Through the Payer Portal</a>.</p>
-  <p class="note">Customer details are anonymized. Time-per-check figures come from the practice's live use of Payerkart.</p>
 </div></section>
-<div class="wrap"><div class="cta-band"><div><h2>Want the same result for your hospital?</h2><p>Book a demo to walk through your workflow and get sandbox access. No payer contracts to negotiate before your first request.</p></div>
+
+<section class="section"><div class="wrap">
+  <h2>What you get</h2>
+  <div class="grid g3" style="margin-top:24px;">
+    <div class="card"><h3>Poll or subscribe</h3><p>Call <code>GET /v1/claims/:id</code> on demand, or receive a webhook when the status changes.</p></div>
+    <div class="card"><h3>Plain-language reasons</h3><p>Rejection and follow-up codes come back with an explanation and a suggested fix your team can act on.</p></div>
+    <div class="card"><h3>Remittance detail</h3><p>Payment and remittance data linked to each claim, in the same standardized schema, so billing doesn't read raw remittance files.</p></div>
+    <div class="card"><h3>One schema, every payer</h3><p>The same status fields regardless of which payer adjudicates the claim.</p></div>
+    <div class="card"><h3>Inside the EHR</h3><p>Status lands where your billing team already works, through the Payerkart EHR adapter.</p></div>
+    <div class="card"><h3>Logged and scoped</h3><p>Every status request is recorded with who made it and when. Keys are scoped and revocable.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap narrow">
+  <h2>Claim status FAQ</h2>
+  <div class="faq"><details><summary>Which claim statuses does Payerkart report?</summary><p>Where a claim stands with the payer: submitted, in review or adjudication, paid, or denied, with remittance detail linked to the claim once it is paid.</p></details><details><summary>How do we get notified when a claim status changes?</summary><p>Poll the claim status endpoint, or subscribe to a webhook that fires when the payer&#x27;s adjudication status changes.</p></details><details><summary>What happens when a payer rejects a claim?</summary><p>The payer&#x27;s code is translated into a plain-language explanation and a suggested fix, for example that the date of birth is missing or doesn&#x27;t match the payer&#x27;s records.</p></details><details><summary>Does Payerkart submit claims?</summary><p>No. Payerkart tracks the status of claims you have already sent through your existing billing workflow. Its scope is eligibility verification and claim status tracking.</p></details></div>
+</div></section>
+<div class="wrap"><div class="cta-band"><div><h2>Stop chasing claim status by phone</h2><p>Book a demo to walk through your workflow and get sandbox access. No payer contracts to negotiate before your first request.</p></div>
 <a href="#demo" data-demo class="btn">Book a Demo →</a></div></div>
 </main>
 <footer class="site-footer">
