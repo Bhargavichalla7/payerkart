@@ -16,7 +16,7 @@
 <meta name="google-site-verification" content="l2rVyKTMptO1igdLxXalkTr6IJ1aGl0IwMnWhwPIuKk" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.svg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -36,6 +36,7 @@
   --warn:#B5581F; --warn-soft:#F3E3D3;
   --line:#D3D0C1; --muted:#5B6660;
   --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){
@@ -58,6 +59,11 @@ a{color:var(--accent);text-decoration:none;}
 a:hover{color:var(--accent-strong);}
 button{font-family:inherit;cursor:pointer;}
 h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
+h1,h2{font-family:var(--display);}
+h2{font-weight:500 !important;font-size:clamp(28px,3.4vw,38px) !important;letter-spacing:-0.02em !important;line-height:1.12 !important;}
+.hero-h1{font-size:clamp(38px,5.2vw,58px) !important;line-height:1.04 !important;font-weight:500 !important;letter-spacing:-0.025em !important;}
+.band-dark{--ink:#E9EFEA;--paper:#0C1813;--surface:#13241C;--surface-2:#182B22;--accent:#5FD8A6;--accent-strong:#5FD8A6;--accent-soft:#16372B;--line:#243A30;--muted:#9BB1A6;background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line);}
+.scope-light{--ink:#14231D;--paper:#EFF1EA;--surface:#FFFFFF;--surface-2:#E7EAE1;--accent:#1E6F52;--accent-strong:#123D2C;--accent-soft:#DCEAE1;--warn:#B5581F;--warn-soft:#F3E3D3;--line:#D3D0C1;--muted:#5B6660;color:var(--ink);}
 ::selection{background:var(--accent-soft);}
 .mono{font-family:var(--mono);}
 .nav-desktop{display:none;}
@@ -105,13 +111,14 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 </div>
 
 <!-- HERO -->
+<div class="band-dark">
 <div id="top" style="max-width:1180px;margin:0 auto;padding:72px 24px 56px;width:100%;display:flex;gap:56px;flex-wrap:wrap;align-items:flex-start;">
   <div style="flex:1 1 460px;min-width:280px;display:flex;flex-direction:column;gap:22px;">
     <div style="display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:6px 12px;width:fit-content;">
       <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>
       Works with your hospital's EHR
     </div>
-    <h1 style="margin:0;font-size:44px;line-height:1.12;font-weight:600;">Eligibility and claim status, built into your hospital's EHR.</h1>
+    <h1 class="hero-h1" style="margin:0;">Eligibility and claim status, built into your hospital's EHR.</h1>
     <p style="margin:0;font-size:17px;line-height:1.6;color:var(--muted);max-width:52ch;">
       Payerkart plugs into your hospital's existing EHR through one API, backed by real clearinghouse connectivity. Staff verify coverage and track claims without leaving the screen they already work in — no separate payer logins, no re-typing patient details, and one integration that works across every payer.
     </p>
@@ -127,7 +134,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
   </div>
 
   <div style="flex:1 1 440px;min-width:280px;">
-    <div style="border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;">
+    <div class="scope-light" style="border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;box-shadow:0 24px 60px -24px rgba(0,0,0,0.6);">
       <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:11px 14px;border-bottom:1px solid var(--line);background:var(--surface-2);">
         <div style="display:flex;align-items:center;gap:9px;">
           <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:5px;background:var(--accent-strong);color:var(--paper);font-size:14px;font-weight:600;line-height:1;">+</span>
@@ -145,32 +152,32 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <div style="border-top:1px solid var(--line);">
         <div style="display:grid;grid-template-columns:44px 1.3fr 1fr 112px;gap:10px;padding:10px 12px;align-items:center;border-bottom:1px solid var(--line);background:var(--accent-soft);">
           <span class="mono" style="font-size:11px;color:var(--muted);">08:00</span>
-          <span style="font-size:13px;font-weight:600;">Gonzalez, Maria</span>
-          <span style="font-size:12px;color:var(--muted);">Aetna</span>
+          <span style="font-size:13px;font-weight:600;">Okafor, Thandi</span>
+          <span style="font-size:12px;color:var(--muted);">Humana</span>
           <span class="mono" style="font-size:10.5px;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">verified</span>
         </div>
         <div style="display:grid;grid-template-columns:44px 1.3fr 1fr 112px;gap:10px;padding:10px 12px;align-items:center;border-bottom:1px solid var(--line);">
           <span class="mono" style="font-size:11px;color:var(--muted);">08:30</span>
-          <span style="font-size:13px;font-weight:600;">Carter, James</span>
+          <span style="font-size:13px;font-weight:600;">Lindqvist, Henrik</span>
           <span style="font-size:12px;color:var(--muted);">UnitedHealthcare</span>
           <span class="mono" style="font-size:10.5px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">needs review</span>
         </div>
         <div style="display:grid;grid-template-columns:44px 1.3fr 1fr 112px;gap:10px;padding:10px 12px;align-items:center;border-bottom:1px solid var(--line);">
           <span class="mono" style="font-size:11px;color:var(--muted);">09:00</span>
-          <span style="font-size:13px;font-weight:600;">Patel, Aisha</span>
+          <span style="font-size:13px;font-weight:600;">Reyes, Domingo</span>
           <span style="font-size:12px;color:var(--muted);">Cigna</span>
           <span class="mono" style="font-size:10.5px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">ID invalid</span>
         </div>
         <div style="display:grid;grid-template-columns:44px 1.3fr 1fr 112px;gap:10px;padding:10px 12px;align-items:center;border-bottom:1px solid var(--line);">
           <span class="mono" style="font-size:11px;color:var(--muted);">10:00</span>
-          <span style="font-size:13px;font-weight:600;">Nguyen, Linda</span>
+          <span style="font-size:13px;font-weight:600;">Bianchi, Marco</span>
           <span style="font-size:12px;color:var(--muted);">Medicare Part B</span>
           <span class="mono" style="font-size:10.5px;color:var(--muted);background:var(--surface-2);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">scheduled</span>
         </div>
       </div>
       <div style="padding:14px;background:var(--surface-2);display:flex;flex-direction:column;gap:8px;">
         <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;">
-          <span style="font-size:13px;font-weight:600;">Maria Gonzalez · Aetna</span>
+          <span style="font-size:13px;font-weight:600;">Thandi Okafor · Humana</span>
           <span class="mono" style="font-size:10.5px;color:var(--accent-strong);background:var(--accent-soft);border-radius:100px;padding:2px 9px;white-space:nowrap;width:fit-content;">active</span>
         </div>
         <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;">
@@ -183,18 +190,64 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <p class="mono" style="margin:10px 0 0;font-size:11px;color:var(--muted);">Illustrative screen, sample data.</p>
   </div>
 </div>
+</div>
 
-<!-- TRUST STRIP -->
-<div style="width:100%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface-2);">
-  <div style="max-width:1180px;margin:0 auto;padding:22px 24px;display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;align-items:center;">
-    <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
-      <span class="mono" style="font-size:24px;font-weight:600;color:var(--accent-strong);">15 min → &lt;1 sec</span>
-      <span class="mono" style="font-size:12px;color:var(--muted);">per eligibility check, in live use at a Payerkart practice</span>
+<!-- USP: WHERE THE 15 MINUTES WENT -->
+<div id="difference" style="max-width:1180px;margin:0 auto;padding:84px 24px 24px;width:100%;">
+  <div style="display:flex;gap:56px;flex-wrap:wrap;align-items:flex-start;">
+    <div style="flex:1 1 380px;min-width:280px;">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:12px;">What makes Payerkart different</div>
+      <h2 style="margin:0 0 16px;">The portal step is gone. Your staff just read the answer.</h2>
+      <p style="margin:0 0 26px;color:var(--muted);font-size:16.5px;line-height:1.65;max-width:50ch;">Most eligibility tools give you a faster way to check. Payerkart removes the check from your staff's day: the result appears inside the EHR, next to the patient, before anyone has to ask for it.</p>
+      <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;">
+        <span style="font-family:var(--display);font-size:clamp(44px,6vw,68px);font-weight:500;letter-spacing:-0.03em;line-height:1;color:var(--accent-strong);">&lt;1 sec</span>
+        <span class="mono" style="font-size:12px;color:var(--muted);max-width:30ch;line-height:1.5;">per check, down from about 15 minutes in a payer portal, at a live Payerkart practice</span>
+      </div>
     </div>
-    <div style="display:flex;gap:26px;flex-wrap:wrap;" class="mono">
-      <span style="font-size:12px;color:var(--ink);">Designed for real-time eligibility</span>
-      <span style="font-size:12px;color:var(--ink);">Purpose-built for payer workflows</span>
-      <span style="font-size:12px;color:var(--ink);">One schema across payers</span>
+
+    <div style="flex:1 1 460px;min-width:280px;display:flex;flex-direction:column;gap:18px;">
+      <div style="border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:22px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+          <span class="mono" style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);">Payer portal, per check</span>
+          <span class="mono" style="font-size:13px;font-weight:600;color:var(--warn);">~15 min</span>
+        </div>
+        <div style="height:10px;border-radius:100px;background:var(--warn-soft);margin-bottom:14px;"><div style="height:100%;width:100%;border-radius:100px;background:var(--warn);"></div></div>
+        <div class="mono" style="display:flex;flex-wrap:wrap;gap:6px;font-size:11px;color:var(--muted);">
+          <span style="border:1px solid var(--line);border-radius:100px;padding:3px 10px;">Log in</span>
+          <span style="border:1px solid var(--line);border-radius:100px;padding:3px 10px;">Wait for the code</span>
+          <span style="border:1px solid var(--line);border-radius:100px;padding:3px 10px;">Search the patient</span>
+          <span style="border:1px solid var(--line);border-radius:100px;padding:3px 10px;">Read benefits</span>
+          <span style="border:1px solid var(--line);border-radius:100px;padding:3px 10px;">Retype into the EHR</span>
+        </div>
+      </div>
+      <div style="border:1px solid var(--accent);border-radius:12px;background:var(--accent-soft);padding:22px;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+          <span class="mono" style="font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);">Payerkart, per check</span>
+          <span class="mono" style="font-size:13px;font-weight:600;color:var(--accent-strong);">&lt;1 sec</span>
+        </div>
+        <div style="height:10px;border-radius:100px;background:var(--surface);margin-bottom:14px;"><div style="height:100%;width:2%;min-width:8px;border-radius:100px;background:var(--accent);"></div></div>
+        <div class="mono" style="display:flex;flex-wrap:wrap;gap:6px;font-size:11px;color:var(--accent-strong);">
+          <span style="border:1px solid var(--accent);border-radius:100px;padding:3px 10px;">Result appears in the EHR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:48px;">
+    <div style="background:var(--surface);padding:24px;">
+      <div class="mono" style="font-size:11px;color:var(--accent);margin-bottom:8px;">01</div>
+      <h3 style="margin:0 0 8px;font-size:17px;font-weight:600;">Lives inside your EHR</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">Built for hospitals as the customer. Staff never open a separate tool, and the result sits on the patient's record.</p>
+    </div>
+    <div style="background:var(--surface);padding:24px;">
+      <div class="mono" style="font-size:11px;color:var(--accent);margin-bottom:8px;">02</div>
+      <h3 style="margin:0 0 8px;font-size:17px;font-weight:600;">Two jobs, done properly</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">Eligibility verification and claim status. Nothing else competing for attention, so both work the way a front desk and billing office need.</p>
+    </div>
+    <div style="background:var(--surface);padding:24px;">
+      <div class="mono" style="font-size:11px;color:var(--accent);margin-bottom:8px;">03</div>
+      <h3 style="margin:0 0 8px;font-size:17px;font-weight:600;">Answers people can act on</h3>
+      <p style="margin:0;color:var(--muted);font-size:14px;line-height:1.6;">An invalid member ID or a lapsed plan comes back as a plain-language message, not a raw payer code someone has to decode.</p>
     </div>
   </div>
 </div>
@@ -327,31 +380,31 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
               </div>
               <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;background:var(--accent-soft);border-bottom:1px solid var(--line);">
                 <span class="mono" style="font-size:12px;">08:00</span>
-                <span><span style="font-size:13.5px;font-weight:600;">Gonzalez, Maria</span><br><span style="font-size:12px;color:var(--muted);">Active PPO, routine follow-up</span></span>
-                <span style="font-size:13px;">Aetna<br><span class="mono" style="font-size:11.5px;color:var(--muted);">W284719035</span></span>
+                <span><span style="font-size:13.5px;font-weight:600;">Okafor, Thandi</span><br><span style="font-size:12px;color:var(--muted);">Active PPO, routine follow-up</span></span>
+                <span style="font-size:13px;">Humana<br><span class="mono" style="font-size:11.5px;color:var(--muted);">W284719035</span></span>
                 <span class="mono" style="font-size:11px;color:var(--accent-strong);background:var(--surface);border-radius:100px;padding:3px 10px;width:fit-content;">verified</span>
               </div>
               <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;border-bottom:1px solid var(--line);">
                 <span class="mono" style="font-size:12px;">08:30</span>
-                <span><span style="font-size:13.5px;font-weight:600;">Carter, James</span><br><span style="font-size:12px;color:var(--muted);">Coverage lapsed at year end</span></span>
+                <span><span style="font-size:13.5px;font-weight:600;">Lindqvist, Henrik</span><br><span style="font-size:12px;color:var(--muted);">Coverage lapsed at year end</span></span>
                 <span style="font-size:13px;">UnitedHealthcare<br><span class="mono" style="font-size:11.5px;color:var(--muted);">INACTIVE-884512</span></span>
                 <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:3px 10px;width:fit-content;">needs review</span>
               </div>
               <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;border-bottom:1px solid var(--line);">
                 <span class="mono" style="font-size:12px;">09:00</span>
-                <span><span style="font-size:13.5px;font-weight:600;">Patel, Aisha</span><br><span style="font-size:12px;color:var(--muted);">Card typo at registration</span></span>
+                <span><span style="font-size:13.5px;font-weight:600;">Reyes, Domingo</span><br><span style="font-size:12px;color:var(--muted);">Card typo at registration</span></span>
                 <span style="font-size:13px;">Cigna<br><span class="mono" style="font-size:11.5px;color:var(--muted);">INVALID-U00917</span></span>
                 <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:3px 10px;width:fit-content;">member ID invalid</span>
               </div>
               <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;border-bottom:1px solid var(--line);">
                 <span class="mono" style="font-size:12px;">09:30</span>
-                <span><span style="font-size:13.5px;font-weight:600;">Kim, Robert</span><br><span style="font-size:12px;color:var(--muted);">Payer clearinghouse outage</span></span>
+                <span><span style="font-size:13.5px;font-weight:600;">Sato, Keiko</span><br><span style="font-size:12px;color:var(--muted);">Payer clearinghouse outage</span></span>
                 <span style="font-size:13px;">BCBS of Texas<br><span class="mono" style="font-size:11.5px;color:var(--muted);">XJH55821</span></span>
                 <span class="mono" style="font-size:11px;color:var(--warn);background:var(--warn-soft);border-radius:100px;padding:3px 10px;width:fit-content;">payer down, retry</span>
               </div>
               <div style="display:grid;grid-template-columns:52px 1.4fr 1.3fr 110px;gap:10px;padding:11px 8px;align-items:center;">
                 <span class="mono" style="font-size:12px;">10:00</span>
-                <span><span style="font-size:13.5px;font-weight:600;">Nguyen, Linda</span><br><span style="font-size:12px;color:var(--muted);">Medicare, annual wellness</span></span>
+                <span><span style="font-size:13.5px;font-weight:600;">Bianchi, Marco</span><br><span style="font-size:12px;color:var(--muted);">Medicare, annual wellness</span></span>
                 <span style="font-size:13px;">Medicare Part B<br><span class="mono" style="font-size:11.5px;color:var(--muted);">1EG4TE5MK73</span></span>
                 <span class="mono" style="font-size:11px;color:var(--muted);background:var(--surface-2);border-radius:100px;padding:3px 10px;width:fit-content;">scheduled</span>
               </div>
@@ -362,12 +415,12 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
         <!-- Detail -->
         <div style="padding:22px;min-width:0;">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;">
-            <h3 style="margin:0;font-size:17px;font-weight:600;">Maria Gonzalez</h3>
+            <h3 style="margin:0;font-size:17px;font-weight:600;">Thandi Okafor</h3>
             <span class="mono" style="font-size:11px;color:var(--accent);border:1px solid var(--line);border-radius:6px;padding:4px 9px;">Eligibility history</span>
           </div>
           <div class="mono" style="display:grid;grid-template-columns:84px 1fr;gap:6px 10px;font-size:12px;margin-bottom:18px;">
             <span style="color:var(--muted);">DOB</span><span>1984-03-12</span>
-            <span style="color:var(--muted);">Payer</span><span>Aetna</span>
+            <span style="color:var(--muted);">Payer</span><span>Humana</span>
             <span style="color:var(--muted);">Member ID</span><span>W284719035</span>
           </div>
 
