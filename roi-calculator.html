@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5KS54TFG1N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5KS54TFG1N');
+</script>
+<title>Eligibility Verification ROI Calculator | Payerkart</title>
+<meta name="description" content="Free calculator: estimate the staff hours and cost of manual insurance eligibility checks each month, and what comes back when checks run automatically.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://payerkart.com/roi-calculator.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="Payerkart">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Eligibility Verification ROI Calculator | Payerkart">
+<meta property="og:description" content="Free calculator: estimate the staff hours and cost of manual insurance eligibility checks each month, and what comes back when checks run automatically.">
+<meta property="og:url" content="https://payerkart.com/roi-calculator.html">
+<meta property="og:image" content="https://payerkart.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eligibility Verification ROI Calculator | Payerkart">
+<meta name="twitter:description" content="Free calculator: estimate the staff hours and cost of manual insurance eligibility checks each month, and what comes back when checks run automatically.">
+<meta name="twitter:image" content="https://payerkart.com/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/motion.css">
+<link rel="stylesheet" href="/theme.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://payerkart.com/#org",
+   "name": "Payerkart",
+   "url": "https://payerkart.com/",
+   "logo": "https://payerkart.com/favicon.svg",
+   "email": "founders@payerkart.com",
+   "parentOrganization": {
+    "@type": "Organization",
+    "name": "Blue Matrix Connect"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://payerkart.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Resources",
+     "item": "https://payerkart.com/resources.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "ROI calculator",
+     "item": "https://payerkart.com/roi-calculator.html"
+    }
+   ]
+  },
+  {
+   "@type": "WebApplication",
+   "name": "Eligibility verification ROI calculator",
+   "url": "https://payerkart.com/roi-calculator.html",
+   "applicationCategory": "BusinessApplication",
+   "operatingSystem": "Web",
+   "isAccessibleForFree": true
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand" aria-label="Payerkart home"><svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg><span>Payerkart</span></a>
+    <nav class="nav" aria-label="Main"><a href="/eligibility-verification.html">Eligibility</a><a href="/claim-status.html">Claim status</a><a href="/ehr-integration.html">EHR integration</a><a href="/security.html">Security</a><a href="/developers.html">Developers</a><a href="/resources.html">Resources</a><a href="/blog/">Blog</a></nav>
+    <div class="header-cta">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+      <a href="#demo" data-demo class="btn btn-sm">Book a Demo →</a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile"><a href="/eligibility-verification.html">Eligibility</a><a href="/claim-status.html">Claim status</a><a href="/ehr-integration.html">EHR integration</a><a href="/security.html">Security</a><a href="/developers.html">Developers</a><a href="/resources.html">Resources</a><a href="/blog/">Blog</a></nav>
+</header>
+<main>
+<div class="hero-band"><div class="wrap crumbs"><a href="/">Home</a> / <a href="/resources.html">Resources</a> / ROI calculator</div>
+<section class="wrap page-hero has-photo">
+  <span class="eyebrow">Free calculator</span>
+  <h1>What are manual eligibility checks costing you?</h1>
+  <p class="lead">Put in your own numbers. The calculator shows how many staff hours and dollars go into checking coverage by hand each month, and how much of that comes back when the check runs automatically.</p>
+
+  <figure class="hero-photo"><img src="/photo-overnight.jpg" alt="Hospital staff member reviewing patient records at a computer" width="1400" height="1050" decoding="async"><span class="photo-chip"><i>⏱</i><span>Hours back every month<small>Using your own numbers</small></span></span></figure>
+</section></div>
+<section class="section"><div class="wrap">
+  <div class="roi">
+    <form class="roi-in card" onsubmit="return false" aria-label="Your numbers">
+      <label>Eligibility checks per day<input type="number" id="r_checks" value="60" min="0" step="1"></label>
+      <label>Minutes per manual check<input type="number" id="r_min" value="15" min="0" step="0.5"></label>
+      <label>Staff cost per hour (USD)<input type="number" id="r_cost" value="22" min="0" step="0.5"></label>
+      <label>Working days per month<input type="number" id="r_days" value="21" min="1" max="31" step="1"></label>
+      <label>Checks that still need a person (%)<input type="number" id="r_exc" value="10" min="0" max="100" step="1"><small>Exceptions such as a lapsed plan or an invalid member ID.</small></label>
+    </form>
+    <div class="roi-out">
+      <div class="roi-big card"><span>Staff hours back each month</span><b id="o_hours">0</b><small id="o_fte"></small></div>
+      <div class="grid g2">
+        <div class="card"><span class="tag">Manual checks today</span><h3 id="o_today">$0</h3><p>staff cost per month</p></div>
+        <div class="card"><span class="tag">Cost that goes away</span><h3 id="o_saved">$0</h3><p>per month, <span id="o_year">$0</span> per year</p></div>
+      </div>
+      <p class="note">An estimate based only on the numbers you enter. It doesn't include Payerkart pricing or downstream savings such as fewer eligibility-related denials.</p>
+      <div class="btn-row"><a href="#demo" data-demo class="btn">Talk through your numbers →</a><a href="/case-study-eligibility-15-minutes-to-under-a-second.html" class="btn-ghost">See a live result</a></div>
+    </div>
+  </div>
+</div></section>
+<style>
+.roi{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;align-items:start;}
+@media (max-width:860px){.roi{grid-template-columns:1fr;}}
+.roi-in{display:grid;gap:16px;}
+.roi-in label{display:grid;gap:6px;font-size:14px;font-weight:600;}
+.roi-in input{font:inherit;font-weight:500;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);}
+.roi-in input:focus{outline:2px solid #6366F1;outline-offset:1px;}
+.roi-in small{font-weight:400;color:var(--muted);font-size:12.5px;}
+.roi-out{display:grid;gap:18px;}
+.roi-big{text-align:left;padding:28px!important;}
+.roi-big span{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);}
+.roi-big b{display:block;font-size:clamp(48px,7vw,76px);line-height:1.05;margin:8px 0;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800;}
+.roi-big small{color:var(--muted);font-size:14px;}
+.roi-out h3{font-size:28px!important;}
+</style>
+<script>
+(function(){
+  var f=function(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;};
+  var usd=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+  function calc(){
+    var checks=f('r_checks'),min=f('r_min'),cost=f('r_cost'),days=f('r_days'),exc=Math.min(100,Math.max(0,f('r_exc')))/100;
+    var hoursToday=checks*min*days/60, hoursBack=hoursToday*(1-exc);
+    document.getElementById('o_hours').textContent=Math.round(hoursBack).toLocaleString('en-US');
+    document.getElementById('o_fte').textContent='About '+(hoursBack/160).toFixed(1)+' full-time staff, out of '+Math.round(hoursToday).toLocaleString('en-US')+' hours spent on manual checks today';
+    document.getElementById('o_today').textContent=usd(hoursToday*cost);
+    document.getElementById('o_saved').textContent=usd(hoursBack*cost);
+    document.getElementById('o_year').textContent=usd(hoursBack*cost*12);
+  }
+  document.querySelectorAll('.roi-in input').forEach(function(i){i.addEventListener('input',calc);});
+  calc();
+})();
+</script>
+<div class="wrap"><div class="cta-band"><div><h2>Want a number for your hospital?</h2><p>We'll walk through your check volume and payer mix and show what Payerkart changes.</p></div>
+<a href="#demo" data-demo class="btn">Book a Demo →</a></div></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="/" class="brand" aria-label="Payerkart home"><svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg><span>Payerkart</span></a>
+        <p class="foot-blurb">Eligibility verification and claim status tracking inside your hospital's EHR, through one API.</p>
+        <div class="trust"><span>HIPAA compliant</span><span>BAA</span><span>US hosting</span><span>Full audit logs</span></div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/eligibility-verification.html">Eligibility verification</a></li>
+          <li><a href="/claim-status.html">Claim status tracking</a></li>
+          <li><a href="/ehr-integration.html">EHR integration</a></li>
+          <li><a href="/payer-coverage.html">Payer coverage</a></li>
+          <li><a href="/for-hospitals.html">For hospitals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/case-studies.html">Case studies</a></li>
+          <li><a href="/roi-calculator.html">ROI calculator</a></li>
+          <li><a href="/resources.html">Free tools &amp; comparisons</a></li>
+          <li><a href="/glossary.html">Glossary</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/security.html">Security &amp; compliance</a></li>
+          <li><a href="/developers.html">Developers</a></li>
+          <li><a href="#demo" data-demo>Book a demo</a></li>
+          <li><a href="mailto:founders@payerkart.com">founders@payerkart.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Payerkart, a product of Blue Matrix Connect.</span>
+      <span>Healthcare payer infrastructure</span>
+    </div>
+  </div>
+</footer>
+<div id="demoModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+  <div class="modal">
+    <button class="close" onclick="closeDemoModal()" aria-label="Close">×</button>
+    <div id="demoFormWrap">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-strong);margin-bottom:8px;">Book a Demo</div>
+      <h3 id="demoTitle">Tell us about your workflow</h3>
+      <p>We'll get back to you to set up a time to walk through your workflow and share sandbox access.</p>
+      <form id="demoForm">
+        <input type="hidden" name="access_key" value="93c88fbd-9ea1-4fdd-a33e-c6ccf4829ad5">
+        <input type="hidden" name="subject" value="Payerkart Demo Request">
+        <input type="hidden" name="from_name" value="Payerkart Website">
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+        <label>Name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Hospital or company<input type="text" name="company" autocomplete="organization"></label>
+        <label>What are you looking to do?<textarea name="message" rows="3"></textarea></label>
+        <button type="submit" id="demoSubmitBtn" class="btn">Send request →</button>
+        <div id="demoFormError" class="err"></div>
+      </form>
+    </div>
+    <div id="demoFormSuccess" class="ok">
+      <div style="font-size:32px;margin-bottom:10px;">✓</div>
+      <h3>Request sent</h3>
+      <p style="margin:0;">Thanks. We'll be in touch shortly to set up a time.</p>
+    </div>
+  </div>
+</div>
+<script src="/site.js" defer></script>
+<script src="/motion.js" defer></script>
+</body>
+</html>

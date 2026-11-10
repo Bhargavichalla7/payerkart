@@ -12,12 +12,24 @@ Scope: eligibility verification and claim status tracking only. Payerkart does n
 - [Payer coverage](https://payerkart.com/payer-coverage.html): Commercial and government payers across the US via clearinghouse connectivity.
 
 
+## Developers
+- [Developer preview](https://payerkart.com/developers.html): API overview (Bearer API keys, eligibility, claim status, webhooks, structured errors) and sandbox access request.
+
+## Free tools
+- [ROI calculator](https://payerkart.com/roi-calculator.html): Staff hours and cost of manual eligibility checks.
+- [Service type code lookup](https://payerkart.com/service-type-codes.html)
+- [271 eligibility response codes](https://payerkart.com/eligibility-response-codes.html)
+- [277 claim status code translator](https://payerkart.com/claim-status-codes.html)
+- [Glossary](https://payerkart.com/glossary.html)
+
 ## Trust
-- [Security & compliance](https://payerkart.com/security.html): Encryption in transit and at rest, scoped keys, role-based access, audit logs, BAA available.
+- [Security & compliance](https://payerkart.com/security.html): HIPAA compliant, US hosting, BAA with every customer, 24-hour incident notification, encryption, scoped keys, audit logs.
 - [Case study](https://payerkart.com/case-study-eligibility-15-minutes-to-under-a-second.html): 15 minutes to under a second per eligibility check.
 
 ## Compare
 - [Payerkart vs payer portals](https://payerkart.com/payerkart-vs-payer-portals.html)
+- [Eligibility API vs VOB platforms](https://payerkart.com/eligibility-api-vs-vob-platforms.html)
+- [Eligibility inside the EHR vs separate tools](https://payerkart.com/eligibility-in-ehr-vs-separate-tools.html)
 - [Eligibility API vs AI agents](https://payerkart.com/eligibility-api-vs-ai-agents.html)
 
 ## Blog

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5KS54TFG1N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5KS54TFG1N');
+</script>
+<title>Developers: Eligibility &amp; Claim Status API Preview | Payerkart</title>
+<meta name="description" content="Overview of the Payerkart API for eligibility verification and claim status: scoped API keys, webhooks, structured errors, sandbox access.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://payerkart.com/developers.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta property="og:site_name" content="Payerkart">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Developers: Eligibility &amp; Claim Status API Preview | Payerkart">
+<meta property="og:description" content="Overview of the Payerkart API for eligibility verification and claim status: scoped API keys, webhooks, structured errors, sandbox access.">
+<meta property="og:url" content="https://payerkart.com/developers.html">
+<meta property="og:image" content="https://payerkart.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Developers: Eligibility &amp; Claim Status API Preview | Payerkart">
+<meta name="twitter:description" content="Overview of the Payerkart API for eligibility verification and claim status: scoped API keys, webhooks, structured errors, sandbox access.">
+<meta name="twitter:image" content="https://payerkart.com/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/motion.css">
+<link rel="stylesheet" href="/theme.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://payerkart.com/#org",
+   "name": "Payerkart",
+   "url": "https://payerkart.com/",
+   "logo": "https://payerkart.com/favicon.svg",
+   "email": "founders@payerkart.com",
+   "parentOrganization": {
+    "@type": "Organization",
+    "name": "Blue Matrix Connect"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://payerkart.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Developers",
+     "item": "https://payerkart.com/developers.html"
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand" aria-label="Payerkart home"><svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg><span>Payerkart</span></a>
+    <nav class="nav" aria-label="Main"><a href="/eligibility-verification.html">Eligibility</a><a href="/claim-status.html">Claim status</a><a href="/ehr-integration.html">EHR integration</a><a href="/security.html">Security</a><a href="/developers.html" aria-current="page">Developers</a><a href="/resources.html">Resources</a><a href="/blog/">Blog</a></nav>
+    <div class="header-cta">
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+      <a href="#demo" data-demo class="btn btn-sm">Book a Demo →</a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile"><a href="/eligibility-verification.html">Eligibility</a><a href="/claim-status.html">Claim status</a><a href="/ehr-integration.html">EHR integration</a><a href="/security.html">Security</a><a href="/developers.html">Developers</a><a href="/resources.html">Resources</a><a href="/blog/">Blog</a></nav>
+</header>
+<main>
+<div class="hero-band"><div class="wrap crumbs"><a href="/">Home</a> / Developers</div>
+<section class="wrap page-hero has-photo">
+  <span class="eyebrow">Developer preview</span>
+  <h1>Built for the team wiring it into your EHR.</h1>
+  <p class="lead">One REST API for eligibility verification and claim status, with the same JSON shape for every payer. This page gives an overview; the full endpoint reference and sandbox keys come with sandbox access.</p>
+  <div class="btn-row"><a href="#sandbox" class="btn">Request sandbox access →</a><a href="/ehr-integration.html" class="btn-ghost">How the EHR adapter works</a></div>
+
+  <figure class="hero-photo"><img src="/photo-it-team.jpg" alt="Hospital IT team working at their desks" width="1400" height="1050" decoding="async"><span class="photo-chip"><i>{}</i><span>200 OK · status: active<small>Same JSON for every payer</small></span></span></figure>
+</section></div>
+
+<section class="section"><div class="wrap">
+  <div class="grid g3">
+    <div class="card"><span class="tag">Authentication</span><h3>Scoped API keys</h3><p>Send your key as a Bearer token. Keys are scoped, revocable from the admin console and every request made with them is logged.</p></div>
+    <div class="card"><span class="tag">Eligibility</span><h3>Verify coverage</h3><p>Send the patient (member ID, or name and date of birth plus payer details) and get coverage, plan dates, copay, deductible and network status back.</p></div>
+    <div class="card"><span class="tag">Claim status</span><h3>Track a claim</h3><p>Look up where a claim stands with the payer. Rejections come back with a plain-language reason and a suggested fix.</p></div>
+    <div class="card"><span class="tag">Webhooks</span><h3>Async when it matters</h3><p>Get notified when a long-running eligibility check finishes, when overnight batch verification flags a patient, and when a claim's status changes.</p></div>
+    <div class="card"><span class="tag">Errors</span><h3>Structured, readable errors</h3><p>A code plus a plain-language message, never raw EDI. Payer outages, invalid IDs and inactive plans each have their own result.</p></div>
+    <div class="card"><span class="tag">Reliability</span><h3>Versioned and idempotent</h3><p>Versioned endpoints, idempotent writes, retries with backoff and clear rate limits with 429 responses.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="wrap narrow">
+  <h2>An eligibility request</h2>
+  <p class="sub">The request shape running in production. Sandbox keys return canned payer responses.</p>
+<pre><span class="k">curl</span> https://api.payerkart.com/v1/eligibility \
+  -H <span class="s">"Authorization: Bearer $PAYERKART_KEY"</span> \
+  -H <span class="s">"Content-Type: application/json"</span> \
+  -d <span class="s">'{
+    "patient": { "member_id": "W12345678" },
+    "payer": "auto-detect",
+    "service_type": "office_visit"
+  }'</span>
+
+<span class="c"># 200 OK</span>
+{ "status": "active", "plan": "PPO Gold", "copay": 25 }</pre>
+</div></section>
+
+<section class="section" id="sandbox"><div class="wrap narrow">
+  <h2>Request sandbox access</h2>
+  <p class="sub">Tell us about your integration. We'll send sandbox keys and the full endpoint reference.</p>
+  <form class="card dev-form" id="sandboxForm">
+    <input type="hidden" name="access_key" value="93c88fbd-9ea1-4fdd-a33e-c6ccf4829ad5">
+    <input type="hidden" name="subject" value="Payerkart Sandbox Access Request">
+    <input type="hidden" name="from_name" value="Payerkart Developers Page">
+    <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+    <label>Name<input type="text" name="name" required autocomplete="name"></label>
+    <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+    <label>Hospital or company<input type="text" name="company" autocomplete="organization"></label>
+    <label>What will you integrate with?<textarea name="message" rows="3" placeholder="Your EHR or integration engine, expected volume, timeline"></textarea></label>
+    <button type="submit" class="btn" id="sandboxBtn">Request access →</button>
+    <p class="note" id="sandboxMsg" role="status"></p>
+  </form>
+</div></section>
+<style>
+.dev-form{display:grid;gap:14px;}
+.dev-form label{display:grid;gap:6px;font-size:14px;font-weight:600;}
+.dev-form input,.dev-form textarea{font:inherit;font-weight:400;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);}
+</style>
+<script>
+document.getElementById('sandboxForm').addEventListener('submit',function(e){
+  e.preventDefault();var b=document.getElementById('sandboxBtn'),m=document.getElementById('sandboxMsg');
+  b.disabled=true;b.textContent='Sending…';
+  var data=Object.fromEntries(new FormData(e.target).entries());
+  fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+   .then(function(r){return r.json();}).then(function(j){
+     if(j.success){m.textContent='Thanks. We\'ll be in touch with sandbox access shortly.';e.target.reset();if(typeof gtag==='function')gtag('event','sandbox_request_submitted');}
+     else{m.textContent=j.message||'Something went wrong. Email founders@payerkart.com.';}
+     b.disabled=false;b.textContent='Request access →';
+   }).catch(function(){m.textContent='Something went wrong. Email founders@payerkart.com.';b.disabled=false;b.textContent='Request access →';});
+});
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="/" class="brand" aria-label="Payerkart home"><svg width="26" height="26" viewBox="0 0 44 44" aria-hidden="true" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg><span>Payerkart</span></a>
+        <p class="foot-blurb">Eligibility verification and claim status tracking inside your hospital's EHR, through one API.</p>
+        <div class="trust"><span>HIPAA compliant</span><span>BAA</span><span>US hosting</span><span>Full audit logs</span></div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="/eligibility-verification.html">Eligibility verification</a></li>
+          <li><a href="/claim-status.html">Claim status tracking</a></li>
+          <li><a href="/ehr-integration.html">EHR integration</a></li>
+          <li><a href="/payer-coverage.html">Payer coverage</a></li>
+          <li><a href="/for-hospitals.html">For hospitals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/case-studies.html">Case studies</a></li>
+          <li><a href="/roi-calculator.html">ROI calculator</a></li>
+          <li><a href="/resources.html">Free tools &amp; comparisons</a></li>
+          <li><a href="/glossary.html">Glossary</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/security.html">Security &amp; compliance</a></li>
+          <li><a href="/developers.html">Developers</a></li>
+          <li><a href="#demo" data-demo>Book a demo</a></li>
+          <li><a href="mailto:founders@payerkart.com">founders@payerkart.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Payerkart, a product of Blue Matrix Connect.</span>
+      <span>Healthcare payer infrastructure</span>
+    </div>
+  </div>
+</footer>
+<div id="demoModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+  <div class="modal">
+    <button class="close" onclick="closeDemoModal()" aria-label="Close">×</button>
+    <div id="demoFormWrap">
+      <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-strong);margin-bottom:8px;">Book a Demo</div>
+      <h3 id="demoTitle">Tell us about your workflow</h3>
+      <p>We'll get back to you to set up a time to walk through your workflow and share sandbox access.</p>
+      <form id="demoForm">
+        <input type="hidden" name="access_key" value="93c88fbd-9ea1-4fdd-a33e-c6ccf4829ad5">
+        <input type="hidden" name="subject" value="Payerkart Demo Request">
+        <input type="hidden" name="from_name" value="Payerkart Website">
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+        <label>Name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Work email<input type="email" name="email" required autocomplete="email"></label>
+        <label>Hospital or company<input type="text" name="company" autocomplete="organization"></label>
+        <label>What are you looking to do?<textarea name="message" rows="3"></textarea></label>
+        <button type="submit" id="demoSubmitBtn" class="btn">Send request →</button>
+        <div id="demoFormError" class="err"></div>
+      </form>
+    </div>
+    <div id="demoFormSuccess" class="ok">
+      <div style="font-size:32px;margin-bottom:10px;">✓</div>
+      <h3>Request sent</h3>
+      <p style="margin:0;">Thanks. We'll be in touch shortly to set up a time.</p>
+    </div>
+  </div>
+</div>
+<script src="/site.js" defer></script>
+<script src="/motion.js" defer></script>
+</body>
+</html>

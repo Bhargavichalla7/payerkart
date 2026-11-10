@@ -126,8 +126,9 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <a href="/eligibility-verification.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Eligibility</a>
       <a href="/claim-status.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Claim status</a>
       <a href="/ehr-integration.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">EHR integration</a>
-      <a href="/case-studies.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Customers</a>
       <a href="/security.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Security</a>
+      <a href="/developers.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Developers</a>
+      <a href="/resources.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Resources</a>
       <a href="/blog/" class="nav-desktop" style="font-size:14px;color:var(--ink);">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
@@ -691,7 +692,7 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <div style="flex:1 1 280px;min-width:240px;">
       <div class="mono" style="font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--accent-strong);margin-bottom:10px;">Security &amp; compliance</div>
       <h2 style="margin:0 0 10px;font-size:24px;font-weight:600;">Handled like the healthcare data it is</h2>
-      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:48ch;">Payerkart is built around HIPAA-aligned data handling — encryption in transit and at rest, scoped access, and full audit logs on every request. <a href="/security.html">Read more about security →</a></p>
+      <p style="margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;max-width:48ch;">Payerkart is HIPAA compliant and hosted in the US — encryption in transit and at rest, scoped access, and full audit logs on every request. <a href="/security.html">Read more about security →</a></p>
     </div>
     <div class="sec-grid" style="flex:1 1 320px;min-width:240px;display:grid;gap:16px;">
       <div class="mono" style="font-size:13px;display:flex;gap:8px;align-items:baseline;"><span style="color:var(--accent);">✓</span>Encrypted in transit &amp; at rest</div>
@@ -702,6 +703,15 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
   </div>
 </div>
 
+<!-- PAYER CODES TRANSLATED -->
+<section class="pk-denials" aria-labelledby="denTitle">
+  <span class="kicker">Answers people can act on</span>
+  <h2 id="denTitle">Payer codes, translated.</h2>
+  <p>Payers answer in codes. Payerkart turns them into a reason your staff understand and the fix to make, right next to the patient.</p>
+  <div class="tw"><table><tr><th>Payer code</th><th>What the payer sends</th><th>What staff see in Payerkart</th><th>Suggested fix</th></tr><tr><td><code>AAA 72</code></td><td>Invalid or missing member ID</td><td><b>The payer doesn&#x27;t recognise the member ID that was sent.</b></td><td>Re-check the card (prefixes and suffixes are often dropped), or re-scan it, then run eligibility again.</td></tr><tr><td><code>AAA 71</code></td><td>Birth date doesn&#x27;t match payer records</td><td><b>The date of birth in the EHR doesn&#x27;t match what the payer has on file.</b></td><td>Confirm the date of birth with the patient. Check you sent the patient&#x27;s details, not the subscriber&#x27;s.</td></tr><tr><td><code>AAA 75</code></td><td>Subscriber not found</td><td><b>The payer can&#x27;t find anyone matching the name, ID and date of birth sent.</b></td><td>Check name spelling and payer selection. Try the subscriber&#x27;s details if the patient is a dependent.</td></tr><tr><td><code>CARC 27</code></td><td>Expenses incurred after coverage terminated</td><td><b>The plan had ended before the date of service.</b></td><td>Re-verify eligibility for that date and ask the patient for current insurance before billing again.</td></tr><tr><td><code>CARC 22</code></td><td>Covered by another payer (coordination of benefits)</td><td><b>The payer thinks another plan should pay first.</b></td><td>Update primary and secondary coverage with the patient, then bill the primary plan.</td></tr></table></div>
+  <p class="note">X12 eligibility (AAA) and claim adjustment reason (CARC) codes; plain-English summaries. <a href="/claim-status-codes.html">Translate more codes free →</a></p>
+</section>
+
 <!-- EXPLORE -->
 <div style="max-width:1180px;margin:0 auto;padding:64px 24px 8px;width:100%;">
   <div class="mono" style="font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--accent-strong);margin-bottom:10px;">Explore</div>
@@ -710,7 +720,8 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
     <a href="/eligibility-verification.html" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>Eligibility verification</b><br><span style="color:var(--muted);font-size:14px;">Coverage, copay and deductible in under a second.</span></a>
     <a href="/claim-status.html" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>Claim status tracking</b><br><span style="color:var(--muted);font-size:14px;">Status changes and plain-language denial reasons.</span></a>
     <a href="/ehr-integration.html" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>EHR integration</b><br><span style="color:var(--muted);font-size:14px;">How the adapter fits into your hospital's EHR.</span></a>
-    <a href="/payerkart-vs-payer-portals.html" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>Payerkart vs payer portals</b><br><span style="color:var(--muted);font-size:14px;">Side-by-side, check by check.</span></a>
+    <a href="/roi-calculator.html" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>ROI calculator</b><br><span style="color:var(--muted);font-size:14px;">What manual checks cost you, with your own numbers.</span></a>
+    <a href="/resources.html" style="display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;color:var(--ink);"><b>Free tools</b><br><span style="color:var(--muted);font-size:14px;">STC lookup, 271 and 277 code translators, glossary.</span></a>
   </div>
 </div>
 
@@ -753,10 +764,10 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 
     <div class="faq-item" style="border-bottom:1px solid var(--line);">
       <button class="faq-toggle" style="width:100%;text-align:left;background:transparent;border:none;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);">
-        <span style="font-size:15.5px;font-weight:500;">Is patient data handled in a HIPAA-aligned way?</span>
+        <span style="font-size:15.5px;font-weight:500;">Is Payerkart HIPAA compliant?</span>
         <span class="mono faq-mark" style="font-size:16px;color:var(--muted);flex:none;">+</span>
       </button>
-      <p class="faq-answer">Yes. Data is encrypted in transit and at rest, access is scoped per API key, every request is logged, and a BAA is available for teams that need one.</p>
+      <p class="faq-answer">Yes. Data is hosted in the US and encrypted in transit and at rest, access is scoped per API key, every request is logged, we sign a BAA with every customer, and we notify you within 24 hours of a confirmed security incident.</p>
     </div>
 
     <div class="faq-item" style="border-bottom:1px solid var(--line);">
@@ -793,8 +804,11 @@ h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
       <a href="/for-hospitals.html" style="font-size:12px;color:var(--muted);">For hospitals</a>
       <a href="/payer-coverage.html" style="font-size:12px;color:var(--muted);">Payer coverage</a>
       <a href="/case-studies.html" style="font-size:12px;color:var(--muted);">Case studies</a>
+      <a href="/roi-calculator.html" style="font-size:12px;color:var(--muted);">ROI calculator</a>
+      <a href="/resources.html" style="font-size:12px;color:var(--muted);">Free tools</a>
+      <a href="/glossary.html" style="font-size:12px;color:var(--muted);">Glossary</a>
       <a href="/security.html" style="font-size:12px;color:var(--muted);">Security</a>
-      <a href="/payerkart-vs-payer-portals.html" style="font-size:12px;color:var(--muted);">vs payer portals</a>
+      <a href="/developers.html" style="font-size:12px;color:var(--muted);">Developers</a>
       <a href="/blog/" style="font-size:12px;color:var(--muted);">Blog</a>
     </div>
   </div>
