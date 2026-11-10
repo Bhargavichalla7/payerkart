@@ -7,12 +7,10 @@ Scope: eligibility verification and claim status tracking only. Payerkart does n
 ## Product
 - [Eligibility verification](https://payerkart.com/eligibility-verification.html): Real-time and overnight batch eligibility; coverage, plan dates, copay, deductible, network status, coverage by service.
 - [Claim status tracking](https://payerkart.com/claim-status.html): Poll or webhook on adjudication changes; plain-language denial reasons; remittance detail.
-- [EHR integration](https://payerkart.com/ehr-integration.html): Standard adapter contract; eClinicalWorks was the first adapter.
+- [EHR integration](https://payerkart.com/ehr-integration.html): Standard adapter contract that works with the hospital's EHR.
 - [For hospitals](https://payerkart.com/for-hospitals.html): What changes for patient access, billing and IT teams.
 - [Payer coverage](https://payerkart.com/payer-coverage.html): Commercial and government payers across the US via clearinghouse connectivity.
 
-## Developers
-- [API docs](https://payerkart.com/docs.html): Base URL https://api.payerkart.com/v1, Bearer auth, POST /v1/eligibility, GET /v1/claims/:id, webhooks, errors, sandbox.
 
 ## Trust
 - [Security & compliance](https://payerkart.com/security.html): Encryption in transit and at rest, scoped keys, role-based access, audit logs, BAA available.
