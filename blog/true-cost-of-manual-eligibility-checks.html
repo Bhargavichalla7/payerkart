@@ -14,9 +14,20 @@
 <title>What Manual Insurance Checks Really Cost Your Front Desk</title>
 <meta name="description" content="A manual insurance check costs far more in staff time than it appears to. Here is where the minutes go, what the CAQH Index says a check costs, and how to measure it in your own front desk.">
 <link rel="canonical" href="https://payerkart.com/blog/true-cost-of-manual-eligibility-checks.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:site_name" content="Payerkart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What Manual Insurance Checks Really Cost Your Front Desk">
+<meta property="og:description" content="A manual insurance check costs far more in staff time than it appears to. Here is where the minutes go, what the CAQH Index says a check costs, and how to measure it in your own front desk.">
+<meta property="og:url" content="https://payerkart.com/blog/true-cost-of-manual-eligibility-checks.html">
+<meta property="og:image" content="https://payerkart.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Manual Insurance Checks Really Cost Your Front Desk">
+<meta name="twitter:description" content="A manual insurance check costs far more in staff time than it appears to. Here is where the minutes go, what the CAQH Index says a check costs, and how to measure it in your own front desk.">
+<meta name="twitter:image" content="https://payerkart.com/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.svg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,27 +42,15 @@
 </script>
 <style>
 :root{
-  --ink:#14231D; --paper:#EFF1EA; --surface:#FFFFFF; --surface-2:#E7EAE1;
-  --accent:#1E6F52; --accent-strong:#123D2C; --accent-soft:#DCEAE1;
-  --warn:#B5581F; --warn-soft:#F3E3D3;
-  --line:#D3D0C1; --muted:#5B6660;
-  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ink:#0B1020; --paper:#F7F8FC; --surface:#FFFFFF; --surface-2:#EEF1F8;
+  --accent:#4F46E5; --accent-strong:#3730A3; --accent-soft:#E7E8FF;
+  --warn:#D9480F; --warn-soft:#FFE8DD;
+  --line:#E2E6F0; --muted:#5A6378;
+  --sans:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --ink:#ECEFE7; --paper:#0F1713; --surface:#152018; --surface-2:#1B271F;
-    --accent:#57D0A0; --accent-strong:#2FA37A; --accent-soft:#1B342A;
-    --warn:#E08B4E; --warn-soft:#3A2718;
-    --line:#28342C; --muted:#93A19A;
-  }
-}
-:root[data-theme="dark"]{
-  --ink:#ECEFE7; --paper:#0F1713; --surface:#152018; --surface-2:#1B271F;
-  --accent:#57D0A0; --accent-strong:#2FA37A; --accent-soft:#1B342A;
-  --warn:#E08B4E; --warn-soft:#3A2718;
-  --line:#28342C; --muted:#93A19A;
-}
+
+
 *{box-sizing:border-box;}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);}
 a{color:var(--accent);text-decoration:none;}
@@ -59,7 +58,7 @@ a:hover{color:var(--accent-strong);}
 h1,h2,h3{font-family:var(--sans);letter-spacing:-0.01em;}
 .mono{font-family:var(--mono);}
 .nav-desktop{display:none;}
-@media (min-width:760px){ .nav-desktop{display:inline-block;} }
+@media (min-width:1000px){ .nav-desktop{display:inline-block;} }
 article p{margin:0 0 18px;font-size:16.5px;line-height:1.75;color:var(--ink);}
 article h2{font-size:24px;font-weight:600;margin:44px 0 16px;}
 article h3{font-size:18px;font-weight:600;margin:32px 0 12px;}
@@ -71,25 +70,28 @@ article blockquote{margin:28px 0;padding:4px 0 4px 20px;border-left:3px solid va
 .cost-table td{padding:12px 14px;font-size:15.5px;border-bottom:1px solid var(--line);}
 .cost-table td:last-child{text-align:right;font-family:var(--mono);font-weight:600;}
 </style>
+<link rel="stylesheet" href="/motion.css">
+<link rel="stylesheet" href="/theme.css">
 </head>
 <body>
 
 <div style="width:100%;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);">
 
 <!-- HEADER -->
-<div style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
+<div class="pk-header" style="position:sticky;top:0;z-index:40;width:100%;background:var(--paper);border-bottom:1px solid var(--line);">
   <div style="max-width:1180px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;">
     <a href="/" style="display:flex;align-items:center;gap:10px;">
       <svg width="26" height="26" viewBox="0 0 44 44" style="flex:none;"><rect x="2" y="2" width="40" height="40" rx="10" fill="var(--ink)"/><text x="22" y="30" font-family="var(--mono)" font-weight="600" font-size="24" fill="var(--paper)" text-anchor="middle">P</text></svg>
       <span style="font-family:var(--mono);font-weight:600;font-size:17px;letter-spacing:-0.01em;">Payerkart</span>
     </a>
     <div style="display:flex;align-items:center;gap:28px;" class="mono">
-      <a href="/#capabilities" class="nav-desktop" style="font-size:14px;color:var(--ink);">Product</a>
-      <a href="/#api" class="nav-desktop" style="font-size:14px;color:var(--ink);">API Preview</a>
+      <a href="/eligibility-verification.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Eligibility</a>
+      <a href="/claim-status.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Claim status</a>
+      <a href="/case-studies.html" class="nav-desktop" style="font-size:14px;color:var(--ink);">Customers</a>
       <a href="/blog/" class="nav-desktop" style="font-size:14px;color:var(--accent-strong);">Blog</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
-      <a href="/#start" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);padding:10px 16px;border-radius:6px;">Book a Demo →</a>
+      <a href="/#demo" style="font-size:13px;font-family:var(--mono);color:var(--paper);background:var(--accent-strong);padding:10px 16px;border-radius:6px;">Book a Demo →</a>
     </div>
   </div>
 </div>
@@ -153,7 +155,7 @@ article blockquote{margin:28px 0;padding:4px 0 4px 20px;border-left:3px solid va
 <div style="margin-top:48px;padding:32px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:flex;flex-direction:column;gap:14px;">
   <h3 style="margin:0;font-size:18px;">Take the portal out of your front desk's day</h3>
   <p style="margin:0;color:var(--muted);font-size:14.5px;">Payerkart verifies eligibility and tracks claim status inside your hospital's EHR. Book a demo to see it on your own workflow.</p>
-  <a href="/#start" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);padding:12px 20px;border-radius:8px;width:fit-content;">Book a Demo →</a>
+  <a href="/#demo" style="font-family:var(--mono);font-size:14px;color:var(--paper);background:var(--accent-strong);padding:12px 20px;border-radius:8px;width:fit-content;">Book a Demo →</a>
 </div>
 
 <p style="margin-top:28px;font-size:13px;color:var(--muted);">Source: CAQH Index, 2023 edition. Staff-time figures are illustrative and based on a live Payerkart practice.</p>
@@ -165,16 +167,16 @@ article blockquote{margin:28px 0;padding:4px 0 4px 20px;border-left:3px solid va
   <div style="max-width:1180px;margin:0 auto;padding:32px 24px 0;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);">
     <span class="mono" style="font-size:12px;color:var(--muted);">© 2026 Payerkart, a product of Blue Matrix Connect. Healthcare payer infrastructure.</span>
     <div style="display:flex;gap:20px;" class="mono">
-      <a href="/#capabilities" style="font-size:12px;color:var(--muted);">Product</a>
-      <a href="/#api" style="font-size:12px;color:var(--muted);">API Preview</a>
+      <a href="/eligibility-verification.html" style="font-size:12px;color:var(--muted);">Eligibility verification</a>
+      <a href="/claim-status.html" style="font-size:12px;color:var(--muted);">Claim status</a>
+      <a href="/case-studies.html" style="font-size:12px;color:var(--muted);">Case studies</a>
+      <a href="/security.html" style="font-size:12px;color:var(--muted);">Security</a>
       <a href="/blog/" style="font-size:12px;color:var(--muted);">Blog</a>
     </div>
-  </div>
-  <div style="max-width:1180px;margin:0 auto;padding:14px 24px 28px;">
-    <span class="mono" style="font-size:11px;color:var(--muted);opacity:0.75;">Confidential — shared for review only. Not for public distribution.</span>
   </div>
 </div>
 
 </div>
+<script src="/motion.js" defer></script>
 </body>
 </html>
